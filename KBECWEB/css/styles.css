@@ -2640,6 +2640,40 @@ body:not([data-theme="dark"]) th {
   color: #cbd5e1;
 }
 
+/* Dual Team Leaders Grid */
+.webteam-dual-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  align-items: stretch;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
+.webteam-lead-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.webteam-lead-wrapper .webteam-card-container {
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.webteam-lead-wrapper .webteam-under-info {
+  margin-top: 0;
+  width: 100%;
+}
+
+@media (max-width: 860px) {
+  .webteam-dual-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+}
+
 /* Outer Card Container */
 .webteam-card-container {
   width: 100%;
