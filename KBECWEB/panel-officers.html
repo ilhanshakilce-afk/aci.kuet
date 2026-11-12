@@ -12,14 +12,14 @@
   <meta property="og:site_name" content="ACI Student Chapter - KUET">
   <meta property="og:title" content="Executive Committee (Session 2026–27) | ACI Student Chapter - KUET">
   <meta property="og:description" content="Meet the executive leadership panel and departmental officers guiding the ACI Student Chapter at KUET under faculty mentorship.">
-  <meta property="og:image" content="https://acikuet.org/images/hero-group-photo.jpg">
+  <meta property="og:image" content="https://acikuet.org/images/hero-group-photo.webp">
   <meta property="og:url" content="https://acikuet.org/panel-officers.html">
   
   <!-- Twitter Card Metadata -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Executive Committee (Session 2026–27) | ACI Student Chapter - KUET">
   <meta name="twitter:description" content="Meet the executive leadership panel and departmental officers guiding the ACI Student Chapter at KUET under faculty mentorship.">
-  <meta name="twitter:image" content="https://acikuet.org/images/hero-group-photo.jpg">
+  <meta name="twitter:image" content="https://acikuet.org/images/hero-group-photo.webp">
   <link rel="icon" href="images/aci-kuet-official-logo.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -122,9 +122,27 @@
         </p>
       </div>
 
+      <!-- Live Search & Interactive Category Filter Tabs -->
+      <div class="panel-search-filter-wrap" style="max-width: 860px; margin: 0 auto 3rem; display: flex; flex-direction: column; gap: 1.25rem;">
+        <!-- Live Search Bar -->
+        <div style="position: relative; width: 100%;">
+          <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 1.25rem; top: 50%; transform: translateY(-50%); color: #64748b; font-size: 1.05rem;"></i>
+          <input type="text" id="officer-search-input" onkeyup="filterOfficers()" placeholder="Search leader by name, designation, or role (e.g. Morshed, Maharajul, Shakil, President)..." style="width: 100%; padding: 0.95rem 1.25rem 0.95rem 3.25rem; font-size: 0.98rem; border: 1.5px solid var(--border-color); border-radius: 0; background: #ffffff; color: #000000; box-shadow: 0 2px 10px rgba(0,0,0,0.03);">
+        </div>
+        
+        <!-- Category Filter Tabs -->
+        <div class="panel-filter-tabs" style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;">
+          <button type="button" class="btn btn-outline filter-tab-btn active" onclick="setOfficerFilter('all', this)" style="border-radius: 0; padding: 0.5rem 1.15rem; font-size: 0.88rem; font-weight: 700; background: #166534; color: #ffffff; border-color: #166534; cursor: pointer;">All Leadership (43)</button>
+          <button type="button" class="btn btn-outline filter-tab-btn" onclick="setOfficerFilter('advisory', this)" style="border-radius: 0; padding: 0.5rem 1.15rem; font-size: 0.88rem; font-weight: 700; background: #ffffff; color: #000000; border-color: var(--border-color); cursor: pointer;">Faculty Mentors</button>
+          <button type="button" class="btn btn-outline filter-tab-btn" onclick="setOfficerFilter('secretariat', this)" style="border-radius: 0; padding: 0.5rem 1.15rem; font-size: 0.88rem; font-weight: 700; background: #ffffff; color: #000000; border-color: var(--border-color); cursor: pointer;">President &amp; Secretaries</button>
+          <button type="button" class="btn btn-outline filter-tab-btn" onclick="setOfficerFilter('heads', this)" style="border-radius: 0; padding: 0.5rem 1.15rem; font-size: 0.88rem; font-weight: 700; background: #ffffff; color: #000000; border-color: var(--border-color); cursor: pointer;">Department Heads</button>
+          <button type="button" class="btn btn-outline filter-tab-btn" onclick="setOfficerFilter('asst', this)" style="border-radius: 0; padding: 0.5rem 1.15rem; font-size: 0.88rem; font-weight: 700; background: #ffffff; color: #000000; border-color: var(--border-color); cursor: pointer;">Asst. Secretaries</button>
+        </div>
+      </div>
+
       <div class="cuet-panel-grid">
         <!-- Dr. Abu Zakir Morshed -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>
@@ -151,7 +169,7 @@
         </div>
 
         <!-- Dr. Mahmudul Hasan Mizan -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>
@@ -177,7 +195,7 @@
         </div>
 
         <!-- Ahmed Shakik -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>
@@ -203,7 +221,7 @@
         </div>
 
         <!-- Shakil Ilhan -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>
@@ -229,7 +247,7 @@
         </div>
 
         <!-- Maharajul Islam -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>
@@ -255,7 +273,7 @@
         </div>
 
         <!-- Dibyo Raj Saha -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>
@@ -281,7 +299,7 @@
         </div>
 
         <!-- Fahim Bin Amin -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>
@@ -307,7 +325,7 @@
         </div>
 
         <!-- Md. Hanifur Rahman Naim -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>
@@ -333,7 +351,7 @@
         </div>
 
         <!-- Syed Mazidul Islam Nazib -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>
@@ -359,7 +377,7 @@
         </div>
 
         <!-- Md. Tasnim Rahman -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>
@@ -385,7 +403,7 @@
         </div>
 
         <!-- Nusrat Jahan -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>
@@ -411,7 +429,7 @@
         </div>
 
         <!-- Abdullah Al Shafi -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>
@@ -437,7 +455,7 @@
         </div>
 
         <!-- Ahnaf Mahmud -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>
@@ -463,7 +481,7 @@
         </div>
 
         <!-- Zumzumy Khan Troye -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>
@@ -489,7 +507,7 @@
         </div>
 
         <!-- Syed Rifatuzzaman -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>
@@ -515,7 +533,7 @@
         </div>
 
         <!-- Ismat Jahan Ina -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>
@@ -541,7 +559,7 @@
         </div>
 
         <!-- Mithun Saha -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>
@@ -567,7 +585,7 @@
         </div>
 
         <!-- Sadia Monir Shifa -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>
@@ -593,7 +611,7 @@
         </div>
 
         <!-- Jubayad Bin Showkat -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>
@@ -619,7 +637,7 @@
         </div>
 
         <!-- Zahin Nawar -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>
@@ -645,7 +663,7 @@
         </div>
 
         <!-- Md. Sadmon Alam Nihal -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>
@@ -671,7 +689,7 @@
         </div>
 
         <!-- Kazi Hasin Rakayet Nabil -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>
@@ -697,7 +715,7 @@
         </div>
 
         <!-- Md. Mushtaq Ahmed Mahir -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>
@@ -723,7 +741,7 @@
         </div>
 
         <!-- Tasnimul Hasan Tarif -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>
@@ -749,7 +767,7 @@
         </div>
 
         <!-- Farhan Sadik Shouvik -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>
@@ -775,7 +793,7 @@
         </div>
 
         <!-- Avrojaty Maitry Ayon -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>
@@ -801,7 +819,7 @@
         </div>
 
         <!-- Shakkhar Kundu -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>
@@ -827,7 +845,7 @@
         </div>
 
         <!-- Ayesha Hossain -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>
@@ -853,7 +871,7 @@
         </div>
 
         <!-- Mashrur Hasan -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>
@@ -879,7 +897,7 @@
         </div>
 
         <!-- Nazifa Siyara -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>
@@ -905,7 +923,7 @@
         </div>
 
         <!-- Mejbahul Jannat -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>
@@ -931,7 +949,7 @@
         </div>
 
         <!-- Md. Golam Rabbi -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>
@@ -957,7 +975,7 @@
         </div>
 
         <!-- Mashrafi Saadman -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>
@@ -983,7 +1001,7 @@
         </div>
 
         <!-- Lumaira Tanzin Abonty -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>
@@ -1009,7 +1027,7 @@
         </div>
 
         <!-- Rofaida Ahmed -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>
@@ -1035,7 +1053,7 @@
         </div>
 
         <!-- Md. Muttakin Ahmed -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>
@@ -1061,7 +1079,7 @@
         </div>
 
         <!-- Md. Fahad Bin Siddik -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>
@@ -1087,7 +1105,7 @@
         </div>
 
         <!-- Arko Gupto -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>
@@ -1113,7 +1131,7 @@
         </div>
 
         <!-- Mst Sanjeeda Yasmin Onti -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>
@@ -1139,7 +1157,7 @@
         </div>
 
         <!-- Abu Hamja -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>
@@ -1165,7 +1183,7 @@
         </div>
 
         <!-- Md. Mazharul Islam Khan -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>
@@ -1191,7 +1209,7 @@
         </div>
 
         <!-- Turjo Ghosh -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>
@@ -1217,7 +1235,7 @@
         </div>
 
         <!-- Md. Mahmuduzzaman -->
-        <div class="cuet-panel-card">
+        <div class="cuet-panel-card" data-category="secretariat">
           <div class="cuet-card-top-icons">
             <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo">
             <span style="font-size: 0.72rem; font-weight: 800; color: #166534; letter-spacing: 0.5px;">ACI KUET STUDENT CHAPTER</span>

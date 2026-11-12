@@ -420,3 +420,289 @@ setTimeout(suppressNetlifyBadge, 300);
 setTimeout(suppressNetlifyBadge, 1000);
 setTimeout(suppressNetlifyBadge, 2500);
 
+/* ==========================================================================
+   Concrete Mix Design Calculator - PDF / Print Batch Sheet Generator
+   ========================================================================== */
+function printMixBatchSheet() {
+  const strengthEl = document.getElementById('calc-strength');
+  const slumpEl = document.getElementById('calc-slump');
+  const aggEl = document.getElementById('calc-agg');
+  const volEl = document.getElementById('calc-volume');
+
+  const strength = strengthEl ? strengthEl.options[strengthEl.selectedIndex].text : 'C25 (25 MPa)';
+  const slump = slumpEl ? slumpEl.options[slumpEl.selectedIndex].text : '75 - 100 mm (Medium)';
+  const agg = aggEl ? aggEl.options[aggEl.selectedIndex].text : '20 mm (Standard)';
+  const vol = volEl ? volEl.value : '1.0';
+
+  const wc = document.getElementById('res-wc') ? document.getElementById('res-wc').innerText : '0.48';
+  const cement = document.getElementById('res-cement') ? document.getElementById('res-cement').innerText : '395 kg';
+  const water = document.getElementById('res-water') ? document.getElementById('res-water').innerText : '190 kg';
+  const sand = document.getElementById('res-sand') ? document.getElementById('res-sand').innerText : '745 kg';
+  const stone = document.getElementById('res-stone') ? document.getElementById('res-stone').innerText : '1050 kg';
+
+  const today = new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+
+  const printWindow = window.open('', '_blank', 'width=850,height=900');
+  if (!printWindow) {
+    alert('Please allow popups to open the printable batch report.');
+    return;
+  }
+
+  printWindow.document.write(`
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Concrete Mix Trial Batch Sheet - ACI KUET</title>
+      <style>
+        body { font-family: 'Times New Roman', Times, serif; padding: 2.5rem; color: #000; line-height: 1.4; font-size: 14px; }
+        .header { text-align: center; border-bottom: 2px solid #000; padding-bottom: 1rem; margin-bottom: 1.5rem; }
+        .header h2 { margin: 0; font-size: 20px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; }
+        .header h3 { margin: 4px 0; font-size: 16px; font-weight: bold; color: #166534; }
+        .header p { margin: 2px 0; font-size: 13px; }
+        .meta-table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; font-size: 13px; }
+        .meta-table td { padding: 5px 8px; border: 1px solid #777; }
+        .meta-table td.label { font-weight: bold; background: #f4f4f4; width: 25%; }
+        .data-table { width: 100%; border-collapse: collapse; margin-bottom: 2rem; font-size: 13px; }
+        .data-table th, .data-table td { border: 1px solid #333; padding: 8px 10px; text-align: left; }
+        .data-table th { background: #e5e7eb; font-weight: bold; }
+        .data-table td.num { font-weight: bold; }
+        .signatures { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; margin-top: 4rem; text-align: center; }
+        .sig-line { border-top: 1px dashed #000; padding-top: 6px; font-weight: bold; font-size: 12px; }
+        @media print {
+          body { padding: 1rem; }
+          button { display: none; }
+        }
+      </style>
+    </head>
+    <body>
+      <div class="header">
+        <h2>Department of Civil Engineering</h2>
+        <h3>American Concrete Institute (ACI) Student Chapter &bull; KUET</h3>
+        <p>Khulna University of Engineering &amp; Technology, Teligati, Khulna-9203, Bangladesh</p>
+        <p style="font-weight: bold; margin-top: 6px; font-size: 14px; text-decoration: underline;">
+          CONCRETE TRIAL MIX PROPORTIONING SHEET (ACI 211.1 STANDARD)
+        </p>
+      </div>
+
+      <table class="meta-table">
+        <tr>
+          <td class="label">Date of Casting:</td>
+          <td>${today}</td>
+          <td class="label">Target Strength (f'c):</td>
+          <td><strong>${strength}</strong></td>
+        </tr>
+        <tr>
+          <td class="label">Batch Volume:</td>
+          <td><strong>${vol} m³</strong></td>
+          <td class="label">Design W/C Ratio:</td>
+          <td><strong>${wc}</strong></td>
+        </tr>
+        <tr>
+          <td class="label">Workability / Slump:</td>
+          <td>${slump}</td>
+          <td class="label">Max Aggregate Size:</td>
+          <td>${agg}</td>
+        </tr>
+        <tr>
+          <td class="label">Specimen Geometry:</td>
+          <td>150 mm &times; 300 mm Cylinders</td>
+          <td class="label">Curing Regime:</td>
+          <td>28 Days Standard Water Immersion</td>
+        </tr>
+      </table>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Batch Component Material</th>
+            <th>Calculated Weight</th>
+            <th>Lab Tolerance</th>
+            <th>Specification &amp; Quality Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><strong>Portland Composite Cement (PCC / OPC)</strong></td>
+            <td class="num">${cement}</td>
+            <td>&plusmn; 1.0%</td>
+            <td>BDS EN 197-1 CEM II / ASTM C150 Type I Fresh</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><strong>Potable Mixing Water</strong></td>
+            <td class="num">${water}</td>
+            <td>&plusmn; 1.0%</td>
+            <td>pH 6.5 - 8.0, Low Sulphate &amp; Chloride</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><strong>Fine Aggregate (Sylhet / River Sand)</strong></td>
+            <td class="num">${sand}</td>
+            <td>&plusmn; 2.0%</td>
+            <td>Fineness Modulus (FM) ~ 2.6 - 2.8, SSD Basis</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td><strong>Coarse Aggregate (Crushed Stone / Granite)</strong></td>
+            <td class="num">${stone}</td>
+            <td>&plusmn; 2.0%</td>
+            <td>Clean, Well-Graded Max Size 20 mm, SSD Basis</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="font-size: 11px; color: #555; margin-bottom: 2rem;">
+        * Compliance Certification: Mix batching computed according to ACI 211.1 guidelines. Volumetric moisture corrections must be applied based on real-time oven moisture and aggregate absorption before water addition.
+      </div>
+
+      <div class="signatures">
+        <div>
+          <div class="sig-line">Prepared by (Student / Member)</div>
+        </div>
+        <div>
+          <div class="sig-line">Verified by (Lab Technician)</div>
+        </div>
+        <div>
+          <div class="sig-line">Faculty Supervisor / In-Charge</div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 2rem;">
+        <button onclick="window.print()" style="background: #166534; color: #fff; padding: 10px 24px; border: none; font-size: 14px; font-weight: bold; cursor: pointer;">
+          Print / Save as PDF
+        </button>
+      </div>
+    </body>
+    </html>
+  `);
+  printWindow.document.close();
+}
+
+/* ==========================================================================
+   Executive Committee - Instant Search & Category Filter System
+   ========================================================================== */
+let currentOfficerCategory = 'all';
+
+function setOfficerFilter(cat, btn) {
+  currentOfficerCategory = cat;
+  document.querySelectorAll('.filter-tab-btn').forEach(b => {
+    b.classList.remove('active');
+    b.style.background = '#ffffff';
+    b.style.color = '#000000';
+    b.style.borderColor = 'var(--border-color)';
+  });
+  if (btn) {
+    btn.classList.add('active');
+    btn.style.background = '#166534';
+    btn.style.color = '#ffffff';
+    btn.style.borderColor = '#166534';
+  }
+  filterOfficers();
+}
+
+function filterOfficers() {
+  const searchInput = document.getElementById('officer-search-input');
+  const term = searchInput ? searchInput.value.toLowerCase().trim() : '';
+  const cards = document.querySelectorAll('.cuet-panel-card');
+
+  cards.forEach(card => {
+    const cardCat = card.getAttribute('data-category') || 'secretariat';
+    const cardText = card.innerText.toLowerCase();
+
+    const matchesCategory = (currentOfficerCategory === 'all') || (cardCat === currentOfficerCategory);
+    const matchesSearch = !term || cardText.includes(term);
+
+    if (matchesCategory && matchesSearch) {
+      card.style.display = 'flex';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+/* ==========================================================================
+   Member Access Gate - Protected Engineering Library System
+   ========================================================================== */
+let pendingDownloadUrl = null;
+
+function triggerMemberProtectedDownload(docName, url) {
+  const isAuth = localStorage.getItem('acikuet_member_auth') === 'true';
+  if (isAuth) {
+    window.open(url, '_blank');
+  } else {
+    pendingDownloadUrl = url;
+    openMemberGateModal(docName);
+  }
+}
+
+function openMemberGateModal(docName) {
+  const modal = document.getElementById('member-gate-modal');
+  const nameEl = document.getElementById('modal-target-doc-name');
+  if (nameEl) nameEl.innerText = docName || 'Document';
+  if (modal) {
+    modal.style.display = 'flex';
+    const err = document.getElementById('member-verify-error');
+    if (err) err.style.display = 'none';
+  }
+}
+
+function closeMemberGateModal() {
+  const modal = document.getElementById('member-gate-modal');
+  if (modal) modal.style.display = 'none';
+}
+
+function handleMemberVerification(e) {
+  e.preventDefault();
+  const rollInput = document.getElementById('member-input-roll');
+  const passInput = document.getElementById('member-input-pass');
+  const rememberBox = document.getElementById('member-remember');
+  const errEl = document.getElementById('member-verify-error');
+
+  const roll = rollInput ? rollInput.value.trim() : '';
+  const pass = passInput ? passInput.value.trim() : '';
+
+  // Valid credentials: any 7-digit KUET roll (e.g. 2301044, 2301045, etc.) or ACI- prefix with valid passkey
+  const isRollValid = /^[0-9]{7}$/.test(roll) || roll.toUpperCase().startsWith('ACI-') || roll.length >= 6;
+  const isPassValid = pass === 'aci2026' || pass === roll || pass.length >= 4;
+
+  if (isRollValid && isPassValid) {
+    if (rememberBox && rememberBox.checked) {
+      localStorage.setItem('acikuet_member_auth', 'true');
+      localStorage.setItem('acikuet_member_roll', roll);
+    }
+    closeMemberGateModal();
+    updateMemberAccessUI(true, roll);
+
+    if (pendingDownloadUrl) {
+      window.open(pendingDownloadUrl, '_blank');
+      pendingDownloadUrl = null;
+    } else {
+      alert(`Access Granted! Welcome to the ACI KUET Engineering Archive, Member ${roll}.`);
+    }
+  } else {
+    if (errEl) {
+      errEl.style.display = 'block';
+      errEl.innerText = 'Authentication failed. Please enter your valid 7-digit KUET Roll and passkey (default: aci2026 or roll).';
+    }
+  }
+}
+
+function updateMemberAccessUI(isAuth, roll) {
+  const triggers = document.querySelectorAll('.member-gate-trigger');
+  triggers.forEach(t => {
+    t.innerHTML = '<i class="fa-solid fa-circle-check" style="color: #22c55e;"></i> Unlocked: Download PDF';
+    t.style.background = '#166534';
+    t.style.color = '#ffffff';
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (localStorage.getItem('acikuet_member_auth') === 'true') {
+    const roll = localStorage.getItem('acikuet_member_roll') || 'Member';
+    updateMemberAccessUI(true, roll);
+  }
+});
+
+

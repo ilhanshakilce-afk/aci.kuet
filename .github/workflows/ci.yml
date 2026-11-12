@@ -1,0 +1,55 @@
+name: ACI KUET Portal CI & Code Quality Audit
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Codebase
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run Integrity Audit
+        run: |
+          python -c "
+          import os, glob, re
+          html_files = glob.glob('KBECWEB/*.html')
+          print(f'Auditing {len(html_files)} HTML pages...')
+          
+          errors = []
+          for f in html_files:
+              with open(f, 'r', encoding='utf-8') as fp:
+                  c = fp.read()
+              if '<title>' not in c:
+                  errors.append(f'{f}: Missing <title>')
+              if 'og:image' not in c:
+                  errors.append(f'{f}: Missing OpenGraph og:image')
+              if 'name=\"description\"' not in c:
+                  errors.append(f'{f}: Missing meta description')
+              
+              # Check internal images
+              imgs = re.findall(r'src=[\"\'](images/[^\"\']+)[\"\']', c)
+              for img in imgs:
+                  # clean query params if any
+                  img_clean = img.split('?')[0]
+                  img_path = os.path.join('KBECWEB', img_clean)
+                  if not os.path.exists(img_path):
+                      errors.append(f'{f}: Missing image {img_clean}')
+          
+          if errors:
+              print('ERRORS FOUND:')
+              for e in errors:
+                  print(' -', e)
+              exit(1)
+          else:
+              print('ALL INTEGRITY CHECKS PASSED: 0 errors detected across all pages!')
+          "
