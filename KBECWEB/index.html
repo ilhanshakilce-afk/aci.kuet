@@ -110,10 +110,10 @@
   <!-- Events Section: Appears with Smooth Transition on Scroll -->
   <section id="events-section" class="scroll-reveal" style="background: #ffffff; padding: 5rem 0;">
     <div class="container">
-      <div class="section-clean-head">
-        <span class="section-tag">Where Civil Minds Connect &amp; Innovate</span>
-        <h2 class="section-title">Events &amp; Competitions Arena</h2>
-        <p style="color: var(--text-muted); font-size: 1.05rem; margin-top: 0.5rem;">
+      <div class="section-clean-head events-head-anim">
+        <span class="section-tag events-tag-anim">Where Civil Minds Connect &amp; Innovate</span>
+        <h2 class="section-title events-title-anim">Events &amp; Competitions Arena</h2>
+        <p class="events-desc-anim" style="color: var(--text-muted); font-size: 1.05rem; margin-top: 0.5rem;">
           Click any segment to view detailed competition guidelines, rulebooks, and registration procedures.
         </p>
       </div>
@@ -121,7 +121,6 @@
       <div class="events-interactive-grid">
         <!-- 1. ACI Events -->
         <a href="events-major.html" class="event-box-link">
-          <div class="event-box-icon"><i class="fa-solid fa-flag"></i></div>
           <h3>ACI Events &amp; General Meetings</h3>
           <p>Annual General Meetings (AGM), parliamentary student sessions, chapter council deliberations, and institutional conventions.</p>
           <span class="event-box-action">Explore ACI Events &rarr;</span>
@@ -129,7 +128,6 @@
 
         <!-- 2. National Events (ReinforCE) -->
         <a href="events-national.html" class="event-box-link">
-          <div class="event-box-icon"><i class="fa-solid fa-trophy"></i></div>
           <h3>National Events (ReinforCE 1.0 &amp; 2026)</h3>
           <p>Premier national civil engineering festival: Truss Triumph, Crack the Case, Photo Quest, 3MT, and Concrete Mix Prototyping.</p>
           <span class="event-box-action">View Rulebooks &amp; Register &rarr;</span>
@@ -137,7 +135,6 @@
 
         <!-- 3. Technical Events -->
         <a href="events-technical.html" class="event-box-link">
-          <div class="event-box-icon"><i class="fa-solid fa-flask-vial"></i></div>
           <h3>Technical Events &amp; Lab Workshops</h3>
           <p>Hands-on casting in KUET concrete labs, NDT rebound hammer testing, compressive strength UTM trials, and software bootcamps.</p>
           <span class="event-box-action">View Technical Events &rarr;</span>
@@ -145,7 +142,6 @@
 
         <!-- 4. In-House Competitions -->
         <a href="events-inhouse.html" class="event-box-link">
-          <div class="event-box-icon"><i class="fa-solid fa-diagram-project"></i></div>
           <h3>In-House Competitions</h3>
           <p>Internal challenges for freshman integration: Balsa Truss Challenge, Speed CAD Master, Mechanics Mania, and The Odyssey.</p>
           <span class="event-box-action">View Domestic Challenges &rarr;</span>
@@ -153,7 +149,6 @@
 
         <!-- 5. Technical Tours -->
         <a href="events-tours.html" class="event-box-link">
-          <div class="event-box-icon"><i class="fa-solid fa-bus"></i></div>
           <h3>Regional Technical Tours</h3>
           <p>8 Mega-infrastructure expeditions: Seven Rings VRM plant, Akij Cement Noapara, Bashundhara RMC, and Rupsha Rail Bridge.</p>
           <span class="event-box-action">Explore Site Tours &rarr;</span>
@@ -161,7 +156,6 @@
 
         <!-- 6. Seminars & Webinars -->
         <a href="events-seminars.html" class="event-box-link">
-          <div class="event-box-icon"><i class="fa-solid fa-video"></i></div>
           <h3>Seminars &amp; Webinars (Sigma Omega)</h3>
           <p>24-Hour Next-Day Virtual Handover masterclasses across 4 wings: Higher Study, BCS Govt Jobs, Research, and Corporate Placement.</p>
           <span class="event-box-action">Explore Masterclasses &rarr;</span>
@@ -183,17 +177,14 @@
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
         <div class="human-card">
-          <div class="human-card-icon"><i class="fa-solid fa-award"></i></div>
           <h3>National Case Champions</h3>
           <p>First place awards in structural forensic case analysis and composite FRP retrofitting challenges across premier university engineering festivals.</p>
         </div>
         <div class="human-card">
-          <div class="human-card-icon"><i class="fa-solid fa-earth-americas"></i></div>
           <h3>Global ACI SYPAC Pathway</h3>
           <p>Qualified for the prestigious ACI Outstanding Student Chapter international designation under American Concrete Institute HQ scoring rubric.</p>
         </div>
         <div class="human-card">
-          <div class="human-card-icon"><i class="fa-solid fa-user-graduate"></i></div>
           <h3>150+ Certified Engineers</h3>
           <p>Undergraduate civil engineering students certified in industry software (AutoCAD, ETABS, SAFE, Revit BIM, Civil 3D) within departmental computing labs.</p>
         </div>
@@ -221,19 +212,11 @@
           </div>
         </div>
 
-        <div class="photo-box-raised photo-box-placeholder">
-          <div style="text-align: center; padding: 1.5rem;">
-            <i class="fa-solid fa-flask-vial" style="font-size: 2.75rem; color: #166534; margin-bottom: 0.75rem;"></i>
-            <div class="photo-caption-title" style="color: #000000;">Concrete Testing Laboratory</div>
-            <div class="photo-caption-sub" style="color: #4b5563;">Casting &amp; Compression Trials</div>
-          </div>
-        </div>
-
-        <div class="photo-box-raised photo-box-placeholder">
-          <div style="text-align: center; padding: 1.5rem;">
-            <i class="fa-solid fa-bridge" style="font-size: 2.75rem; color: #166534; margin-bottom: 0.75rem;"></i>
-            <div class="photo-caption-title" style="color: #000000;">Rupsha Rail Bridge &amp; Megasites</div>
-            <div class="photo-caption-sub" style="color: #4b5563;">Regional Field Immersion</div>
+        <div class="photo-box-raised">
+          <img src="images/moderator-card.jpg" alt="KUET Concrete Testing Laboratory Delegation" class="photo-box-img">
+          <div class="photo-box-caption">
+            <div class="photo-caption-title">Concrete Testing &amp; Research Arena</div>
+            <div class="photo-caption-sub">KUET Concrete Materials &amp; Testing Facility</div>
           </div>
         </div>
       </div>
@@ -244,27 +227,8 @@
   <section class="scroll-reveal" style="background: #ffffff; padding: 5rem 0; border-top: 1px solid var(--border-light);">
     <div class="container">
       <div class="moderator-card-box">
-        <div class="moderator-portrait-wrap">
-          <img src="images/moderator-portrait.jpg" alt="Prof. Dr. Abu Zakir Morshed" class="moderator-img">
-          <h3 class="moderator-name">Prof. Dr. Abu Zakir Morshed</h3>
-          <div class="moderator-title">Moderator</div>
-          <div class="moderator-affil">Department of Civil Engineering<br>ACI Student Chapter, KUET</div>
-          
-          <!-- Moderator Social & Scholar Profiles -->
-          <div class="moderator-social-row">
-            <a href="https://www.facebook.com/azmhappy" target="_blank" rel="noopener noreferrer" class="moderator-social-btn" title="Facebook Profile" aria-label="Facebook Profile">
-              <i class="fa-brands fa-facebook-f"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/abu-zakir-morshed-536a5970/" target="_blank" rel="noopener noreferrer" class="moderator-social-btn" title="LinkedIn Profile" aria-label="LinkedIn Profile">
-              <i class="fa-brands fa-linkedin-in"></i>
-            </a>
-            <a href="https://scholar.google.com/citations?user=tjOn_M8AAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="moderator-social-btn" title="Google Scholar Profile" aria-label="Google Scholar Profile">
-              <i class="fa-solid fa-graduation-cap"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="moderator-message-content">
+        <!-- 1. Moderator Message Text Reveals First -->
+        <div class="moderator-message-content moderator-anim-content">
           <span class="moderator-badge-header">Official Message</span>
           <h2 style="font-size: 1.85rem; font-weight: 800; color: var(--text-dark); margin-bottom: 1.25rem;">
             Message From Moderator
@@ -286,6 +250,30 @@
             I encourage every member to actively participate, share ideas, and take advantage of the resources and opportunities our chapter offers. Let’s continue building a community that not only upholds engineering brilliance but also inspires growth and innovation.
           </p>
         </div>
+
+        <!-- 2. Moderator Portrait Photo Reveals Second, then Details Below -->
+        <div class="moderator-portrait-wrap">
+          <img src="images/moderator-portrait.jpg" alt="Prof. Dr. Abu Zakir Morshed" class="moderator-img moderator-anim-photo">
+          
+          <div class="moderator-anim-meta">
+            <h3 class="moderator-name">Prof. Dr. Abu Zakir Morshed</h3>
+            <div class="moderator-title">Moderator</div>
+            <div class="moderator-affil">Department of Civil Engineering<br>ACI Student Chapter, KUET</div>
+            
+            <!-- Moderator Social & Scholar Profiles -->
+            <div class="moderator-social-row">
+              <a href="https://www.facebook.com/azmhappy" target="_blank" rel="noopener noreferrer" class="moderator-social-btn" title="Facebook Profile" aria-label="Facebook Profile">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/abu-zakir-morshed-536a5970/" target="_blank" rel="noopener noreferrer" class="moderator-social-btn" title="LinkedIn Profile" aria-label="LinkedIn Profile">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="https://scholar.google.com/citations?user=tjOn_M8AAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="moderator-social-btn" title="Google Scholar Profile" aria-label="Google Scholar Profile">
+                <i class="fa-solid fa-graduation-cap"></i>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -305,7 +293,7 @@
         <!-- Message from Founding Convener -->
         <div class="leader-card">
           <div class="leader-card-header">
-            <div class="leader-initials-badge">SI</div>
+            <img src="images/shakil-webteam.jpg" alt="Shakil Ilhan" class="leader-photo-cutout">
             <div>
               <h4>SHAKIL ILHAN</h4>
               <span>Initiator &amp; Founding Convener | Roll: 2301044</span>
@@ -326,7 +314,7 @@
         <!-- Message from Chapter President -->
         <div class="leader-card">
           <div class="leader-card-header">
-            <div class="leader-initials-badge">MI</div>
+            <img src="images/officers/pres-maharajul.jpg" alt="Maharajul Islam" class="leader-photo-cutout">
             <div>
               <h4>MAHARAJUL ISLAM</h4>
               <span>President &bull; Executive Committee 2026&ndash;27</span>

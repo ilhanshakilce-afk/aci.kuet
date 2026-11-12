@@ -392,8 +392,8 @@ a {
 
 .dropdown-item {
   display: block;
-  padding: 0.8rem 1.25rem;
-  font-size: 1rem;
+  padding: 0.72rem 1.25rem;
+  font-size: 0.92rem; /* Reduced by one size as requested */
   font-weight: 600;
   color: #111827 !important;
   background: transparent;
@@ -412,18 +412,18 @@ a {
   display: none !important; /* Icons removed */
 }
 
-/* Dropdown Hover & Active: Clean, Crisp, Neutral Hover - No Bright Green Blocks */
+/* Dropdown Hover & Active: Clean, Crisp, Neutral Hover - ZERO GREEN COLOR as requested */
 .dropdown-item:hover {
-  background: #f8fafc !important;
-  color: #166534 !important;
-  border-left-color: #166534;
+  background: #f1f5f9 !important;
+  color: #000000 !important; /* Pure black, NO green */
+  border-left-color: #000000;
   padding-left: 1.45rem;
 }
 
 .dropdown-item.active {
-  background: #f8fafc !important;
-  color: #166534 !important;
-  border-left-color: #166534;
+  background: #f1f5f9 !important;
+  color: #000000 !important; /* Pure black, NO green */
+  border-left-color: #000000;
   font-weight: 700;
   padding-left: 1.45rem;
 }
@@ -431,8 +431,8 @@ a {
 [data-theme="dark"] .dropdown-item:hover,
 [data-theme="dark"] .dropdown-item.active {
   background: rgba(255, 255, 255, 0.08);
-  color: #86efac !important;
-  border-left-color: #86efac;
+  color: #ffffff !important;
+  border-left-color: #ffffff;
 }
 
 /* Nav Actions: Hidden on desktop to ensure only 2 flex items (brand & menu), visible on mobile for toggle */
@@ -658,14 +658,14 @@ section {
 }
 
 .section-tag {
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   color: #166534;
-  background: #f0fdf4;
-  border: 1px solid #bbf7d0;
-  padding: 0.35rem 0.85rem;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
   border-radius: 0;
   display: inline-block;
   margin-bottom: 0.75rem;
@@ -678,6 +678,43 @@ section {
   color: #000000;
   letter-spacing: -0.02em;
   line-height: 1.25;
+}
+
+/* Events Header Animations - Tag from right, Title drops from top */
+.events-tag-anim {
+  opacity: 0;
+  transform: translateX(80px); /* Comes from the right side */
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.events-title-anim {
+  opacity: 0;
+  transform: translateY(-40px); /* Drops down from top */
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.events-desc-anim {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.12s, opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.12s;
+  will-change: transform, opacity;
+}
+
+.events-head-anim.is-visible .events-tag-anim {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.events-head-anim.is-visible .events-title-anim {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.events-head-anim.is-visible .events-desc-anim {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Events Grid: 2 Balanced Columns for Desktop Slide-In */
@@ -737,25 +774,9 @@ section {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
+/* Remove all flag/trophy/emoji icons as requested */
 .event-box-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 0;
-  background: #f0fdf4;
-  border: 1px solid #bbf7d0;
-  color: #166534;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  margin-bottom: 1.25rem;
-  transition: all 0.25s ease;
-}
-
-.event-box-link:hover .event-box-icon {
-  background: #166534;
-  color: #ffffff;
-  border-color: #166534;
+  display: none !important;
 }
 
 .event-box-link h3 {
@@ -815,25 +836,9 @@ section {
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
 }
 
+/* Remove all AI icons from achievement cards */
 .human-card-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 0;
-  background: #f0fdf4;
-  border: 1px solid #bbf7d0;
-  color: #166534;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.35rem;
-  margin-bottom: 1.25rem;
-  transition: all 0.25s ease;
-}
-
-.human-card:hover .human-card-icon {
-  background: #166534;
-  color: #ffffff;
-  border-color: #166534;
+  display: none !important;
 }
 
 .human-card h3 {
@@ -930,13 +935,57 @@ section {
   padding: 3rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   display: grid;
-  grid-template-columns: 280px 1fr;
+  grid-template-columns: 1fr 280px; /* Message text first on left, photo on right */
   gap: 3rem;
   align-items: center;
 }
 
+@media (max-width: 900px) {
+  .moderator-card-box {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
 .moderator-portrait-wrap {
   text-align: center;
+}
+
+/* Staggered Animation Sequence for Moderator: 1. Text -> 2. Photo -> 3. Meta below */
+.moderator-anim-content {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.moderator-anim-photo {
+  opacity: 0;
+  transform: scale(0.94);
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.22s, opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.22s;
+  will-change: transform, opacity;
+}
+
+.moderator-anim-meta {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.44s, opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.44s;
+  will-change: transform, opacity;
+}
+
+.moderator-card-box.is-visible .moderator-anim-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.moderator-card-box.is-visible .moderator-anim-photo {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.moderator-card-box.is-visible .moderator-anim-meta {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .moderator-img {
@@ -977,14 +1026,14 @@ section {
 }
 
 .moderator-badge-header {
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   color: #166534;
-  background: #f0fdf4;
-  border: 1px solid #bbf7d0;
-  padding: 0.35rem 0.85rem;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
   border-radius: 0;
   display: inline-block;
   margin-bottom: 0.75rem;
@@ -1023,22 +1072,22 @@ section {
   border-bottom: 1px solid #e5e7eb;
 }
 
-.leader-initials-badge {
-  width: 52px;
-  height: 52px;
-  border-radius: 0;
-  background: #f0fdf4;
-  border: 1px solid #bbf7d0;
-  color: #166534;
-  font-size: 1.25rem;
-  font-weight: 800;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Real Photo Cutout replacing initials text badge */
+.leader-photo-cutout {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  object-position: center top;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 0 !important;
+  display: block;
   flex-shrink: 0;
+  background: #f8fafc;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
-  justify-content: center;
-  flex-shrink: 0;
+
+.leader-initials-badge {
+  display: none !important;
 }
 
 .leader-card h4 {
@@ -1317,7 +1366,7 @@ section {
 
 .reinforce-card-footer {
   padding: 1.25rem 1.75rem;
-  background: #f0fdf4;
+  background: #f8fafc;
   border-top: 1px solid var(--border-light);
   display: flex;
   gap: 0.75rem;
@@ -1342,8 +1391,9 @@ section {
 }
 
 .btn-rulebook:hover {
-  background: #dcfce7;
-  color: #14532d !important;
+  background: #f1f5f9;
+  color: #000000 !important;
+  border-color: #000000;
   transform: translateY(-2px);
 }
 
@@ -2170,32 +2220,38 @@ body:not([data-theme="dark"]) th {
 }
 
 .mix-result-box {
-  background: #f0fdf4;
-  border: 1.5px solid var(--satin-border);
-  border-radius: var(--radius-md);
-  padding: 2rem;
+  background: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 0 !important;
+  padding: 2.25rem 2rem;
   margin-top: 2rem;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
 }
 
 .mix-result-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 1rem;
+  margin-top: 1.25rem;
+  background: #ffffff !important;
+  border: 1px solid #e5e7eb;
 }
 
 .mix-result-table th,
 .mix-result-table td {
-  padding: 0.85rem 1.25rem;
+  padding: 0.95rem 1.25rem;
   text-align: left;
-  border-bottom: 1px solid #bbf7d0;
-  color: #000000;
-  font-weight: 600;
+  border-bottom: 1px solid #e5e7eb !important;
+  color: #111827;
+  font-weight: 500;
+  font-size: 0.92rem;
 }
 
 .mix-result-table th {
-  background: #dcfce7;
-  font-weight: 800;
-  font-size: 1rem;
+  background: #f8fafc !important; /* Neutral clean header - zero green */
+  color: #000000 !important;
+  font-weight: 700;
+  font-size: 0.92rem;
+  border-bottom: 2px solid #e5e7eb !important;
 }
 
 /* Code & Standards Directory */
@@ -2227,14 +2283,15 @@ body:not([data-theme="dark"]) th {
 
 .code-badge {
   display: inline-block;
-  padding: 0.35rem 0.85rem;
-  border-radius: 0;
+  padding: 0;
   font-size: 0.82rem;
   font-weight: 800;
-  background: #dcfce7;
+  background: transparent !important;
   color: #166534;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   width: fit-content;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .code-card h3 {
@@ -2319,16 +2376,7 @@ body:not([data-theme="dark"]) th {
 }
 
 .software-icon-wrap {
-  width: 58px;
-  height: 58px;
-  border-radius: var(--radius-md);
-  background: #dcfce7;
-  color: #166534;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.75rem;
-  margin-bottom: 1.25rem;
+  display: none !important;
 }
 
 .software-card h3 {
@@ -2361,9 +2409,9 @@ body:not([data-theme="dark"]) th {
   gap: 0.5rem;
 }
 
-.software-topics li i {
-  color: #22c55e;
-  font-size: 0.85rem;
+.software-topics li i,
+.code-clauses li i {
+  display: none !important;
 }
 
 /* Lab Photo-Journal & Equipment Showcase */
@@ -2509,16 +2557,7 @@ body:not([data-theme="dark"]) th {
 }
 
 .perk-icon-wrap {
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  background: #dcfce7;
-  color: #166534;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.6rem;
-  margin-bottom: 1.25rem;
+  display: none !important;
 }
 
 .perk-card h3 {

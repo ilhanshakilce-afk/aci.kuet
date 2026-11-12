@@ -11,42 +11,74 @@ document.addEventListener('DOMContentLoaded', () => {
   initCertificateVerifier();
   initScrollAnimations();
   initHomepageEventsSlideAnimation();
+  initModeratorAnimation();
   initContactForm();
 });
 
-// Homepage 6 Event Cards Slide In From Left & Right
+// Homepage Events Arena Animations (Tag from Right, Title drops from Top, Cards slide from 2 sides)
 function initHomepageEventsSlideAnimation() {
+  const head = document.querySelector('.events-head-anim');
   const grid = document.querySelector('.events-interactive-grid');
   const cards = document.querySelectorAll('.events-interactive-grid .event-box-link');
-  if (!grid || !cards.length) return;
 
-  cards.forEach((card, i) => {
-    // 0, 2, 4 (left column) come from left; 1, 3, 5 (right column) come from right
-    if (i % 2 === 0) {
-      card.classList.add('slide-from-left');
-    } else {
-      card.classList.add('slide-from-right');
-    }
-  });
+  if (head) {
+    const headObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          head.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
+    headObserver.observe(head);
+  }
+
+  if (grid && cards.length) {
+    cards.forEach((card, i) => {
+      // 0, 2, 4 (left column) come from left; 1, 3, 5 (right column) come from right
+      if (i % 2 === 0) {
+        card.classList.add('slide-from-left');
+      } else {
+        card.classList.add('slide-from-right');
+      }
+    });
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          cards.forEach((card, i) => {
+            const delay = (i % 2) * 120 + Math.floor(i / 2) * 140;
+            setTimeout(() => {
+              card.classList.add('is-visible');
+            }, delay);
+          });
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    observer.observe(grid);
+  }
+}
+
+// Moderator Section Staggered Animation: 1. Text -> 2. Photo -> 3. Meta below
+function initModeratorAnimation() {
+  const modBox = document.querySelector('.moderator-card-box');
+  if (!modBox) return;
 
   const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        cards.forEach((card, i) => {
-          const delay = (i % 2) * 120 + Math.floor(i / 2) * 140;
-          setTimeout(() => {
-            card.classList.add('is-visible');
-          }, delay);
-        });
+        modBox.classList.add('is-visible');
         obs.unobserve(entry.target);
       }
     });
-  }, {
-    threshold: 0.12,
-    rootMargin: '0px 0px -40px 0px'
-  });
+  }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
 
-  observer.observe(grid);
+  observer.observe(modBox);
 }
 
 // Scroll Reveal Animations
