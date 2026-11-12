@@ -107,22 +107,23 @@
             Send your official inquiries, collaboration proposals, or student chapter questions directly to our executive panel.
           </p>
 
-          <form id="contact-form">
+          <form id="contact-form" name="contact" method="POST" data-netlify="true" action="/contact.html?success=true">
+            <input type="hidden" name="form-name" value="contact">
             <div style="margin-bottom: 1.5rem;">
               <label class="contact-label-lg" style="color: #000000; font-weight: 800;">Full Name *</label>
-              <input type="text" class="contact-input-lg" placeholder="e.g. Shakil Ilhan" required>
+              <input type="text" name="name" class="contact-input-lg" placeholder="e.g. Shakil Ilhan" required>
             </div>
             <div style="margin-bottom: 1.5rem;">
               <label class="contact-label-lg" style="color: #000000; font-weight: 800;">Email Address *</label>
-              <input type="email" class="contact-input-lg" placeholder="e.g. yourname@gmail.com or student@kuet.ac.bd" required>
+              <input type="email" name="email" class="contact-input-lg" placeholder="e.g. yourname@gmail.com or student@kuet.ac.bd" required>
             </div>
             <div style="margin-bottom: 1.5rem;">
               <label class="contact-label-lg" style="color: #000000; font-weight: 800;">Subject *</label>
-              <input type="text" class="contact-input-lg" placeholder="Inquiry regarding ACI Student Chapter, KUET or ReinforCE" required>
+              <input type="text" name="subject" class="contact-input-lg" placeholder="Inquiry regarding ACI Student Chapter, KUET or ReinforCE" required>
             </div>
             <div style="margin-bottom: 1.85rem;">
               <label class="contact-label-lg" style="color: #000000; font-weight: 800;">Message *</label>
-              <textarea rows="5" class="contact-input-lg" style="min-height: 160px; resize: vertical;" placeholder="Write your detailed message here..." required></textarea>
+              <textarea name="message" rows="5" class="contact-input-lg" style="min-height: 160px; resize: vertical;" placeholder="Write your detailed message here..." required></textarea>
             </div>
             <button type="submit" class="btn-reinforce" style="width: 100%; justify-content: center; padding: 1.1rem; font-size: 1.12rem; border-radius: 0;">
               <i class="fa-solid fa-paper-plane"></i> Send to ACI Student Chapter, KUET

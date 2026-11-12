@@ -282,8 +282,40 @@ function initContactForm() {
   if (!form) return;
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    alert('Thank you! Your message has been routed to ACI Student Chapter, KUET (Department of Civil Engineering).');
-    form.reset();
+    const btn = form.querySelector('button[type="submit"]');
+    const originalText = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Dispatching Message...';
+
+    const formData = new FormData(form);
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString()
+    })
+    .then((res) => {
+      form.innerHTML = `
+        <div style="background: #f0fdf4; border: 2px solid #166534; padding: 2.5rem 2rem; text-align: center; border-radius: 0; box-shadow: 0 4px 14px rgba(22, 101, 52, 0.08);">
+          <div style="font-size: 3rem; color: #166534; margin-bottom: 1rem;">
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+          <h4 style="font-size: 1.4rem; font-weight: 800; color: #166534; margin-bottom: 0.6rem;">
+            Official Inquiry Received
+          </h4>
+          <p style="color: #0f172a; font-size: 0.98rem; line-height: 1.7; max-width: 500px; margin: 0 auto 1.25rem;">
+            Thank you! Your official inquiry has been routed directly to the ACI KUET Secretariat at <strong>aci.kuet.student.chapter@gmail.com</strong>. Our coordination panel will review and respond promptly.
+          </p>
+          <div style="font-size: 0.85rem; color: #64748b; font-weight: 600;">
+            Department of Civil Engineering &bull; Khulna University of Engineering &amp; Technology
+          </div>
+        </div>
+      `;
+    })
+    .catch((err) => {
+      btn.disabled = false;
+      btn.innerHTML = originalText;
+      alert('Network issue encountered. Please email us directly at aci.kuet.student.chapter@gmail.com');
+    });
   });
 }
 
