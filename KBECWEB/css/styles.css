@@ -2922,3 +2922,22 @@ body:not([data-theme="dark"]) th {
   }
 }
 
+/* ==========================================================================
+   Suppress Netlify Injected Drawer, Floating Badges, or Feedback Pills
+   ========================================================================== */
+#netlify-cdp-loader,
+.netlify-drawer,
+[data-netlify-drawer],
+.netlify-badge,
+iframe[src*="netlify"],
+div[class*="netlify-drawer"],
+div[class*="netlify-badge"],
+div[id*="netlify-drawer"],
+div[id*="netlify-badge"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+
