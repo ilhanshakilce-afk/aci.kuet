@@ -637,14 +637,9 @@ a {
    ========================================================================== */
 
 .scroll-reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.scroll-reveal.visible {
   opacity: 1;
   transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 section {
@@ -682,39 +677,46 @@ section {
 
 /* Events Header Animations - Tag from right, Title drops from top */
 .events-tag-anim {
-  opacity: 0;
-  transform: translateX(80px); /* Comes from the right side */
+  opacity: 1;
+  transform: translateX(0);
   transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;
 }
 
 .events-title-anim {
-  opacity: 0;
-  transform: translateY(-40px); /* Drops down from top */
+  opacity: 1;
+  transform: translateY(0);
   transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;
 }
 
 .events-desc-anim {
-  opacity: 0;
-  transform: translateY(20px);
+  opacity: 1;
+  transform: translateY(0);
   transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.12s, opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.12s;
   will-change: transform, opacity;
 }
 
-.events-head-anim.is-visible .events-tag-anim {
-  opacity: 1;
-  transform: translateX(0);
+.events-head-anim:not(.is-visible) .events-tag-anim {
+  opacity: 0;
+  transform: translateX(80px); /* Comes from the right side */
 }
 
-.events-head-anim.is-visible .events-title-anim {
-  opacity: 1;
-  transform: translateY(0);
+.events-head-anim:not(.is-visible) .events-title-anim {
+  opacity: 0;
+  transform: translateY(-40px); /* Drops down from top */
 }
 
+.events-head-anim:not(.is-visible) .events-desc-anim {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.events-head-anim.is-visible .events-tag-anim,
+.events-head-anim.is-visible .events-title-anim,
 .events-head-anim.is-visible .events-desc-anim {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
 /* Events Grid: 2 Balanced Columns for Desktop Slide-In */
@@ -740,7 +742,8 @@ section {
   flex-direction: column;
   position: relative;
   text-decoration: none;
-  opacity: 0;
+  opacity: 1;
+  transform: translateX(0);
   will-change: transform, opacity;
   transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
               opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
@@ -749,11 +752,13 @@ section {
 }
 
 /* Slide-in from Two Sides Animation */
-.event-box-link.slide-from-left {
+.event-box-link.slide-from-left:not(.is-visible) {
+  opacity: 0;
   transform: translateX(-90px);
 }
 
-.event-box-link.slide-from-right {
+.event-box-link.slide-from-right:not(.is-visible) {
+  opacity: 0;
   transform: translateX(90px);
 }
 
@@ -953,34 +958,46 @@ section {
 
 /* Staggered Animation Sequence for Moderator: 1. Text -> 2. Photo -> 3. Meta below */
 .moderator-anim-content {
-  opacity: 0;
-  transform: translateY(25px);
+  opacity: 1;
+  transform: none;
   transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;
 }
 
 .moderator-anim-photo {
-  opacity: 0;
-  transform: scale(0.94);
+  opacity: 1;
+  transform: none;
   transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.22s, opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.22s;
   will-change: transform, opacity;
 }
 
 .moderator-anim-meta {
-  opacity: 0;
-  transform: translateY(15px);
+  opacity: 1;
+  transform: none;
   transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.44s, opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.44s;
   will-change: transform, opacity;
 }
 
-.moderator-card-box.is-visible .moderator-anim-content {
-  opacity: 1;
-  transform: translateY(0);
+.moderator-card-box:not(.is-visible) .moderator-anim-content {
+  opacity: 0;
+  transform: translateY(25px);
 }
 
-.moderator-card-box.is-visible .moderator-anim-photo {
+.moderator-card-box:not(.is-visible) .moderator-anim-photo {
+  opacity: 0;
+  transform: scale(0.94);
+}
+
+.moderator-card-box:not(.is-visible) .moderator-anim-meta {
+  opacity: 0;
+  transform: translateY(15px);
+}
+
+.moderator-card-box.is-visible .moderator-anim-content,
+.moderator-card-box.is-visible .moderator-anim-photo,
+.moderator-card-box.is-visible .moderator-anim-meta {
   opacity: 1;
-  transform: scale(1);
+  transform: none;
 }
 
 .moderator-card-box.is-visible .moderator-anim-meta {

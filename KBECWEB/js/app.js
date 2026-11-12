@@ -56,11 +56,24 @@ function initHomepageEventsSlideAnimation() {
         }
       });
     }, {
-      threshold: 0.12,
-      rootMargin: '0px 0px -40px 0px'
+      threshold: 0.05,
+      rootMargin: '0px 0px 50px 0px'
     });
 
     observer.observe(grid);
+
+    // Fast check fallback
+    const checkEvents = () => {
+      const vh = window.innerHeight || 800;
+      if (head && head.getBoundingClientRect().top < vh + 150) {
+        head.classList.add('is-visible');
+      }
+      if (grid && grid.getBoundingClientRect().top < vh + 150) {
+        cards.forEach(card => card.classList.add('is-visible'));
+      }
+    };
+    window.addEventListener('scroll', checkEvents, { passive: true });
+    setTimeout(checkEvents, 300);
   }
 }
 
@@ -76,9 +89,18 @@ function initModeratorAnimation() {
         obs.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
+  }, { threshold: 0.05, rootMargin: '0px 0px 50px 0px' });
 
   observer.observe(modBox);
+
+  // Fast check fallback
+  const checkMod = () => {
+    if (modBox.getBoundingClientRect().top < (window.innerHeight || 800) + 200) {
+      modBox.classList.add('is-visible');
+    }
+  };
+  window.addEventListener('scroll', checkMod, { passive: true });
+  setTimeout(checkMod, 300);
 }
 
 // Scroll Reveal Animations
