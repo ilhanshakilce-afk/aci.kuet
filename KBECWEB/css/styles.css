@@ -3073,6 +3073,420 @@ table, pre, code, .cuet-table-responsive {
 }
 
 /* ==========================================================================
+   ACI-KUET Civil Engineering & Building Estimation Portal Styles
+   ========================================================================== */
+.est-hero-section {
+  background: #ffffff;
+  padding: 4.5rem 0 3.5rem;
+  border-bottom: 2px solid var(--border-light);
+}
+
+.est-portal-tag {
+  display: inline-block;
+  background: #166534;
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 0.45rem 1.15rem;
+  border-radius: 0;
+  margin-bottom: 1.25rem;
+}
+
+.est-hero-title {
+  font-family: 'Merriweather', serif;
+  font-size: 2.75rem;
+  font-weight: 900;
+  color: #000000;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.est-hero-subtitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #166534;
+  margin-bottom: 1rem;
+}
+
+.est-hero-desc {
+  font-size: 1.05rem;
+  color: #334155;
+  max-width: 900px;
+  line-height: 1.7;
+  font-weight: 500;
+}
+
+/* Overview KPI Stat Bar */
+.est-kpi-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+.est-kpi-card {
+  background: #ffffff;
+  border: 2px solid #000000;
+  padding: 1.5rem 1.25rem;
+  border-radius: 0;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.9);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.est-kpi-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 6px 6px 0px rgba(22, 101, 52, 0.9);
+}
+
+.est-kpi-num {
+  font-family: 'Space Mono', monospace, 'Inter', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #166534;
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+
+.est-kpi-label {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.est-kpi-sub {
+  font-size: 0.78rem;
+  color: #64748b;
+  margin-top: 0.25rem;
+}
+
+/* Modular Route Nav Tabs */
+.est-nav-bar {
+  background: #f8fafc;
+  border-bottom: 2px solid #000000;
+  position: sticky;
+  top: 72px;
+  z-index: 100;
+  padding: 0;
+  backdrop-filter: blur(8px);
+}
+
+.est-nav-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.est-nav-tab {
+  padding: 1.15rem 1.6rem;
+  font-size: 0.96rem;
+  font-weight: 800;
+  color: #334155;
+  background: transparent;
+  border: none;
+  border-right: 1px solid #e2e8f0;
+  cursor: pointer;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  transition: all 0.15s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.est-nav-tab:hover {
+  background: #ffffff;
+  color: #166534;
+}
+
+.est-nav-tab.active {
+  background: #ffffff;
+  color: #166534;
+  border-bottom: 3px solid #166534;
+}
+
+/* Phase Workflow Diagram */
+.phase-flow-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 3rem 0;
+}
+
+.phase-step-card {
+  background: #ffffff;
+  border: 2px solid #000000;
+  padding: 1.75rem;
+  display: grid;
+  grid-template-columns: 220px 1fr 240px;
+  gap: 1.5rem;
+  align-items: center;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.9);
+}
+
+@media (max-width: 900px) {
+  .phase-step-card {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.phase-badge {
+  background: #166534;
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.4rem 0.85rem;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+/* Document Cards Grid */
+.doc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 1.75rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 640px) {
+  .doc-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.doc-card {
+  background: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 0;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.9);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.doc-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 6px 6px 0px rgba(22, 101, 52, 0.9);
+}
+
+.doc-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.doc-auth-badge {
+  font-size: 0.76rem;
+  font-weight: 800;
+  padding: 0.3rem 0.65rem;
+  border-radius: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  max-width: 70%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.doc-size-badge {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #0f172a;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  padding: 0.25rem 0.6rem;
+  border-radius: 0;
+  white-space: nowrap;
+}
+
+.doc-item-id {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #166534;
+  margin-bottom: 0.35rem;
+}
+
+.doc-title-en {
+  font-family: 'Merriweather', serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #000000;
+  line-height: 1.35;
+  margin-bottom: 0.35rem;
+}
+
+.doc-title-bn {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #166534;
+  margin-bottom: 1rem;
+}
+
+.doc-scope-box {
+  background: #f8fafc;
+  border-left: 3px solid #166534;
+  padding: 0.75rem 0.9rem;
+  font-size: 0.86rem;
+  color: #334155;
+  line-height: 1.55;
+  margin-bottom: 0.65rem;
+}
+
+.doc-rate-box {
+  background: #f0fdf4;
+  border-left: 3px solid #22c55e;
+  padding: 0.75rem 0.9rem;
+  font-size: 0.86rem;
+  color: #14532d;
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+}
+
+.doc-card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: auto;
+}
+
+.btn-doc-download {
+  background: #166534;
+  color: #ffffff;
+  border: 2px solid #000000;
+  padding: 0.65rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.15s ease;
+}
+
+.btn-doc-download:hover {
+  background: #0f4a24;
+  color: #ffffff;
+}
+
+.btn-doc-detail {
+  background: #ffffff;
+  color: #000000;
+  border: 2px solid #000000;
+  padding: 0.65rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.15s ease;
+}
+
+.btn-doc-detail:hover {
+  background: #f8fafc;
+  border-color: #166534;
+  color: #166534;
+}
+
+/* Modal Connection Tag */
+.modal-conn-tag {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #1e293b;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.modal-conn-tag:hover {
+  background: #e0f2fe;
+  border-color: #0284c7;
+  color: #0369a1;
+}
+
+/* Estimator Interactive Layout */
+.est-controls-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  background: #f8fafc;
+  border: 2px solid #000000;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.est-input-group label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #000000;
+  margin-bottom: 0.4rem;
+}
+
+.est-input-group input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #000000;
+  font-size: 1.05rem;
+  font-weight: 700;
+  font-family: 'Space Mono', monospace, sans-serif;
+  box-sizing: border-box;
+}
+
+.est-summary-banner {
+  background: #166534;
+  color: #ffffff;
+  border: 2px solid #000000;
+  padding: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.75rem;
+  margin-bottom: 3rem;
+  box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.9);
+}
+
+.est-summary-banner h4 {
+  font-size: 0.88rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #86efac;
+  margin-bottom: 0.35rem;
+}
+
+.est-summary-banner .big-num {
+  font-family: 'Space Mono', monospace;
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.1;
+}
+
+/* ==========================================================================
    Suppress Netlify Injected Drawer, Floating Badges, or Feedback Pills
    ========================================================================== */
 #netlify-cdp-loader,
