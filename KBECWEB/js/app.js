@@ -286,3 +286,39 @@ function initContactForm() {
     form.reset();
   });
 }
+
+// Automatically eradicate any Netlify-injected badge, drawer, or promotional widget
+function suppressNetlifyBadge() {
+  const selectors = [
+    'a[href*="netlify.com"]',
+    'a[href*="netlify.app"]',
+    '#netlify-cdp-loader',
+    '.netlify-drawer',
+    '[data-netlify-drawer]',
+    '.netlify-badge',
+    '#netlify-badge',
+    '[id*="netlify"]',
+    '[class*="netlify"]',
+    'iframe[src*="netlify"]'
+  ];
+  selectors.forEach(sel => {
+    document.querySelectorAll(sel).forEach(el => {
+      try {
+        const fixedContainer = el.closest('div');
+        if (fixedContainer && fixedContainer !== document.body && window.getComputedStyle(fixedContainer).position === 'fixed') {
+          fixedContainer.remove();
+        } else {
+          el.remove();
+        }
+      } catch (err) {
+        el.style.display = 'none';
+      }
+    });
+  });
+}
+window.addEventListener('DOMContentLoaded', suppressNetlifyBadge);
+window.addEventListener('load', suppressNetlifyBadge);
+setTimeout(suppressNetlifyBadge, 300);
+setTimeout(suppressNetlifyBadge, 1000);
+setTimeout(suppressNetlifyBadge, 2500);
+

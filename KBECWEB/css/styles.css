@@ -2929,7 +2929,14 @@ body:not([data-theme="dark"]) th {
 .netlify-drawer,
 [data-netlify-drawer],
 .netlify-badge,
+#netlify-badge,
+[id*="netlify"],
+[class*="netlify"],
 iframe[src*="netlify"],
+a[href*="netlify.com"],
+a[href*="netlify.app"],
+div:has(> a[href*="netlify.com"]),
+div:has(> a[href*="netlify.app"]),
 div[class*="netlify-drawer"],
 div[class*="netlify-badge"],
 div[id*="netlify-drawer"],
@@ -2938,6 +2945,14 @@ div[id*="netlify-badge"] {
   visibility: hidden !important;
   opacity: 0 !important;
   pointer-events: none !important;
+  transform: scale(0) !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  left: -99999px !important;
+  top: -99999px !important;
 }
+
 
 
