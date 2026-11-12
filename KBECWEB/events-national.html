@@ -2,7 +2,10 @@
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#166534">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <title>ReinforCE 1.0 & 2.0 | National Civil Engineering Festival | ACI KUET</title>
   <meta name="description" content="ReinforCE is the premier national civil engineering competition by ACI KUET Student Chapter featuring Truss Challenge, Mechanics Mania, and Concrete Case Competitions.">
   <link rel="canonical" href="https://acikuet.org/events-national.html">
@@ -20,7 +23,7 @@
   <meta name="twitter:title" content="ReinforCE 1.0 & 2.0 | National Civil Engineering Festival | ACI KUET">
   <meta name="twitter:description" content="ReinforCE is the premier national civil engineering competition by ACI KUET Student Chapter featuring Truss Challenge, Mechanics Mania, and Concrete Case Competitions.">
   <meta name="twitter:image" content="https://acikuet.org/images/hero-group-photo.webp">
-  <link rel="icon" href="images/aci-kuet-official-logo.png" type="image/png">
+  <link rel="icon" href="images/aci-kuet-official-logo.webp" type="image/webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&display=swap" rel="stylesheet">
@@ -36,7 +39,7 @@
       <nav class="navbar">
         <!-- Far Left: Official Logo + Text -->
         <a href="index.html" class="nav-brand">
-          <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Official Logo" class="nav-brand-logo">
+          <img src="images/aci-kuet-official-logo.webp" alt="ACI KUET Official Logo" class="nav-brand-logo">
           <span class="nav-brand-text">
             <span class="brand-aci">ACI</span> <span class="brand-kuet">KUET</span> <span class="brand-sub">Student Chapter</span>
           </span>
@@ -368,28 +371,48 @@
         <p style="font-size: 1.3rem; font-weight: 700; color: #166534; margin-bottom: 1.5rem;">
           The Nation's Biggest Civil Engineering Festival Returns to KUET
         </p>
-        <p style="font-size: 1.05rem; color: #000000; font-weight: 500; max-width: 820px; margin: 0 auto 2.5rem; line-height: 1.8;">
+        <p style="font-size: 1.05rem; color: #000000; font-weight: 500; max-width: 820px; margin: 0 auto 1.5rem; line-height: 1.8;">
           Following the overwhelming nationwide participation in ReinforCE 1.0, the ACI KUET Student Chapter is preparing an even grander arena for <strong>ReinforCE 2.0</strong>. Featuring expanded university delegations, higher prize pools, advanced concrete testing segments, and corporate sponsorship partnerships.
         </p>
 
+        <!-- Architectural Live Countdown Clock -->
+        <div class="reinforce-countdown-wrapper">
+          <div class="countdown-box">
+            <span id="reinforce-countdown-days" class="countdown-num">00</span>
+            <span class="countdown-label">Days</span>
+          </div>
+          <div class="countdown-box">
+            <span id="reinforce-countdown-hours" class="countdown-num">00</span>
+            <span class="countdown-label">Hours</span>
+          </div>
+          <div class="countdown-box">
+            <span id="reinforce-countdown-minutes" class="countdown-num">00</span>
+            <span class="countdown-label">Minutes</span>
+          </div>
+          <div class="countdown-box">
+            <span id="reinforce-countdown-seconds" class="countdown-num">00</span>
+            <span class="countdown-label">Seconds</span>
+          </div>
+        </div>
+
         <!-- Key Pillars Grid -->
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; text-align: left;">
-          <div style="background: #ffffff; padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-light); border-left: 4px solid #166534;">
+          <div style="background: #ffffff; padding: 1.5rem; border-radius: 0; border: 1px solid var(--border-light); border-left: 4px solid #166534;">
             <div style="font-size: 1.8rem; color: #166534; margin-bottom: 0.5rem;"><i class="fa-solid fa-building-columns"></i></div>
             <h4 style="font-size: 1.15rem; font-weight: 800; color: #000000; margin-bottom: 0.35rem;">50+ Universities</h4>
             <p style="font-size: 0.88rem; color: #000000; line-height: 1.5;">Nationwide engineering institutions and ACI student chapters.</p>
           </div>
-          <div style="background: #ffffff; padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-light); border-left: 4px solid #166534;">
+          <div style="background: #ffffff; padding: 1.5rem; border-radius: 0; border: 1px solid var(--border-light); border-left: 4px solid #166534;">
             <div style="font-size: 1.8rem; color: #166534; margin-bottom: 0.5rem;"><i class="fa-solid fa-award"></i></div>
             <h4 style="font-size: 1.15rem; font-weight: 800; color: #000000; margin-bottom: 0.35rem;">Expanded Prize Pool</h4>
             <p style="font-size: 0.88rem; color: #000000; line-height: 1.5;">Prestigious trophies, industry citations, and substantial cash rewards.</p>
           </div>
-          <div style="background: #ffffff; padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-light); border-left: 4px solid #166534;">
+          <div style="background: #ffffff; padding: 1.5rem; border-radius: 0; border: 1px solid var(--border-light); border-left: 4px solid #166534;">
             <div style="font-size: 1.8rem; color: #166534; margin-bottom: 0.5rem;"><i class="fa-solid fa-flask-vial"></i></div>
             <h4 style="font-size: 1.15rem; font-weight: 800; color: #000000; margin-bottom: 0.35rem;">High-Tech Lab Testing</h4>
             <p style="font-size: 0.88rem; color: #000000; line-height: 1.5;">Live destructive and non-destructive testing in KUET testing halls.</p>
           </div>
-          <div style="background: #ffffff; padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-light); border-left: 4px solid #166534;">
+          <div style="background: #ffffff; padding: 1.5rem; border-radius: 0; border: 1px solid var(--border-light); border-left: 4px solid #166534;">
             <div style="font-size: 1.8rem; color: #166534; margin-bottom: 0.5rem;"><i class="fa-solid fa-handshake"></i></div>
             <h4 style="font-size: 1.15rem; font-weight: 800; color: #000000; margin-bottom: 0.35rem;">Industry Mentorship</h4>
             <p style="font-size: 0.88rem; color: #000000; line-height: 1.5;">Direct engagement with top cement and infrastructure conglomerates.</p>
@@ -482,7 +505,7 @@
       <div class="split-footer-top">
         <div class="footer-left-club-intro">
           <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.15rem;">
-            <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo" style="height: 52px; width: auto; object-fit: contain;">
+            <img src="images/aci-kuet-official-logo.webp" alt="ACI KUET Logo" style="height: 52px; width: auto; object-fit: contain;">
             <h3 style="margin: 0; font-size: 1.4rem; font-weight: 900; color: #000000;">ACI KUET Student Chapter</h3>
           </div>
           <p style="color: #000000; font-weight: 500; font-size: 0.95rem; line-height: 1.75;">

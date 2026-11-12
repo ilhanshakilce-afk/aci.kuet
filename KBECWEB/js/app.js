@@ -703,6 +703,47 @@ document.addEventListener('DOMContentLoaded', () => {
     const roll = localStorage.getItem('acikuet_member_roll') || 'Member';
     updateMemberAccessUI(true, roll);
   }
+  initReinforCECountdown();
 });
+
+// ReinforCE 2.0 Live Architectural Countdown Clock
+function initReinforCECountdown() {
+  const daysEl = document.getElementById('reinforce-countdown-days');
+  const hoursEl = document.getElementById('reinforce-countdown-hours');
+  const minutesEl = document.getElementById('reinforce-countdown-minutes');
+  const secondsEl = document.getElementById('reinforce-countdown-seconds');
+
+  if (!daysEl || !hoursEl || !minutesEl || !secondsEl) return;
+
+  // Target event date: November 20, 2026 09:00:00 (Flagship National Edition)
+  const targetDate = new Date('2026-11-20T09:00:00+06:00').getTime();
+
+  function updateClock() {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    if (distance <= 0) {
+      daysEl.innerText = '00';
+      hoursEl.innerText = '00';
+      minutesEl.innerText = '00';
+      secondsEl.innerText = '00';
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    daysEl.innerText = String(days).padStart(2, '0');
+    hoursEl.innerText = String(hours).padStart(2, '0');
+    minutesEl.innerText = String(minutes).padStart(2, '0');
+    secondsEl.innerText = String(seconds).padStart(2, '0');
+  }
+
+  updateClock();
+  setInterval(updateClock, 1000);
+}
+
 
 
