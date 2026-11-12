@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 120" width="300" height="120">
+  <defs>
+    <linearGradient id="akijRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e11d48"/>
+      <stop offset="100%" stop-color="#be123c"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="65" cy="60" rx="40" ry="32" fill="url(#akijRed)"/>
+  <path d="M50 60 Q65 40 80 60 Q65 72 50 60 Z" fill="#ffffff"/>
+  <circle cx="65" cy="52" r="7" fill="#ffffff"/>
+  <text x="120" y="58" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="34" font-weight="900" fill="#0284c7" letter-spacing="1">AKIJ</text>
+  <text x="122" y="82" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="18" font-weight="800" fill="#dc2626" letter-spacing="2">CEMENT</text>
+</svg>

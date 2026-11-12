@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Students' Technical Resource Library | ACI Student Chapter - KUET</title>
+  <link rel="icon" href="images/aci-kuet-official-logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css?v=6.1">
+</head>
+<body>
+
+  <!-- Main Slim White Navbar -->
+    <!-- Main Slim White Navbar -->
+  <header class="main-header">
+    <div class="navbar-container">
+      <nav class="navbar">
+        <!-- Far Left: Official Logo + Text -->
+        <a href="index.html" class="nav-brand">
+          <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Official Logo" class="nav-brand-logo">
+          <span class="nav-brand-text">
+            <span class="brand-aci">ACI</span> <span class="brand-kuet">KUET</span> <span class="brand-sub">Student Chapter</span>
+          </span>
+        </a>
+
+        <!-- Right Side: Navigation Menu -->
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          
+          <!-- Events Dropdown -->
+          <li class="nav-item">
+            <span class="nav-link">Events <i class="fa-solid fa-chevron-down dropdown-icon"></i></span>
+            <ul class="dropdown-menu">
+              <li><a href="events-major.html" class="dropdown-item">ACI Events</a></li>
+              <li><a href="events-national.html" class="dropdown-item">National Events (ReinforCE 1.0 &amp; 2.0)</a></li>
+              <li><a href="events-technical.html" class="dropdown-item">Technical Events</a></li>
+              <li><a href="events-inhouse.html" class="dropdown-item">In-House Competitions (1.1, 1.2, 1.3)</a></li>
+              <li><a href="events-tours.html" class="dropdown-item">Technical Tours</a></li>
+              <li><a href="events-seminars.html" class="dropdown-item">Seminars &amp; Webinars</a></li>
+            </ul>
+          </li>
+
+          <!-- Panel Dropdown -->
+          <li class="nav-item">
+            <span class="nav-link">Panel <i class="fa-solid fa-chevron-down dropdown-icon"></i></span>
+            <ul class="dropdown-menu">
+              <li><a href="panel-officers.html" class="dropdown-item">Executive Committee</a></li>
+              <li><a href="panel-webteam.html" class="dropdown-item">Webpage Team</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a href="achievements.html" class="nav-link">Achievements</a></li>
+          <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>
+          <li class="nav-item"><a href="resources.html" class="nav-link active">Resources</a></li>
+          <li class="nav-item"><a href="verify-certificate.html" class="nav-link"><i class="fa-solid fa-certificate"></i> Verify Certificate</a></li>
+          <li class="nav-item"><a href="sponsors.html" class="nav-link">Sponsors</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+
+          <!-- About Us Dropdown -->
+          <li class="nav-item">
+            <span class="nav-link">About Us <i class="fa-solid fa-chevron-down dropdown-icon"></i></span>
+            <ul class="dropdown-menu">
+              <li><a href="about-membership.html" class="dropdown-item">Why Join ACI KUET?</a></li>
+              <li><a href="about-lab.html" class="dropdown-item">Inside KUET Concrete Lab</a></li>
+              <li><a href="about-alumni.html" class="dropdown-item">Alumni in Industry Spotlight</a></li>
+              <li><a href="about-us.html" class="dropdown-item">Chapter Overview &amp; Mission</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="mobile-menu-toggle" aria-label="Menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Banner -->
+  <section class="page-banner">
+    <div class="container">
+      <div class="breadcrumb-nav">
+        <a href="index.html">Home</a> &gt; <span>Students' Technical Resource Library</span>
+      </div>
+      <h1 class="page-banner-title">Students' Technical Resource Library</h1>
+      <p class="page-banner-desc">
+        Empowering KUET Civil &amp; Materials Engineering undergraduates with international ACI design standards, structural software learning roadmaps, interactive concrete calculators, and seminar handouts.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section style="background: var(--bg-white); padding: 4.5rem 0 6rem;">
+    <div class="container">
+
+      <!-- Section 1: Interactive Concrete Mix Design Calculator -->
+      <div class="section-clean-head">
+        <span class="section-tag">Interactive Engineering Tool</span>
+        <h2 class="section-title">ACI 211.1 Concrete Mix Proportioning Calculator</h2>
+        <p style="color: #000000; font-size: 1.05rem; margin-top: 0.5rem; max-width: 800px; margin-inline: auto;">
+          Quickly compute trial batching proportions for standard cylinder casting, laboratory trials, and competition mixes per ACI 211.1 recommendations.
+        </p>
+      </div>
+
+      <div class="mix-calc-card">
+        <form id="mix-calculator-form">
+          <div class="mix-calc-grid">
+            <div class="mix-calc-group">
+              <label class="mix-calc-label">Target Compressive Strength (f'c)</label>
+              <select id="calc-fc" class="mix-calc-select">
+                <option value="20">20 MPa (~2900 psi) - General Slab</option>
+                <option value="25" selected>25 MPa (~3600 psi) - Standard Beam &amp; Column</option>
+                <option value="30">30 MPa (~4350 psi) - High Performance</option>
+                <option value="35">35 MPa (~5075 psi) - Precast &amp; Bridges</option>
+                <option value="40">40 MPa (~5800 psi) - Heavy Structural</option>
+              </select>
+            </div>
+
+            <div class="mix-calc-group">
+              <label class="mix-calc-label">Slump Target (Workability)</label>
+              <select id="calc-slump" class="mix-calc-select">
+                <option value="50">25 - 50 mm (Low Slump / Vibrated)</option>
+                <option value="100" selected>75 - 100 mm (Medium / Reinforced Columns)</option>
+                <option value="150">125 - 175 mm (High Flow / Pumped)</option>
+              </select>
+            </div>
+
+            <div class="mix-calc-group">
+              <label class="mix-calc-label">Nominal Max Aggregate Size</label>
+              <select id="calc-agg-size" class="mix-calc-select">
+                <option value="12.5">12.5 mm (1/2 in) Crushed Stone</option>
+                <option value="20" selected>20 mm (3/4 in) Standard Graded</option>
+                <option value="25">25 mm (1 in) Heavy Footings</option>
+              </select>
+            </div>
+
+            <div class="mix-calc-group">
+              <label class="mix-calc-label">Batch Volume to Produce</label>
+              <input type="number" id="calc-volume" class="mix-calc-input" value="1.0" min="0.01" step="0.01" placeholder="e.g. 1.0 m³ or 0.05 m³ for 3 cylinders">
+            </div>
+          </div>
+
+          <div style="text-align: center;">
+            <button type="button" id="btn-calc-mix" class="btn-hero-solid" style="background: #114b2b; color: #fff; padding: 0.85rem 2.5rem; font-size: 1.05rem; font-weight: 800; border: none; cursor: pointer;">
+              <i class="fa-solid fa-calculator"></i> Compute Batch Quantities (1 m³)
+            </button>
+          </div>
+        </form>
+
+        <div id="mix-calc-output" class="mix-result-box" style="display: block;">
+          <h4 style="font-size: 1.25rem; font-weight: 900; color: #166534; margin-bottom: 0.5rem;">
+            Estimated Batch Proportions per 1.0 m³ (SSD Condition):
+          </h4>
+          <p style="font-size: 0.92rem; color: #000000; margin-bottom: 1rem;">
+            Recommended Water-Cement Ratio: <strong id="res-wc">0.48</strong> | Estimated Density: <strong>2380 kg/m³</strong>
+          </p>
+
+          <table class="mix-result-table">
+            <thead>
+              <tr>
+                <th>Component Material</th>
+                <th>Estimated Weight (kg)</th>
+                <th>Standard Lab Tolerance</th>
+                <th>Field Batching Recommendation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Portland Composite Cement (PCC / OPC)</strong></td>
+                <td id="res-cement"><strong>395 kg</strong></td>
+                <td>&plusmn; 1.0%</td>
+                <td>Grade 42.5N / 52.5N Fresh Dry Binder</td>
+              </tr>
+              <tr>
+                <td><strong>Mixing Water (Potable)</strong></td>
+                <td id="res-water"><strong>190 kg (Litres)</strong></td>
+                <td>&plusmn; 1.0%</td>
+                <td>pH 6.5 - 8.0, Low Sulphate/Chloride</td>
+              </tr>
+              <tr>
+                <td><strong>Fine Aggregate (Sylhet Sand / River Sand)</strong></td>
+                <td id="res-sand"><strong>745 kg</strong></td>
+                <td>&plusmn; 2.0%</td>
+                <td>Fineness Modulus (FM) ~ 2.6 - 2.8</td>
+              </tr>
+              <tr>
+                <td><strong>Coarse Aggregate (Crushed Granite / Stone)</strong></td>
+                <td id="res-stone"><strong>1050 kg</strong></td>
+                <td>&plusmn; 2.0%</td>
+                <td>Clean, well-graded, Max Size 20 mm</td>
+              </tr>
+            </tbody>
+          </table>
+          <div style="font-size: 0.82rem; color: #000000; margin-top: 1rem; font-style: italic;">
+            * Note: These are initial volumetric trial batch estimates according to ACI 211.1 guidelines. Lab trial casting and slump verification must be executed in the KUET Concrete Materials Lab before structural casting.
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2: International Codes & Design Standards -->
+      <div class="section-clean-head" style="margin-top: 5rem;">
+        <span class="section-tag">Building Codes &amp; Design Criteria</span>
+        <h2 class="section-title">International Concrete Codes &amp; Specifications Directory</h2>
+        <p style="color: #000000; font-size: 1.05rem; margin-top: 0.5rem; max-width: 800px; margin-inline: auto;">
+          Authoritative technical standards codified by the American Concrete Institute (ACI) and the Bangladesh National Building Code (BNBC).
+        </p>
+      </div>
+
+      <div class="code-card-grid">
+        <!-- 1. ACI 318-19 -->
+        <div class="code-card">
+          <div>
+            <span class="code-badge">Structural Design Standard</span>
+            <h3>ACI 318-19: Building Code Requirements for Structural Concrete</h3>
+            <p>
+              The definitive global code covering materials, analysis, design of beams, one-way and two-way slabs, columns, shear walls, foundations, and earthquake-resistant detailing provisions (Chapter 18).
+            </p>
+            <ul class="code-clauses">
+              <li><i class="fa-solid fa-check"></i> Chapter 9: Beams &amp; One-Way Flexural Elements</li>
+              <li><i class="fa-solid fa-check"></i> Chapter 11: Two-Way Slabs &amp; Punching Shear</li>
+              <li><i class="fa-solid fa-check"></i> Chapter 18: Earthquake-Resistant Structural Systems</li>
+              <li><i class="fa-solid fa-check"></i> Chapter 22: Sectional Strength &amp; Shear Friction</li>
+            </ul>
+          </div>
+          <a href="https://www.concrete.org/store/productdetail.aspx?ItemID=31819" target="_blank" class="btn-download-pdf">
+            <i class="fa-solid fa-external-link"></i> Access ACI 318-19 Guidelines
+          </a>
+        </div>
+
+        <!-- 2. ACI 211.1-91 -->
+        <div class="code-card">
+          <div>
+            <span class="code-badge">Mix Proportioning Guide</span>
+            <h3>ACI 211.1-91: Standard Practice for Selecting Proportions for Concrete</h3>
+            <p>
+              The international benchmark for designing normal, heavyweight, and mass concrete mixes. Detailed step-by-step procedures based on slump, maximum aggregate size, water-cement ratio curves, and coarse aggregate volume.
+            </p>
+            <ul class="code-clauses">
+              <li><i class="fa-solid fa-check"></i> Water-Cement Ratio vs. Target Strength Relationships</li>
+              <li><i class="fa-solid fa-check"></i> Aggregate Fineness Modulus (FM) Adjustment Tables</li>
+              <li><i class="fa-solid fa-check"></i> Moisture Correction &amp; Absorption Compensation</li>
+              <li><i class="fa-solid fa-check"></i> Entrained Air &amp; Chemical Admixture Dosing</li>
+            </ul>
+          </div>
+          <a href="https://www.concrete.org/store/productdetail.aspx?ItemID=211191" target="_blank" class="btn-download-pdf">
+            <i class="fa-solid fa-external-link"></i> Access ACI 211.1 Standard
+          </a>
+        </div>
+
+        <!-- 3. BNBC 2020 Part 6 -->
+        <div class="code-card">
+          <div>
+            <span class="code-badge">National Building Code</span>
+            <h3>BNBC 2020: Part 6, Chapter 5 (Concrete Material &amp; Reinforcement)</h3>
+            <p>
+              Bangladesh's gazetted building code regulating reinforced concrete structures across Seismic Zones 1 to 4, coastal salinity exposure classes, minimum cover provisions, and wind load considerations for the Bay of Bengal region.
+            </p>
+            <ul class="code-clauses">
+              <li><i class="fa-solid fa-check"></i> Section 5.3: Minimum Cover for Saline &amp; Coastal Zones</li>
+              <li><i class="fa-solid fa-check"></i> Section 5.6: Development Length &amp; Lap Splicing</li>
+              <li><i class="fa-solid fa-check"></i> Table 6.5.1: Maximum Water-Cement Ratios</li>
+              <li><i class="fa-solid fa-check"></i> Seismic Detailing for Special Moment Resisting Frames (SMRF)</li>
+            </ul>
+          </div>
+          <a href="https://www.hbri.gov.bd" target="_blank" class="btn-download-pdf">
+            <i class="fa-solid fa-external-link"></i> Review BNBC 2020 Provisions
+          </a>
+        </div>
+
+        <!-- 4. ASTM Standards -->
+        <div class="code-card">
+          <div>
+            <span class="code-badge">Laboratory Testing Series</span>
+            <h3>ASTM Concrete &amp; Aggregate Test Standards Compendium</h3>
+            <p>
+              Standard test methods used in the KUET Materials Laboratory for assessing mechanical and durability characteristics of fresh and hardened concrete specimens.
+            </p>
+            <ul class="code-clauses">
+              <li><i class="fa-solid fa-check"></i> ASTM C39: Compressive Strength of Cylindrical Specimens</li>
+              <li><i class="fa-solid fa-check"></i> ASTM C143: Standard Slump Test for Hydraulic Concrete</li>
+              <li><i class="fa-solid fa-check"></i> ASTM C78: Flexural Strength (Simple Beam Third-Point Loading)</li>
+              <li><i class="fa-solid fa-check"></i> ASTM C496: Splitting Tensile Strength of Cylinders</li>
+            </ul>
+          </div>
+          <a href="https://www.astm.org" target="_blank" class="btn-download-pdf">
+            <i class="fa-solid fa-external-link"></i> Explore ASTM Standards
+          </a>
+        </div>
+
+        <!-- 5. ACI 301-20 -->
+        <div class="code-card">
+          <div>
+            <span class="code-badge">Construction Specification</span>
+            <h3>ACI 301-20: Specifications for Concrete Construction</h3>
+            <p>
+              Contractor and engineer specifications regulating formwork design, tolerances, reinforcement placement, batching, mixing, transport, consolidation, finishing, and moist curing protocols.
+            </p>
+            <ul class="code-clauses">
+              <li><i class="fa-solid fa-check"></i> Section 2: Formwork Shoring &amp; Stripping Time</li>
+              <li><i class="fa-solid fa-check"></i> Section 3: Rebar Tolerances &amp; Chair Spacing</li>
+              <li><i class="fa-solid fa-check"></i> Section 4: Hot Weather &amp; Cold Weather Placement</li>
+              <li><i class="fa-solid fa-check"></i> Section 5: Curing Methods &amp; Minimum Moist Periods</li>
+            </ul>
+          </div>
+          <a href="https://www.concrete.org/store/productdetail.aspx?ItemID=30120" target="_blank" class="btn-download-pdf">
+            <i class="fa-solid fa-external-link"></i> View ACI 301-20 Guide
+          </a>
+        </div>
+
+        <!-- 6. ACI 544.1R Fiber Concrete -->
+        <div class="code-card">
+          <div>
+            <span class="code-badge">Advanced Materials</span>
+            <h3>ACI 544.1R: State-of-the-Art Report on Fiber-Reinforced Concrete (FRC)</h3>
+            <p>
+              In-depth research guide on steel, synthetic (polypropylene), glass, and natural fibers in concrete matrices. Essential reference for students preparing for the ACI International Concrete Bowling Ball &amp; Egg Protection competitions.
+            </p>
+            <ul class="code-clauses">
+              <li><i class="fa-solid fa-check"></i> Crack Arrest Mechanics &amp; Post-Peak Toughness</li>
+              <li><i class="fa-solid fa-check"></i> Fiber Aspect Ratio &amp; Balling Prevention in Mixer</li>
+              <li><i class="fa-solid fa-check"></i> Impact Resistance &amp; Dynamic Shatter Mitigation</li>
+              <li><i class="fa-solid fa-check"></i> Industrial Flooring &amp; Shotcrete Applications</li>
+            </ul>
+          </div>
+          <a href="https://www.concrete.org" target="_blank" class="btn-download-pdf">
+            <i class="fa-solid fa-external-link"></i> Access ACI 544 Report
+          </a>
+        </div>
+      </div>
+
+      <!-- Section 3: Software Mastery Roadmaps -->
+      <div class="section-clean-head" style="margin-top: 5rem;">
+        <span class="section-tag">Digital Engineering Toolkit</span>
+        <h2 class="section-title">Civil Engineering Software Learning Roadmaps</h2>
+        <p style="color: #000000; font-size: 1.05rem; margin-top: 0.5rem; max-width: 800px; margin-inline: auto;">
+          Curated step-by-step pathways for students to achieve industry-ready competence in computational structural modeling, finite element analysis, and building information modeling (BIM).
+        </p>
+      </div>
+
+      <div class="software-grid">
+        <!-- 1. ETABS 21 -->
+        <div class="software-card">
+          <div class="software-icon-wrap"><i class="fa-solid fa-cubes-stacked"></i></div>
+          <h3>CSI ETABS 21</h3>
+          <div class="software-tag">High-Rise Analysis &amp; RCC Design</div>
+          <p style="font-size: 0.92rem; color: #000000; line-height: 1.6; margin-bottom: 1.25rem;">
+            Primary industry software for 3D modeling of multistorey commercial towers, seismic response spectrum, wind tunnel simulations, and automated reinforcement scheduling.
+          </p>
+          <ul class="software-topics">
+            <li><i class="fa-solid fa-circle-check"></i> Grid generation &amp; story data assignment</li>
+            <li><i class="fa-solid fa-circle-check"></i> Diaphragm constraints &amp; mass center calculation</li>
+            <li><i class="fa-solid fa-circle-check"></i> BNBC 2020 Equivalent Static vs Response Spectrum</li>
+            <li><i class="fa-solid fa-circle-check"></i> P-Delta non-linear geometric stiffness effects</li>
+            <li><i class="fa-solid fa-circle-check"></i> Shear wall design (Pier &amp; Spandrel detailing)</li>
+          </ul>
+        </div>
+
+        <!-- 2. CSI SAP2000 -->
+        <div class="software-card">
+          <div class="software-icon-wrap"><i class="fa-solid fa-bridge"></i></div>
+          <h3>CSI SAP2000</h3>
+          <div class="software-tag">General FEM, Trusses &amp; Bridges</div>
+          <p style="font-size: 0.92rem; color: #000000; line-height: 1.6; margin-bottom: 1.25rem;">
+            Finite element powerhouse for arbitrary 2D/3D civil geometries: space trusses, cable-stayed spans, culverts, transmission towers, and industrial precast frames.
+          </p>
+          <ul class="software-topics">
+            <li><i class="fa-solid fa-circle-check"></i> Joint restraints, springs &amp; support releases</li>
+            <li><i class="fa-solid fa-circle-check"></i> Shell element meshing &amp; out-of-plane bending</li>
+            <li><i class="fa-solid fa-circle-check"></i> Moving vehicular loads (AASHTO / Roads &amp; Highways)</li>
+            <li><i class="fa-solid fa-circle-check"></i> Eigenvalue modal frequency extraction</li>
+            <li><i class="fa-solid fa-circle-check"></i> Time-history earthquake ground motion analysis</li>
+          </ul>
+        </div>
+
+        <!-- 3. CSI SAFE -->
+        <div class="software-card">
+          <div class="software-icon-wrap"><i class="fa-solid fa-layer-group"></i></div>
+          <h3>CSI SAFE</h3>
+          <div class="software-tag">Foundations, Footings &amp; Slabs</div>
+          <p style="font-size: 0.92rem; color: #000000; line-height: 1.6; margin-bottom: 1.25rem;">
+            Specialized tool for foundation engineering, mat/raft foundations, pile caps, subgrade soil spring stiffness distribution, and punching shear design.
+          </p>
+          <ul class="software-topics">
+            <li><i class="fa-solid fa-circle-check"></i> Modulus of subgrade reaction (k-value) modeling</li>
+            <li><i class="fa-solid fa-circle-check"></i> Isolated, combined &amp; strap footing design</li>
+            <li><i class="fa-solid fa-circle-check"></i> Mat foundation with nonlinear tension-free soil</li>
+            <li><i class="fa-solid fa-circle-check"></i> Column punching shear critical perimeter check</li>
+            <li><i class="fa-solid fa-circle-check"></i> Post-tensioned tendon profiling &amp; stress losses</li>
+          </ul>
+        </div>
+
+        <!-- 4. AutoCAD & Detailing -->
+        <div class="software-card">
+          <div class="software-icon-wrap"><i class="fa-solid fa-compass-drafting"></i></div>
+          <h3>AutoCAD Structural Drafting</h3>
+          <div class="software-tag">Engineering Working Drawings &amp; Rebar Schedules</div>
+          <p style="font-size: 0.92rem; color: #000000; line-height: 1.6; margin-bottom: 1.25rem;">
+            The foundation of site communication. Mastery in structural layout plans, beam schedules, column rebar bend diagrams, and bar bending schedule (BBS) calculation.
+          </p>
+          <ul class="software-topics">
+            <li><i class="fa-solid fa-circle-check"></i> Dynamic blocks, layers &amp; standard lineweights</li>
+            <li><i class="fa-solid fa-circle-check"></i> Beam longitudinal elevation &amp; section cross-cuts</li>
+            <li><i class="fa-solid fa-circle-check"></i> Column ties, crossties &amp; splice confinement zones</li>
+            <li><i class="fa-solid fa-circle-check"></i> Foundation pile layout coordinates &amp; grids</li>
+            <li><i class="fa-solid fa-circle-check"></i> Automated Bar Bending Schedule (BBS) spreadsheet link</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Comprehensive Split Footer (Institutional Light Green Theme) -->
+  <footer class="split-footer">
+    <div class="container">
+      <div class="split-footer-top">
+        <div class="footer-left-club-intro">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.15rem;">
+            <img src="images/aci-kuet-official-logo.png" alt="ACI KUET Logo" style="height: 52px; width: auto; object-fit: contain;">
+            <h3 style="margin: 0; font-size: 1.4rem; font-weight: 900; color: #000000;">ACI KUET Student Chapter</h3>
+          </div>
+          <p style="color: #000000; font-weight: 500; font-size: 0.95rem; line-height: 1.75;">
+            Department of Civil Engineering, Khulna University of Engineering &amp; Technology (KUET). Fostering concrete excellence, cutting-edge materials research, and national competitive dominance.
+          </p>
+          <div class="footer-social-row">
+            <a href="https://www.facebook.com/profile.php?id=61596231034458" target="_blank" class="footer-social-link" title="Official Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/in/aci-kuet-student-chapter-426b2644a/" target="_blank" class="footer-social-link" title="Official LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/aci.kuet/" target="_blank" class="footer-social-link" title="Official Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@ACIKUETStudentChapter" target="_blank" class="footer-social-link" title="Official YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="mailto:aci.kuetsc@gmail.com" class="footer-social-link" title="Official Gmail"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-right-columns">
+          <!-- Col 1: Navigation -->
+          <div>
+            <h4 class="footer-col-title">Navigation</h4>
+            <ul class="footer-links-list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="events-major.html">Events &amp; Competitions</a></li>
+              <li><a href="panel-officers.html">Executive Committee</a></li>
+              <li><a href="achievements.html">Achievements</a></li>
+              <li><a href="news.html">News &amp; Bulletins</a></li>
+              <li><a href="resources.html">Technical Library</a></li>
+              <li><a href="verify-certificate.html">Verify Certificate</a></li>
+              <li><a href="sponsors.html">Sponsors Directory</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 2: About Us -->
+          <div>
+            <h4 class="footer-col-title">About Us</h4>
+            <ul class="footer-links-list">
+              <li><a href="about-membership.html">Why Join ACI KUET?</a></li>
+              <li><a href="about-lab.html">Inside KUET Concrete Lab</a></li>
+              <li><a href="about-alumni.html">Alumni in Industry</a></li>
+              <li><a href="about-us.html">Chapter Overview</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Contact & Social Handles -->
+          <div>
+            <h4 class="footer-col-title">Contact</h4>
+            <ul class="footer-links-list">
+              <li><a href="contact.html">Contact Secretariat</a></li>
+              <li><a href="https://www.facebook.com/profile.php?id=61596231034458" target="_blank"><i class="fa-brands fa-facebook-f" style="width: 14px;"></i> Facebook Page</a></li>
+              <li><a href="https://www.linkedin.com/in/aci-kuet-student-chapter-426b2644a/" target="_blank"><i class="fa-brands fa-linkedin-in" style="width: 14px;"></i> LinkedIn Profile</a></li>
+              <li><a href="https://www.instagram.com/aci.kuet/" target="_blank"><i class="fa-brands fa-instagram" style="width: 14px;"></i> Instagram</a></li>
+              <li><a href="https://www.youtube.com/@ACIKUETStudentChapter" target="_blank"><i class="fa-brands fa-youtube" style="width: 14px;"></i> YouTube Channel</a></li>
+              <li><a href="mailto:aci.kuetsc@gmail.com"><i class="fa-solid fa-envelope" style="width: 14px;"></i> Official Gmail</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 4: Department Coordinates -->
+          <div>
+            <h4 class="footer-col-title">Department Coordinates</h4>
+            <div class="footer-location-block">
+              <i class="fa-solid fa-location-dot" style="color: #166534; font-size: 1.15rem; margin-top: 3px;"></i>
+              <p style="color: #000000; font-size: 0.92rem; line-height: 1.6; font-weight: 500;">
+                Department of Civil Engineering<br>
+                Khulna University of Engineering &amp; Technology (KUET)<br>
+                Teligati, Khulna-9203, Bangladesh.
+              </p>
+            </div>
+            <div style="margin-top: 1rem; font-size: 0.88rem; color: #000000; font-weight: 600; line-height: 1.6;">
+              <strong>Convener:</strong> Shakil Ilhan (2301044)<br>
+              <strong>Email:</strong> aci.kuetsc@gmail.com
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-legal" style="text-align: center; border-top: 1px solid var(--border-light); padding-top: 2rem; color: #000000; font-size: 0.88rem; font-weight: 500;">
+        <p>&copy; 2026 ACI Student Chapter, KUET. All rights reserved. Department of Civil Engineering, Khulna University of Engineering &amp; Technology.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js?v=6.1"></script>
+  <script>
+    // Concrete Mix Calculator Logic
+    document.addEventListener('DOMContentLoaded', () => {
+      const calcBtn = document.getElementById('btn-calc-mix');
+      if (calcBtn) {
+        calcBtn.addEventListener('click', () => {
+          const fc = parseFloat(document.getElementById('calc-fc').value) || 25;
+          const slump = parseFloat(document.getElementById('calc-slump').value) || 100;
+          const aggSize = parseFloat(document.getElementById('calc-agg-size').value) || 20;
+          const vol = parseFloat(document.getElementById('calc-volume').value) || 1.0;
+
+          // Water-cement ratio lookup approximate curve
+          let wc = 0.50;
+          if (fc <= 20) wc = 0.55;
+          else if (fc <= 25) wc = 0.48;
+          else if (fc <= 30) wc = 0.43;
+          else if (fc <= 35) wc = 0.38;
+          else wc = 0.34;
+
+          // Water content per m3 (slump & max agg size based)
+          let waterDemand = 190;
+          if (slump <= 50) waterDemand -= 15;
+          if (slump >= 150) waterDemand += 15;
+          if (aggSize <= 12.5) waterDemand += 15;
+          if (aggSize >= 25) waterDemand -= 10;
+
+          // Cement content
+          const cementWeight = Math.round(waterDemand / wc);
+          const waterWeight = Math.round(waterDemand);
+
+          // Coarse aggregate (approx 1050 kg/m3 dry rod bulk)
+          let stoneWeight = 1050;
+          if (aggSize <= 12.5) stoneWeight = 980;
+          if (aggSize >= 25) stoneWeight = 1100;
+
+          // Fine aggregate = Total density (approx 2380) - (cement + water + stone)
+          const totalEstimatedDensity = 2380;
+          let sandWeight = totalEstimatedDensity - (cementWeight + waterWeight + stoneWeight);
+          if (sandWeight < 650) sandWeight = 680;
+
+          // Scale by volume
+          document.getElementById('res-wc').textContent = wc.toFixed(2);
+          document.getElementById('res-cement').innerHTML = '<strong>' + Math.round(cementWeight * vol) + ' kg</strong>';
+          document.getElementById('res-water').innerHTML = '<strong>' + Math.round(waterWeight * vol) + ' kg (L)</strong>';
+          document.getElementById('res-sand').innerHTML = '<strong>' + Math.round(sandWeight * vol) + ' kg</strong>';
+          document.getElementById('res-stone').innerHTML = '<strong>' + Math.round(stoneWeight * vol) + ' kg</strong>';
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 70" width="240" height="70">
+  <defs>
+    <!-- Satin gradient for the ACI emblem -->
+    <linearGradient id="aciSatin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f4426"/>
+      <stop offset="50%" stop-color="#18643a"/>
+      <stop offset="100%" stop-color="#0d351e"/>
+    </linearGradient>
+  </defs>
+  <!-- Official ACI Emblem Badge -->
+  <rect x="2" y="5" width="60" height="60" rx="8" fill="url(#aciSatin)"/>
+  <rect x="4" y="7" width="56" height="56" rx="6" fill="none" stroke="#22c55e" stroke-width="1.5" stroke-opacity="0.6"/>
+  <!-- Classic lowercase aci lettering -->
+  <text x="32" y="44" font-family="'Helvetica Neue', Arial, sans-serif" font-size="34" font-weight="900" font-style="italic" fill="#ffffff" text-anchor="middle" letter-spacing="-1.5">aci</text>
+  
+  <!-- Sub-label: American Concrete Institute -->
+  <g transform="translate(72, 18)">
+    <text x="0" y="14" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="13" font-weight="800" fill="#0f172a" letter-spacing="0.5">American Concrete</text>
+    <text x="0" y="28" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="13" font-weight="800" fill="#0f172a" letter-spacing="0.5">Institute <tspan fill="#166534" font-weight="700">®</tspan></text>
+    <text x="0" y="41" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="9" font-weight="700" fill="#64748b" letter-spacing="1.2">ALWAYS ADVANCING</text>
+  </g>
+</svg>

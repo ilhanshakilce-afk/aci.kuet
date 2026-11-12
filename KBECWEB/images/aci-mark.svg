@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="aciMarkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f4426"/>
+      <stop offset="50%" stop-color="#18643a"/>
+      <stop offset="100%" stop-color="#0b2e1a"/>
+    </linearGradient>
+  </defs>
+  <rect width="100" height="100" rx="16" fill="url(#aciMarkGrad)"/>
+  <rect x="4" y="4" width="92" height="92" rx="12" fill="none" stroke="#22c55e" stroke-width="2" stroke-opacity="0.5"/>
+  <text x="50" y="65" font-family="'Helvetica Neue', Arial, sans-serif" font-size="54" font-weight="900" font-style="italic" fill="#ffffff" text-anchor="middle" letter-spacing="-2">aci</text>
+</svg>

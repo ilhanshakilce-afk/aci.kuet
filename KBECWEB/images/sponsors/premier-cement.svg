@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120" width="320" height="120">
+  <circle cx="55" cy="60" r="32" fill="#0284c7"/>
+  <path d="M38 60 L50 45 L60 55 L72 60 L55 75 Z" fill="#ffffff"/>
+  <text x="105" y="56" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="24" font-weight="900" fill="#0284c7" letter-spacing="0.5">PREMIER</text>
+  <text x="106" y="78" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="16" font-weight="800" fill="#0f172a" letter-spacing="1.5">CEMENT</text>
+</svg>
