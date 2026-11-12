@@ -3,7 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>National Events - ReinforCE | ACI Student Chapter - KUET</title>
+  <title>ReinforCE 1.0 & 2.0 | National Civil Engineering Festival | ACI KUET</title>
+  <meta name="description" content="ReinforCE is the premier national civil engineering competition by ACI KUET Student Chapter featuring Truss Challenge, Mechanics Mania, and Concrete Case Competitions.">
+  <link rel="canonical" href="https://acikuet.org/events-national.html">
+  
+  <!-- OpenGraph Metadata for Facebook, WhatsApp & LinkedIn Previews -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ACI Student Chapter - KUET">
+  <meta property="og:title" content="ReinforCE 1.0 & 2.0 | National Civil Engineering Festival | ACI KUET">
+  <meta property="og:description" content="ReinforCE is the premier national civil engineering competition by ACI KUET Student Chapter featuring Truss Challenge, Mechanics Mania, and Concrete Case Competitions.">
+  <meta property="og:image" content="https://acikuet.org/images/hero-group-photo.jpg">
+  <meta property="og:url" content="https://acikuet.org/events-national.html">
+  
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ReinforCE 1.0 & 2.0 | National Civil Engineering Festival | ACI KUET">
+  <meta name="twitter:description" content="ReinforCE is the premier national civil engineering competition by ACI KUET Student Chapter featuring Truss Challenge, Mechanics Mania, and Concrete Case Competitions.">
+  <meta name="twitter:image" content="https://acikuet.org/images/hero-group-photo.jpg">
   <link rel="icon" href="images/aci-kuet-official-logo.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -431,26 +447,27 @@
       </h3>
       <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.5rem;">Fill out this form to register your team for the selected segment.</p>
       
-      <form onsubmit="submitReinforceReg(event)">
+      <form id="reinforce-reg-form" name="reinforce-registration" method="POST" data-netlify="true" action="/events-national.html?success=true">
+        <input type="hidden" name="form-name" value="reinforce-registration">
         <div style="margin-bottom: 1rem;">
           <label style="display: block; font-weight: 700; font-size: 0.85rem; margin-bottom: 0.35rem;">Competition Segment</label>
-          <input type="text" id="modal-segment-name" class="verify-input" style="width: 100%;" readonly>
+          <input type="text" name="segment" id="modal-segment-name" class="verify-input" style="width: 100%;" readonly>
         </div>
         <div style="margin-bottom: 1rem;">
           <label style="display: block; font-weight: 700; font-size: 0.85rem; margin-bottom: 0.35rem;">Team / Participant Name *</label>
-          <input type="text" class="verify-input" style="width: 100%;" placeholder="e.g. Team Concrete Titans" required>
+          <input type="text" name="team_name" class="verify-input" style="width: 100%;" placeholder="e.g. Team Concrete Titans" required>
         </div>
         <div style="margin-bottom: 1rem;">
           <label style="display: block; font-weight: 700; font-size: 0.85rem; margin-bottom: 0.35rem;">Institution / University *</label>
-          <input type="text" class="verify-input" style="width: 100%;" placeholder="e.g. KUET, BUET, IUT, CUET" required>
+          <input type="text" name="institution" class="verify-input" style="width: 100%;" placeholder="e.g. KUET, BUET, IUT, CUET" required>
         </div>
         <div style="margin-bottom: 1rem;">
           <label style="display: block; font-weight: 700; font-size: 0.85rem; margin-bottom: 0.35rem;">Leader Email *</label>
-          <input type="email" class="verify-input" style="width: 100%;" placeholder="leader@domain.com" required>
+          <input type="email" name="leader_email" class="verify-input" style="width: 100%;" placeholder="leader@domain.com" required>
         </div>
         <div style="margin-bottom: 1.5rem;">
           <label style="display: block; font-weight: 700; font-size: 0.85rem; margin-bottom: 0.35rem;">WhatsApp / Contact Number *</label>
-          <input type="tel" class="verify-input" style="width: 100%;" placeholder="017XXXXXXXX" required>
+          <input type="tel" name="phone" class="verify-input" style="width: 100%;" placeholder="017XXXXXXXX" required>
         </div>
         <button type="submit" class="btn-reinforce" style="width: 100%; justify-content: center; padding: 0.75rem;">
           Submit Official Registration

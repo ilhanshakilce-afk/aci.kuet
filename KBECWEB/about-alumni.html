@@ -3,7 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alumni in Industry Spotlight | Mentorship & Global Network</title>
+  <title>Alumni in Industry & Mentorship Desk | ACI KUET Student Chapter</title>
+  <meta name="description" content="Connect with KUET Civil Engineering alumni working across international infrastructure mega-projects and research institutions.">
+  <link rel="canonical" href="https://acikuet.org/about-alumni.html">
+  
+  <!-- OpenGraph Metadata for Facebook, WhatsApp & LinkedIn Previews -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ACI Student Chapter - KUET">
+  <meta property="og:title" content="Alumni in Industry & Mentorship Desk | ACI KUET Student Chapter">
+  <meta property="og:description" content="Connect with KUET Civil Engineering alumni working across international infrastructure mega-projects and research institutions.">
+  <meta property="og:image" content="https://acikuet.org/images/hero-group-photo.jpg">
+  <meta property="og:url" content="https://acikuet.org/about-alumni.html">
+  
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Alumni in Industry & Mentorship Desk | ACI KUET Student Chapter">
+  <meta name="twitter:description" content="Connect with KUET Civil Engineering alumni working across international infrastructure mega-projects and research institutions.">
+  <meta name="twitter:image" content="https://acikuet.org/images/hero-group-photo.jpg">
   <link rel="icon" href="images/aci-kuet-official-logo.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -217,26 +233,27 @@
           </p>
         </div>
 
-        <form onsubmit="event.preventDefault(); alert('Mentorship Request Received! The ACI KUET Alumni Relations Desk will connect you with a relevant mentor via email.'); this.reset();">
+        <form id="alumni-mentorship-form" name="alumni-mentorship" method="POST" data-netlify="true" action="/about-alumni.html?success=true">
+          <input type="hidden" name="form-name" value="alumni-mentorship">
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
             <div>
               <label style="display: block; font-weight: 800; font-size: 0.92rem; color: #000000; margin-bottom: 0.5rem;">Full Name *</label>
-              <input type="text" class="contact-input-lg" placeholder="e.g. Shakil Ilhan" required>
+              <input type="text" name="name" class="contact-input-lg" placeholder="e.g. Shakil Ilhan" required>
             </div>
             <div>
               <label style="display: block; font-weight: 800; font-size: 0.92rem; color: #000000; margin-bottom: 0.5rem;">Student Roll *</label>
-              <input type="text" class="contact-input-lg" placeholder="e.g. 2301044" required>
+              <input type="text" name="roll" class="contact-input-lg" placeholder="e.g. 2301044" required>
             </div>
           </div>
 
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
             <div>
               <label style="display: block; font-weight: 800; font-size: 0.92rem; color: #000000; margin-bottom: 0.5rem;">Email Address *</label>
-              <input type="email" class="contact-input-lg" placeholder="e.g. yourname@gmail.com" required>
+              <input type="email" name="email" class="contact-input-lg" placeholder="e.g. yourname@gmail.com" required>
             </div>
             <div>
               <label style="display: block; font-weight: 800; font-size: 0.92rem; color: #000000; margin-bottom: 0.5rem;">Guidance Category *</label>
-              <select class="contact-input-lg" required>
+              <select name="category" class="contact-input-lg" required>
                 <option value="">Select Guidance Track</option>
                 <option value="higher-studies">Higher Studies Abroad (GRE/IELTS, SOP, University Selection)</option>
                 <option value="structural-consultancy">Structural Consultancy Career (ETABS/SAFE Detailing)</option>
@@ -248,7 +265,7 @@
 
           <div style="margin-bottom: 1.85rem;">
             <label style="display: block; font-weight: 800; font-size: 0.92rem; color: #000000; margin-bottom: 0.5rem;">Brief Note / Specific Questions *</label>
-            <textarea rows="4" class="contact-input-lg" style="resize: vertical;" placeholder="Outline your specific queries or the background of your undergraduate research..." required></textarea>
+            <textarea name="notes" rows="4" class="contact-input-lg" style="resize: vertical;" placeholder="Outline your specific queries or the background of your undergraduate research..." required></textarea>
           </div>
 
           <button type="submit" class="btn-reinforce" style="width: 100%; justify-content: center; padding: 1.15rem; font-size: 1.1rem; border-radius: 0;">

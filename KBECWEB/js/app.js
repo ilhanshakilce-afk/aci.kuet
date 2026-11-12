@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHomepageEventsSlideAnimation();
   initModeratorAnimation();
   initContactForm();
+  initAllNetlifyForms();
 });
 
 // Homepage Events Arena Animations (Tag from Right, Title drops from Top, Cards slide from 2 sides)
@@ -318,6 +319,71 @@ function initContactForm() {
     });
   });
 }
+
+// Global Netlify Form Handler for Membership, Alumni & ReinforCE Forms
+function initAllNetlifyForms() {
+  const forms = [
+    {
+      id: 'membership-application-form',
+      title: 'Membership Application Submitted',
+      msg: 'Your application has been received! The ACI KUET Academic Secretariat will verify your student roll and email you the ACI International student membership credentials.'
+    },
+    {
+      id: 'alumni-mentorship-form',
+      title: 'Mentorship Request Registered',
+      msg: 'Your mentorship request has been forwarded to our Alumni Relations Desk. A suitable senior alumnus/mentor will be assigned to guide you.'
+    },
+    {
+      id: 'reinforce-reg-form',
+      title: 'ReinforCE Registration Dispatched',
+      msg: 'Your team registration has been recorded for ReinforCE. The organizing committee will contact the team leader via email and WhatsApp with competition rulebooks.'
+    }
+  ];
+
+  forms.forEach(cfg => {
+    const f = document.getElementById(cfg.id);
+    if (!f) return;
+    f.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const btn = f.querySelector('button[type="submit"]');
+      const orig = btn ? btn.innerHTML : 'Submit';
+      if (btn) {
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Processing...';
+      }
+
+      const formData = new FormData(f);
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString()
+      })
+      .then(() => {
+        f.innerHTML = `
+          <div style="background: #f0fdf4; border: 2px solid #166534; padding: 2rem 1.5rem; text-align: center; border-radius: 0;">
+            <div style="font-size: 2.5rem; color: #166534; margin-bottom: 0.75rem;">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h4 style="font-size: 1.3rem; font-weight: 800; color: #166534; margin-bottom: 0.5rem;">
+              ${cfg.title}
+            </h4>
+            <p style="color: #0f172a; font-size: 0.95rem; line-height: 1.6; margin: 0 auto;">
+              ${cfg.msg}
+            </p>
+          </div>
+        `;
+      })
+      .catch(() => {
+        if (btn) {
+          btn.disabled = false;
+          btn.innerHTML = orig;
+        }
+        alert('Network connection error. Please email us directly at aci.kuet.student.chapter@gmail.com');
+      });
+    });
+  });
+}
+
 
 // Automatically eradicate any Netlify-injected badge, drawer, or promotional widget
 function suppressNetlifyBadge() {

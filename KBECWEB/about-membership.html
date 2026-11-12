@@ -3,7 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Why Join ACI KUET? | Student Chapter Membership & Opportunities</title>
+  <title>Join ACI KUET | Student Membership Privileges & Registration</title>
+  <meta name="description" content="Access global ACI resources, free webinars, American Concrete Institute member discounts, and research forums at KUET.">
+  <link rel="canonical" href="https://acikuet.org/about-membership.html">
+  
+  <!-- OpenGraph Metadata for Facebook, WhatsApp & LinkedIn Previews -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ACI Student Chapter - KUET">
+  <meta property="og:title" content="Join ACI KUET | Student Membership Privileges & Registration">
+  <meta property="og:description" content="Access global ACI resources, free webinars, American Concrete Institute member discounts, and research forums at KUET.">
+  <meta property="og:image" content="https://acikuet.org/images/hero-group-photo.jpg">
+  <meta property="og:url" content="https://acikuet.org/about-membership.html">
+  
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Join ACI KUET | Student Membership Privileges & Registration">
+  <meta name="twitter:description" content="Access global ACI resources, free webinars, American Concrete Institute member discounts, and research forums at KUET.">
+  <meta name="twitter:image" content="https://acikuet.org/images/hero-group-photo.jpg">
   <link rel="icon" href="images/aci-kuet-official-logo.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -239,22 +255,23 @@
           </p>
         </div>
 
-        <form id="membership-application-form" onsubmit="event.preventDefault(); alert('Membership Application Received! The ACI KUET Secretariat will verify your roll number and email you the ACI International account instructions.'); this.reset();">
+        <form id="membership-application-form" name="membership-application" method="POST" data-netlify="true" action="/about-membership.html?success=true">
+          <input type="hidden" name="form-name" value="membership-application">
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
             <div>
               <label style="display: block; font-weight: 800; font-size: 0.92rem; color: #000000; margin-bottom: 0.5rem;">Full Name *</label>
-              <input type="text" class="contact-input-lg" placeholder="e.g. Shakil Ilhan" required>
+              <input type="text" name="name" class="contact-input-lg" placeholder="e.g. Shakil Ilhan" required>
             </div>
             <div>
               <label style="display: block; font-weight: 800; font-size: 0.92rem; color: #000000; margin-bottom: 0.5rem;">Student Roll (KUET) *</label>
-              <input type="text" class="contact-input-lg" placeholder="e.g. 2301044" required>
+              <input type="text" name="roll" class="contact-input-lg" placeholder="e.g. 2301044" required>
             </div>
           </div>
 
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
             <div>
               <label style="display: block; font-weight: 800; font-size: 0.92rem; color: #000000; margin-bottom: 0.5rem;">Academic Year / Cohort *</label>
-              <select class="contact-input-lg" required>
+              <select name="academic_year" class="contact-input-lg" required>
                 <option value="">Select your academic year</option>
                 <option value="1st Year">1st Year (Freshman)</option>
                 <option value="2nd Year">2nd Year (Sophomore)</option>
@@ -264,18 +281,18 @@
             </div>
             <div>
               <label style="display: block; font-weight: 800; font-size: 0.92rem; color: #000000; margin-bottom: 0.5rem;">Contact Mobile *</label>
-              <input type="tel" class="contact-input-lg" placeholder="e.g. 01973592343" required>
+              <input type="tel" name="phone" class="contact-input-lg" placeholder="e.g. 01973592343" required>
             </div>
           </div>
 
           <div style="margin-bottom: 1.5rem;">
             <label style="display: block; font-weight: 800; font-size: 0.92rem; color: #000000; margin-bottom: 0.5rem;">Email Address *</label>
-            <input type="email" class="contact-input-lg" placeholder="e.g. yourname@gmail.com or student@kuet.ac.bd" required>
+            <input type="email" name="email" class="contact-input-lg" placeholder="e.g. yourname@gmail.com or student@kuet.ac.bd" required>
           </div>
 
           <div style="margin-bottom: 1.85rem;">
             <label style="display: block; font-weight: 800; font-size: 0.92rem; color: #000000; margin-bottom: 0.5rem;">Primary Technical Interest *</label>
-            <select class="contact-input-lg" required>
+            <select name="interest" class="contact-input-lg" required>
               <option value="">Select Area of Interest</option>
               <option value="mix-design">Concrete Mix Design &amp; Materials Testing</option>
               <option value="structural-design">Structural Modeling &amp; Finite Element Analysis (ETABS/SAP2000)</option>
