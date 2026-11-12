@@ -251,7 +251,7 @@ function initCertificateVerifier() {
           <h4 style="color: #16a34a; font-size: 1.15rem; font-weight: 800;">
             <i class="fa-solid fa-circle-check"></i> Authentic Certificate Verified
           </h4>
-          <span style="background: #16a34a; color: #fff; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700;">${cert.status}</span>
+          <span style="background: #16a34a; color: #fff; padding: 0.2rem 0.6rem; border-radius: 0; font-size: 0.75rem; font-weight: 700;">${cert.status}</span>
         </div>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; font-size: 0.9rem;">
           <div><strong>Recipient:</strong> ${cert.recipient}</div>
