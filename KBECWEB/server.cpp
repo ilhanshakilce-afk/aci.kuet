@@ -112,11 +112,16 @@ void handle_client(int client_socket) {
                  << json_body;
     }
     else {
-        // Serve static assets from local directory
+        // Serve static assets from local directory or KBECWEB subfolder
         std::string local_path = "." + url;
         std::string file_content;
 
-        if (read_file(local_path, file_content)) {
+        if (!read_file(local_path, file_content)) {
+            local_path = "./KBECWEB" + url;
+            read_file(local_path, file_content);
+        }
+
+        if (!file_content.empty() || read_file(local_path, file_content)) {
             std::string mime = get_mime_type(local_path);
             response << "HTTP/1.1 200 OK\r\n"
                      << "Content-Type: " << mime << "\r\n"

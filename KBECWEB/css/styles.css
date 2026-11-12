@@ -295,16 +295,19 @@ a {
 }
 
 .nav-link {
-  font-size: 1.05rem; /* Two sizes larger as requested */
-  font-weight: 700;
-  color: #000000 !important; /* Pure Black as requested */
+  font-family: var(--font-main);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #111827 !important;
   display: inline-flex;
   align-items: center;
-  gap: 0.28rem;
-  padding: 0.5rem 0.65rem;
-  border-radius: var(--radius-sm);
+  gap: 0.3rem;
+  padding: 0.55rem 0.75rem;
+  border-radius: 0 !important;
+  background: transparent !important;
+  border-bottom: 2px solid transparent;
   cursor: pointer;
-  transition: var(--transition);
+  transition: color 0.18s ease, border-color 0.18s ease;
   white-space: nowrap;
 }
 
@@ -314,53 +317,56 @@ a {
 
 .nav-link i.dropdown-icon {
   font-size: 0.72rem;
-  opacity: 0.7;
+  opacity: 0.65;
+  transition: transform 0.25s ease;
 }
 
+.nav-item:hover .nav-link i.dropdown-icon,
+.nav-item.open .nav-link i.dropdown-icon {
+  transform: rotate(180deg);
+}
+
+/* Subtle, sophisticated hover without bright green block backgrounds */
 .nav-link:hover {
   color: #166534 !important;
-  background: #dcfce7;
+  background: transparent !important;
+  border-bottom-color: #166534;
 }
 
 [data-theme="dark"] .nav-link:hover {
-  color: #4ade80 !important;
-  background: rgba(255, 255, 255, 0.08);
+  color: #86efac !important;
+  background: transparent !important;
 }
 
+/* Active State: Clean Understated Black/Dark Underline, ZERO Green Background Pill/Box */
 .nav-link.active {
-  color: #166534 !important;
+  color: #000000 !important;
   font-weight: 800;
-  background: #dcfce7;
-  border-bottom: 3px solid #166534;
+  background: transparent !important;
+  border-bottom: 2px solid #000000 !important;
 }
 
 [data-theme="dark"] .nav-link.active {
   color: #ffffff !important;
-  border-bottom-color: #4ade80;
+  border-bottom-color: #ffffff !important;
 }
 
-[data-theme="dark"] .nav-link.active {
-  color: #4ade80;
-  background: rgba(34, 197, 94, 0.15);
-}
-
-/* Dropdown Menus: Spacious, Large and Clean */
+/* Dropdown Menus: Spacious, Architectural Sharp Boxes */
 .dropdown-menu {
   position: absolute;
   top: 100%;
   left: 0;
   background: #ffffff;
   min-width: 280px;
-  border-radius: var(--radius-md);
-  box-shadow: 0 16px 40px rgba(22, 101, 52, 0.08);
-  border: 1.5px solid var(--border-light);
-  
+  border-radius: 0 !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+  border: 1px solid #e5e7eb;
   list-style: none;
-  padding: 0.65rem;
+  padding: 0.4rem 0;
   opacity: 0;
   visibility: hidden;
   transform: translateY(6px);
-  transition: var(--transition);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 1100;
 }
 
@@ -386,14 +392,16 @@ a {
 
 .dropdown-item {
   display: block;
-  padding: 0.95rem 1.35rem;
-  font-size: 1.18rem; /* Prominently larger font size */
-  font-weight: 800; /* Bold */
-  color: #000000 !important; /* Pure black */
-  border-radius: var(--radius-sm);
-  transition: var(--transition);
+  padding: 0.8rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827 !important;
+  background: transparent;
+  border-radius: 0 !important;
+  transition: background-color 0.15s ease, color 0.15s ease, padding-left 0.15s ease;
   line-height: 1.4;
   text-decoration: none;
+  border-left: 2px solid transparent;
 }
 
 [data-theme="dark"] .dropdown-item {
@@ -404,18 +412,27 @@ a {
   display: none !important; /* Icons removed */
 }
 
-.dropdown-item:hover,
-.dropdown-item.active {
-  background: #f0fdf4;
+/* Dropdown Hover & Active: Clean, Crisp, Neutral Hover - No Bright Green Blocks */
+.dropdown-item:hover {
+  background: #f8fafc !important;
   color: #166534 !important;
-  padding-left: 1.65rem;
-  border-left: 3px solid #166534;
+  border-left-color: #166534;
+  padding-left: 1.45rem;
+}
+
+.dropdown-item.active {
+  background: #f8fafc !important;
+  color: #166534 !important;
+  border-left-color: #166534;
+  font-weight: 700;
+  padding-left: 1.45rem;
 }
 
 [data-theme="dark"] .dropdown-item:hover,
 [data-theme="dark"] .dropdown-item.active {
-  background: rgba(34, 197, 94, 0.18);
-  color: #4ade80 !important;
+  background: rgba(255, 255, 255, 0.08);
+  color: #86efac !important;
+  border-left-color: #86efac;
 }
 
 /* Nav Actions: Hidden on desktop to ensure only 2 flex items (brand & menu), visible on mobile for toggle */
@@ -459,8 +476,6 @@ a {
 .btn-reinforce:hover {
   transform: translateY(-1px);
   box-shadow: 0 4px 14px rgba(21, 128, 61, 0.4);
-}
-  transition: var(--transition);
 }
 
 [data-theme="dark"] .theme-toggle-btn {
@@ -1426,9 +1441,10 @@ section {
     position: static;
     box-shadow: none;
     border: none;
+    border-left: 2px solid #e5e7eb;
     padding-left: 1rem;
-    background: #f0fdf4;
-    border-radius: var(--radius-sm);
+    background: #f9fafb;
+    border-radius: 0;
   }
 }
 
