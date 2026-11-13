@@ -456,6 +456,7 @@ function initMobileNav() {
       toggleBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
       toggleBtn.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
+      navMenu.querySelectorAll('.nav-item.open').forEach(el => el.classList.remove('open'));
     };
 
     toggleBtn.addEventListener('click', (e) => {
@@ -467,6 +468,9 @@ function initMobileNav() {
         : '<i class="fa-solid fa-bars"></i>';
       toggleBtn.setAttribute('aria-expanded', isActive ? 'true' : 'false');
       document.body.style.overflow = isActive ? 'hidden' : '';
+      if (!isActive) {
+        navMenu.querySelectorAll('.nav-item.open').forEach(el => el.classList.remove('open'));
+      }
     });
 
     // Close when tapping backdrop
