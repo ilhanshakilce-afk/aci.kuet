@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACI KUET Mobile Simulator &amp; Device Preview Tool</title>
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0f172a;
+      color: #f8fafc;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    /* Top Control Bar */
+    .sim-header {
+      background: #1e293b;
+      border-bottom: 2px solid #334155;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      z-index: 100;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .sim-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .sim-brand img {
+      height: 38px;
+      width: auto;
+    }
+
+    .sim-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.2px;
+    }
+
+    .sim-subtitle {
+      font-size: 0.75rem;
+      color: #94a3b8;
+      font-family: 'Space Mono', monospace;
+    }
+
+    /* Controls Group */
+    .sim-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .control-label {
+      font-size: 0.78rem;
+      color: #94a3b8;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .sim-select, .sim-input {
+      background: #0f172a;
+      border: 1.5px solid #475569;
+      color: #ffffff;
+      padding: 0.45rem 0.85rem;
+      font-size: 0.85rem;
+      font-family: inherit;
+      border-radius: 4px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .sim-select:focus, .sim-input:focus {
+      border-color: #22c55e;
+    }
+
+    .btn-group {
+      display: inline-flex;
+      background: #0f172a;
+      border: 1.5px solid #475569;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .sim-btn {
+      background: transparent;
+      border: none;
+      color: #cbd5e1;
+      padding: 0.45rem 0.85rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: all 0.15s;
+    }
+
+    .sim-btn:hover {
+      background: #334155;
+      color: #ffffff;
+    }
+
+    .sim-btn.active {
+      background: #15803D;
+      color: #ffffff;
+    }
+
+    .action-btn {
+      background: #334155;
+      border: 1px solid #475569;
+      color: #ffffff;
+      padding: 0.45rem 0.75rem;
+      border-radius: 4px;
+      font-size: 0.82rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: background 0.15s;
+    }
+
+    .action-btn:hover {
+      background: #475569;
+    }
+
+    .dim-pill {
+      background: #0f172a;
+      border: 1px solid #334155;
+      padding: 0.35rem 0.65rem;
+      border-radius: 4px;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      color: #4ade80;
+    }
+
+    /* Simulation Stage */
+    .sim-stage {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2.5rem 1.5rem;
+      background: radial-gradient(circle at center, #1e293b 0%, #090e17 100%);
+      overflow: auto;
+      min-height: 850px;
+    }
+
+    /* Device Container / Frame */
+    .device-scaler {
+      transform-origin: top center;
+      transition: transform 0.25s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .device-mockup {
+      position: relative;
+      background: #000000;
+      border-radius: 54px;
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9), 0 0 0 12px #27272a, 0 0 0 14px #3f3f46;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* iPhone 15 Pro Bezel Styling */
+    .device-mockup.iphone-15-pro {
+      width: 393px;
+      height: 852px;
+    }
+
+    .device-mockup.iphone-se {
+      width: 375px;
+      height: 667px;
+      border-radius: 36px;
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9), 0 0 0 10px #1e293b, 0 0 0 12px #334155;
+    }
+
+    .device-mockup.android-galaxy {
+      width: 360px;
+      height: 800px;
+      border-radius: 40px;
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9), 0 0 0 10px #18181b, 0 0 0 12px #27272a;
+    }
+
+    .device-mockup.ipad-mini {
+      width: 768px;
+      height: 1024px;
+      border-radius: 32px;
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9), 0 0 0 12px #27272a, 0 0 0 14px #3f3f46;
+    }
+
+    /* Landscape Mode */
+    .device-mockup.landscape.iphone-15-pro {
+      width: 852px;
+      height: 393px;
+    }
+
+    .device-mockup.landscape.iphone-se {
+      width: 667px;
+      height: 375px;
+    }
+
+    .device-mockup.landscape.android-galaxy {
+      width: 800px;
+      height: 360px;
+    }
+
+    .device-mockup.landscape.ipad-mini {
+      width: 1024px;
+      height: 768px;
+    }
+
+    /* Dynamic Island & Notch */
+    .device-status-bar {
+      height: 48px;
+      background: #ffffff;
+      width: 100%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #052E16;
+      border-bottom: 1px solid #f1f5f9;
+      position: relative;
+      z-index: 15;
+    }
+
+    .device-status-time {
+      font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+      letter-spacing: -0.2px;
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    .device-status-icons {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: #052E16;
+    }
+
+    .device-mockup.android-galaxy .device-status-bar {
+      height: 32px;
+      padding: 0 16px;
+      font-size: 12px;
+    }
+
+    .dynamic-island {
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 32px;
+      background: #000000;
+      border-radius: 20px;
+      z-index: 20;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px;
+    }
+
+    .galaxy-punch-hole {
+      position: absolute;
+      top: 9px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 14px;
+      height: 14px;
+      background: #000000;
+      border-radius: 50%;
+      z-index: 20;
+      display: none;
+    }
+
+    .device-mockup.android-galaxy .galaxy-punch-hole {
+      display: block;
+    }
+
+    .island-camera {
+      width: 12px;
+      height: 12px;
+      background: #111827;
+      border-radius: 50%;
+      box-shadow: inset 0 0 2px #38bdf8;
+    }
+
+    .island-sensor {
+      width: 8px;
+      height: 8px;
+      background: #0f172a;
+      border-radius: 50%;
+    }
+
+    /* iPhone Bottom Home Bar */
+    .home-indicator {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 135px;
+      height: 5px;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 10px;
+      z-index: 20;
+      pointer-events: none;
+    }
+
+    /* Live Webpage Iframe */
+    .sim-iframe {
+      width: 100%;
+      flex: 1;
+      height: calc(100% - 48px);
+      border: none;
+      background: #ffffff;
+      display: block;
+    }
+
+    .device-mockup.android-galaxy .sim-iframe {
+      height: calc(100% - 32px);
+    }
+
+    /* Quick Guide Box */
+    .sim-footer-bar {
+      background: #1e293b;
+      border-top: 1px solid #334155;
+      padding: 0.6rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: #94a3b8;
+    }
+
+    .sim-footer-bar a {
+      color: #4ade80;
+      text-decoration: none;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Controls -->
+  <header class="sim-header">
+    <div class="sim-brand">
+      <img src="images/aci-kuet-official-logo.webp" alt="ACI KUET Logo">
+      <div>
+        <div class="sim-title">ACI KUET Mobile Simulator</div>
+        <div class="sim-subtitle">Local Device Rendering &amp; Inspection Lab</div>
+      </div>
+    </div>
+
+    <!-- Page Selection -->
+    <div class="sim-controls">
+      <label class="control-label">View Page:</label>
+      <select id="page-selector" class="sim-select">
+        <option value="index.html" selected>Home (index.html)</option>
+        <option value="color-palettes.html">100 World-Class Color Palettes Explorer</option>
+        <option value="resources.html">Technical Resources Library</option>
+        <option value="estimation.html">Civil Estimation Hub (95 Docs + BOQ)</option>
+        <option value="learn-etabs.html">CSI ETABS 21 Roadmap (Zero to Pro)</option>
+        <option value="learn-sap2000.html">CSI SAP2000 Roadmap (Zero to Pro)</option>
+        <option value="learn-safe.html">CSI SAFE 20 Roadmap (Zero to Pro)</option>
+        <option value="learn-autocad.html">AutoCAD Structural Roadmap (Zero to Pro)</option>
+        <option value="about-membership.html">Membership Application Form</option>
+        <option value="panel-officers.html">Executive Officers 2026-27</option>
+        <option value="panel-webteam.html">Website Team (Shakil Ilhan)</option>
+        <option value="events-major.html">Events &amp; Competitions Arena</option>
+        <option value="contact.html">Official Message Desk &amp; Contact</option>
+        <option value="verify-certificate.html">Certificate Verifier</option>
+        <option value="achievements.html">Chapter Achievements</option>
+        <option value="news.html">News &amp; Bulletins</option>
+        <option value="sponsors.html">Corporate Sponsors</option>
+        <option value="about-lab.html">Inside KUET Concrete Lab</option>
+        <option value="about-alumni.html">Alumni Spotlight &amp; Mentorship</option>
+        <option value="about-us.html">Chapter Overview &amp; Mission</option>
+      </select>
+    </div>
+
+    <!-- Device Preset Buttons -->
+    <div class="sim-controls">
+      <label class="control-label">Device Preset:</label>
+      <div class="btn-group">
+        <button type="button" class="sim-btn active" data-device="iphone-15-pro" data-w="393" data-h="852">
+          <i class="fa-brands fa-apple"></i> iPhone 15 Pro
+        </button>
+        <button type="button" class="sim-btn" data-device="iphone-se" data-w="375" data-h="667">
+          <i class="fa-solid fa-mobile-screen"></i> iPhone SE (375px)
+        </button>
+        <button type="button" class="sim-btn" data-device="android-galaxy" data-w="360" data-h="800">
+          <i class="fa-brands fa-android"></i> Galaxy S23 (360px)
+        </button>
+        <button type="button" class="sim-btn" data-device="ipad-mini" data-w="768" data-h="1024">
+          <i class="fa-solid fa-tablet-screen-button"></i> Tablet (768px)
+        </button>
+      </div>
+
+      <!-- Orientation Toggle -->
+      <button type="button" id="rotate-btn" class="action-btn" title="Rotate Orientation">
+        <i class="fa-solid fa-rotate"></i> Rotate
+      </button>
+
+      <!-- Refresh Page -->
+      <button type="button" id="reload-btn" class="action-btn" title="Reload Frame">
+        <i class="fa-solid fa-arrows-rotate"></i> Reload
+      </button>
+
+      <!-- Open in New Tab -->
+      <button type="button" id="external-btn" class="action-btn" title="Open Page in Full Window">
+        <i class="fa-solid fa-arrow-up-right-from-square"></i> Open
+      </button>
+
+      <!-- Zoom / Scale -->
+      <label class="control-label" style="margin-left: 0.5rem;">Zoom:</label>
+      <select id="scale-selector" class="sim-select" style="width: 85px;">
+        <option value="1">100%</option>
+        <option value="0.9" selected>90%</option>
+        <option value="0.8">80%</option>
+        <option value="0.75">75%</option>
+        <option value="0.65">65%</option>
+      </select>
+
+      <span id="dim-badge" class="dim-pill">393 × 852 px</span>
+    </div>
+  </header>
+
+  <!-- Interactive Stage -->
+  <main class="sim-stage">
+    <div class="device-scaler" id="scaler" style="transform: scale(0.9);">
+      <div class="device-mockup iphone-15-pro" id="device">
+        <!-- Authentic Device Status Bar (Protects Header from Camera Cutouts) -->
+        <div class="device-status-bar" id="status-bar">
+          <span class="device-status-time" id="status-time">9:41</span>
+          <!-- iPhone Dynamic Island -->
+          <div class="dynamic-island" id="island">
+            <div class="island-camera"></div>
+            <div class="island-sensor"></div>
+          </div>
+          <!-- Galaxy S23 Punch Hole Camera -->
+          <div class="galaxy-punch-hole" id="galaxy-camera"></div>
+          <span class="device-status-icons" id="status-icons">
+            <i class="fa-solid fa-signal"></i> 
+            <i class="fa-solid fa-wifi"></i> 
+            <i class="fa-solid fa-battery-full"></i>
+          </span>
+        </div>
+
+        <!-- Frame -->
+        <iframe id="preview-frame" class="sim-iframe" src="index.html" title="Mobile Simulator Preview"></iframe>
+
+        <!-- iPhone Home Bar -->
+        <div class="home-indicator" id="home-bar"></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer Info Bar -->
+  <footer class="sim-footer-bar">
+    <div>
+      <i class="fa-solid fa-laptop-code" style="color: #4ade80;"></i>
+      <strong>Local Testing Mode:</strong> Running on port 8080. Zero Netlify deploys or git push needed!
+    </div>
+    <div>
+      Tested Viewports: 360px &bull; 375px &bull; 393px &bull; 768px (Zero Horizontal Scroll Guaranteed)
+    </div>
+  </footer>
+
+  <script>
+    const pageSelector = document.getElementById('page-selector');
+    const previewFrame = document.getElementById('preview-frame');
+    const device = document.getElementById('device');
+    const island = document.getElementById('island');
+    const homeBar = document.getElementById('home-bar');
+    const scaler = document.getElementById('scaler');
+    const scaleSelector = document.getElementById('scale-selector');
+    const rotateBtn = document.getElementById('rotate-btn');
+    const reloadBtn = document.getElementById('reload-btn');
+    const externalBtn = document.getElementById('external-btn');
+    const dimBadge = document.getElementById('dim-badge');
+    const deviceButtons = document.querySelectorAll('[data-device]');
+
+    let currentDevice = 'iphone-15-pro';
+    let isLandscape = false;
+    let baseW = 393;
+    let baseH = 852;
+
+    // Check URL parameters for preset override
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('device') === 'galaxy') {
+      currentDevice = 'android-galaxy';
+      baseW = 360;
+      baseH = 800;
+      deviceButtons.forEach(b => b.classList.toggle('active', b.dataset.device === 'android-galaxy'));
+      setTimeout(updateDeviceClass, 50);
+    }
+
+    // Switch Page
+    pageSelector.addEventListener('change', () => {
+      previewFrame.src = pageSelector.value;
+    });
+
+    // Device Preset Selection
+    deviceButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        deviceButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        currentDevice = btn.dataset.device;
+        baseW = parseInt(btn.dataset.w, 10);
+        baseH = parseInt(btn.dataset.h, 10);
+
+        updateDeviceClass();
+      });
+    });
+
+    // Orientation Rotate
+    rotateBtn.addEventListener('click', () => {
+      isLandscape = !isLandscape;
+      updateDeviceClass();
+    });
+
+    // Reload Frame
+    reloadBtn.addEventListener('click', () => {
+      previewFrame.contentWindow.location.reload();
+    });
+
+    // Open External
+    externalBtn.addEventListener('click', () => {
+      window.open(pageSelector.value, '_blank');
+    });
+
+    // Zoom Scaling
+    scaleSelector.addEventListener('change', () => {
+      scaler.style.transform = `scale(${scaleSelector.value})`;
+    });
+
+    function updateDeviceClass() {
+      // Remove all device classes
+      device.className = 'device-mockup';
+      device.classList.add(currentDevice);
+      if (isLandscape) {
+        device.classList.add('landscape');
+      }
+
+      const statusBar = document.getElementById('status-bar');
+      const galaxyCamera = document.getElementById('galaxy-camera');
+      const statusTime = document.getElementById('status-time');
+
+      // Update status bar elements per device preset
+      if (isLandscape) {
+        statusBar.style.display = 'none';
+        island.style.display = 'none';
+        galaxyCamera.style.display = 'none';
+        homeBar.style.display = 'none';
+      } else {
+        statusBar.style.display = 'flex';
+        if (currentDevice === 'iphone-15-pro') {
+          island.style.display = 'flex';
+          galaxyCamera.style.display = 'none';
+          homeBar.style.display = 'block';
+          statusTime.textContent = '9:41';
+        } else if (currentDevice === 'android-galaxy') {
+          island.style.display = 'none';
+          galaxyCamera.style.display = 'block';
+          homeBar.style.display = 'none';
+          statusTime.textContent = '12:30';
+        } else if (currentDevice === 'iphone-se') {
+          island.style.display = 'none';
+          galaxyCamera.style.display = 'none';
+          homeBar.style.display = 'none';
+          statusTime.textContent = '9:41';
+        } else {
+          statusBar.style.display = 'none';
+          island.style.display = 'none';
+          galaxyCamera.style.display = 'none';
+          homeBar.style.display = 'none';
+        }
+      }
+
+      const activeW = isLandscape ? baseH : baseW;
+      const activeH = isLandscape ? baseW : baseH;
+      dimBadge.textContent = `${activeW} × ${activeH} px`;
+    }
+
+    // Auto-sync iframe URL changes with select box
+    previewFrame.addEventListener('load', () => {
+      try {
+        const path = previewFrame.contentWindow.location.pathname.split('/').pop();
+        if (path && pageSelector.querySelector(`option[value="${path}"]`)) {
+          pageSelector.value = path;
+        }
+      } catch (e) {}
+    });
+  </script>
+</body>
+</html>

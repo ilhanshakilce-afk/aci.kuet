@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#166534">
+  <meta name="theme-color" content="#15803D">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <title>Technical Resources & Concrete Mix Design Calculator | ACI KUET</title>
+  <title>ACI KUET Student Chapter | Technical Resources</title>
   <meta name="description" content="Interactive ACI 211.1 concrete trial mix proportions calculator, civil engineering software roadmaps, and technical papers.">
   <link rel="canonical" href="https://acikuet.org/resources.html">
   
@@ -23,29 +23,44 @@
   <meta name="twitter:title" content="Technical Resources & Concrete Mix Design Calculator | ACI KUET">
   <meta name="twitter:description" content="Interactive ACI 211.1 concrete trial mix proportions calculator, civil engineering software roadmaps, and technical papers.">
   <meta name="twitter:image" content="https://acikuet.org/images/hero-group-photo.webp">
-  <link rel="icon" href="images/aci-kuet-official-logo.webp" type="image/webp">
+    <!-- Favicon with Solid White Circular Backing (Dark Mode Proof for Browser Tabs) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="shortcut icon" href="images/favicon.ico">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="css/styles.css?v=6.1">
+  <link rel="stylesheet" href="css/styles.css?v=8.6">
 </head>
 <body>
 
-  <!-- Main Slim White Navbar -->
-    <!-- Main Slim White Navbar -->
+    <!-- Persistent Sticky Top Ribbon (Stays pinned at top as page scrolls) -->
+  <div class="persistent-top-ribbon">
+    <div class="top-ribbon-inner">
+      <span>ACI KUET Student Chapter</span>
+    </div>
+  </div>
+
+  <!-- Main Slim White Navbar (0.8x Compact, Logo shifted to far left, 3-step stacked brand) -->
   <header class="main-header">
     <div class="navbar-container">
       <nav class="navbar">
-        <!-- Far Left: Official Logo + Text -->
+        <!-- Far Left: Official Logo with Solid White Backing + 3-Step Stacked Text -->
         <a href="index.html" class="nav-brand">
-          <img src="images/aci-kuet-official-logo.webp" alt="ACI KUET Official Logo" class="nav-brand-logo">
-          <span class="nav-brand-text">
-            <span class="brand-aci">ACI</span> <span class="brand-kuet">KUET</span> <span class="brand-sub">Student Chapter</span>
+          <div class="nav-brand-logo-box">
+            <img src="images/aci-kuet-official-logo.webp" alt="ACI KUET Official Logo" class="nav-brand-logo">
+          </div>
+          <span class="nav-brand-stacked">
+            <span class="brand-step-1">ACI KUET</span>
+            <span class="brand-step-2">STUDENT</span>
+            <span class="brand-step-3">CHAPTER</span>
           </span>
         </a>
 
-        <!-- Right Side: Navigation Menu -->
+        <!-- Right Side: Navigation Menu (0.8x compact, bold on click/active) -->
         <ul class="nav-menu">
           <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
           
@@ -74,7 +89,7 @@
           <li class="nav-item"><a href="achievements.html" class="nav-link">Achievements</a></li>
           <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>
           <li class="nav-item"><a href="resources.html" class="nav-link active">Resources</a></li>
-          <li class="nav-item"><a href="verify-certificate.html" class="nav-link"><i class="fa-solid fa-certificate"></i> Verify Certificate</a></li>
+          <li class="nav-item"><a href="verify-certificate.html" class="nav-link">Verify Certificate</a></li>
           <li class="nav-item"><a href="sponsors.html" class="nav-link">Sponsors</a></li>
           <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
 
@@ -120,7 +135,7 @@
       <div class="section-clean-head">
         <span class="section-tag">Interactive Engineering Tool</span>
         <h2 class="section-title">ACI 211.1 Concrete Mix Proportioning Calculator</h2>
-        <p style="color: #000000; font-size: 1.05rem; margin-top: 0.5rem; max-width: 800px; margin-inline: auto;">
+        <p style="color: #052E16; font-size: 1.05rem; margin-top: 0.5rem; max-width: 800px; margin-inline: auto;">
           Quickly compute trial batching proportions for standard cylinder casting, laboratory trials, and competition mixes per ACI 211.1 recommendations.
         </p>
       </div>
@@ -171,77 +186,125 @@
         </form>
 
         <div id="mix-calc-output" class="mix-result-box" style="display: block;">
-          <h4 style="font-size: 1.25rem; font-weight: 900; color: #166534; margin-bottom: 0.5rem;">
+          <h4 style="font-size: 1.25rem; font-weight: 900; color: #15803D; margin-bottom: 0.5rem;">
             Estimated Batch Proportions per 1.0 m³ (SSD Condition):
           </h4>
-          <p style="font-size: 0.92rem; color: #000000; margin-bottom: 1rem;">
+          <p style="font-size: 0.92rem; color: #052E16; margin-bottom: 1.25rem;">
             Recommended Water-Cement Ratio: <strong id="res-wc">0.48</strong> | Estimated Density: <strong>2380 kg/m³</strong>
           </p>
 
-          <table class="mix-result-table">
-            <thead>
-              <tr>
-                <th>Component Material</th>
-                <th>Estimated Weight (kg)</th>
-                <th>Standard Lab Tolerance</th>
-                <th>Field Batching Recommendation</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Portland Composite Cement (PCC / OPC)</strong></td>
-                <td id="res-cement"><strong>395 kg</strong></td>
-                <td>&plusmn; 1.0%</td>
-                <td>Grade 42.5N / 52.5N Fresh Dry Binder</td>
-              </tr>
-              <tr>
-                <td><strong>Mixing Water (Potable)</strong></td>
-                <td id="res-water"><strong>190 kg (Litres)</strong></td>
-                <td>&plusmn; 1.0%</td>
-                <td>pH 6.5 - 8.0, Low Sulphate/Chloride</td>
-              </tr>
-              <tr>
-                <td><strong>Fine Aggregate (Sylhet Sand / River Sand)</strong></td>
-                <td id="res-sand"><strong>745 kg</strong></td>
-                <td>&plusmn; 2.0%</td>
-                <td>Fineness Modulus (FM) ~ 2.6 - 2.8</td>
-              </tr>
-              <tr>
-                <td><strong>Coarse Aggregate (Crushed Granite / Stone)</strong></td>
-                <td id="res-stone"><strong>1050 kg</strong></td>
-                <td>&plusmn; 2.0%</td>
-                <td>Clean, well-graded, Max Size 20 mm</td>
-              </tr>
-            </tbody>
-          </table>
-          <div style="font-size: 0.82rem; color: #000000; margin-top: 1rem; font-style: italic;">
+          <!-- Visual Material Proportion Distribution Bar & Graph -->
+          <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; padding: 1.25rem; margin-bottom: 1.5rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
+              <span style="font-size: 0.85rem; font-weight: 800; text-transform: uppercase; color: #15803D; letter-spacing: 0.5px;">
+                <i class="fa-solid fa-chart-pie"></i> Volumetric &amp; Weight Proportion Graph
+              </span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 600;">Total Batch: 100% SSD Matrix</span>
+            </div>
+
+            <!-- Proportional Stacked Bar Chart -->
+            <div style="display: flex; width: 100%; height: 26px; border: 1px solid #cbd5e1; overflow: hidden; margin-bottom: 0.85rem;">
+              <div id="bar-cement" style="width: 16.6%; background: #15803D; transition: width 0.4s ease;" title="Cement"></div>
+              <div id="bar-water" style="width: 8.0%; background: #0284c7; transition: width 0.4s ease;" title="Water"></div>
+              <div id="bar-sand" style="width: 31.3%; background: #d97706; transition: width 0.4s ease;" title="Fine Aggregate"></div>
+              <div id="bar-stone" style="width: 44.1%; background: #475569; transition: width 0.4s ease;" title="Coarse Aggregate"></div>
+            </div>
+
+            <!-- Chart Legend with Percentages -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.65rem; font-size: 0.82rem;">
+              <div style="display: flex; align-items: center; gap: 0.4rem;">
+                <span style="width: 12px; height: 12px; background: #15803D; display: inline-block;"></span>
+                <span>Cement: <strong id="pct-cement">16.6%</strong></span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.4rem;">
+                <span style="width: 12px; height: 12px; background: #0284c7; display: inline-block;"></span>
+                <span>Water: <strong id="pct-water">8.0%</strong></span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.4rem;">
+                <span style="width: 12px; height: 12px; background: #d97706; display: inline-block;"></span>
+                <span>Fine Agg: <strong id="pct-sand">31.3%</strong></span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.4rem;">
+                <span style="width: 12px; height: 12px; background: #475569; display: inline-block;"></span>
+                <span>Coarse Agg: <strong id="pct-stone">44.1%</strong></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mobile Swipeable Horizontal Sliding Table Container -->
+          <div style="margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+            <div style="font-size: 0.82rem; color: #15803D; font-weight: 700; display: flex; align-items: center; gap: 0.45rem;">
+              <i class="fa-solid fa-arrows-left-right"></i> Horizontal Table Swipe Enabled (Swipe Horizontally)
+            </div>
+            <div style="font-size: 0.78rem; color: #64748b;">Scroll right on mobile for tolerance &amp; notes &rarr;</div>
+          </div>
+
+          <div class="cuet-table-responsive" style="overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1.5px solid var(--border-light); margin-bottom: 1.25rem;">
+            <table class="mix-result-table" style="min-width: 620px; width: 100%; margin: 0;">
+              <thead>
+                <tr>
+                  <th>Component Material</th>
+                  <th>Estimated Weight (kg)</th>
+                  <th>Standard Lab Tolerance</th>
+                  <th>Field Batching Recommendation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Portland Composite Cement (PCC / OPC)</strong></td>
+                  <td id="res-cement"><strong>395 kg</strong></td>
+                  <td>&plusmn; 1.0%</td>
+                  <td>Grade 42.5N / 52.5N Fresh Dry Binder</td>
+                </tr>
+                <tr>
+                  <td><strong>Mixing Water (Potable)</strong></td>
+                  <td id="res-water"><strong>190 kg (Litres)</strong></td>
+                  <td>&plusmn; 1.0%</td>
+                  <td>pH 6.5 - 8.0, Low Sulphate/Chloride</td>
+                </tr>
+                <tr>
+                  <td><strong>Fine Aggregate (Sylhet Sand / River Sand)</strong></td>
+                  <td id="res-sand"><strong>745 kg</strong></td>
+                  <td>&plusmn; 2.0%</td>
+                  <td>Fineness Modulus (FM) ~ 2.6 - 2.8</td>
+                </tr>
+                <tr>
+                  <td><strong>Coarse Aggregate (Crushed Granite / Stone)</strong></td>
+                  <td id="res-stone"><strong>1050 kg</strong></td>
+                  <td>&plusmn; 2.0%</td>
+                  <td>Clean, well-graded, Max Size 20 mm</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="font-size: 0.82rem; color: #052E16; margin-top: 1rem; font-style: italic;">
             * Note: These are initial volumetric trial batch estimates according to ACI 211.1 guidelines. Lab trial casting and slump verification must be executed in the KUET Concrete Materials Lab before structural casting.
           </div>
 
           <!-- Print & PDF Export Toolbar -->
           <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: flex-end; margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border-color);">
-            <button type="button" id="btn-print-mix" onclick="printMixBatchSheet()" class="btn btn-outline" style="border-radius: 0; background: #ffffff; color: #166534; border: 1.5px solid #166534; font-weight: 700; padding: 0.65rem 1.35rem; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem;">
+            <button type="button" id="btn-print-mix" onclick="printMixBatchSheet()" class="btn btn-outline" style="border-radius: 0; background: #ffffff; color: #15803D; border: 1.5px solid #15803D; font-weight: 700; padding: 0.65rem 1.35rem; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem;">
               <i class="fa-solid fa-print"></i> Print Lab Batch Sheet
             </button>
-            <button type="button" id="btn-export-pdf" onclick="printMixBatchSheet()" class="btn btn-primary" style="border-radius: 0; background: #166534; color: #ffffff; font-weight: 700; padding: 0.65rem 1.35rem; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem;">
+            <button type="button" id="btn-export-pdf" onclick="printMixBatchSheet()" class="btn btn-primary" style="border-radius: 0; background: #15803D; color: #ffffff; font-weight: 700; padding: 0.65rem 1.35rem; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem;">
               <i class="fa-solid fa-file-pdf"></i> Export Printable Report (PDF)
             </button>
           </div>
         </div>
       </div>
 
-      <!-- Section 2: International Codes & Design Standards -->
-      <div class="section-clean-head" style="margin-top: 5rem;">
+      <!-- Section 2: International Codes & Design Standards (Pops out from inside) -->
+      <div class="section-clean-head" data-animate="pop-inside" style="margin-top: 5rem;">
         <span class="section-tag">Building Codes &amp; Design Criteria</span>
         <h2 class="section-title">International Concrete Codes &amp; Specifications Directory</h2>
-        <p style="color: #000000; font-size: 1.05rem; margin-top: 0.5rem; max-width: 800px; margin-inline: auto;">
+        <p style="color: #052E16; font-size: 1.05rem; margin-top: 0.5rem; max-width: 800px; margin-inline: auto;">
           Authoritative technical standards codified by the American Concrete Institute (ACI) and the Bangladesh National Building Code (BNBC).
         </p>
       </div>
 
       <div class="code-card-grid">
-        <!-- 1. ACI 318-19 -->
-        <div class="code-card">
+        <!-- 1. ACI 318-19 (Slides from Right) -->
+        <div class="code-card" data-animate="slide-right">
           <div>
             <span class="code-badge">Structural Design Standard</span>
             <h3>ACI 318-19: Building Code Requirements for Structural Concrete</h3>
@@ -260,8 +323,8 @@
           </a>
         </div>
 
-        <!-- 2. ACI 211.1-91 -->
-        <div class="code-card">
+        <!-- 2. ACI 211.1-91 (Slides from Right) -->
+        <div class="code-card" data-animate="slide-right">
           <div>
             <span class="code-badge">Mix Proportioning Guide</span>
             <h3>ACI 211.1-91: Standard Practice for Selecting Proportions for Concrete</h3>
@@ -280,8 +343,8 @@
           </a>
         </div>
 
-        <!-- 3. BNBC 2020 Part 6 -->
-        <div class="code-card">
+        <!-- 3. BNBC 2020 Part 6 (Slides from Left) -->
+        <div class="code-card" data-animate="slide-left">
           <div>
             <span class="code-badge">National Building Code</span>
             <h3>BNBC 2020: Part 6, Chapter 5 (Concrete Material &amp; Reinforcement)</h3>
@@ -300,8 +363,8 @@
           </a>
         </div>
 
-        <!-- 4. ASTM Standards -->
-        <div class="code-card">
+        <!-- 4. ASTM Standards (Slides from Left) -->
+        <div class="code-card" data-animate="slide-left">
           <div>
             <span class="code-badge">Laboratory Testing Series</span>
             <h3>ASTM Concrete &amp; Aggregate Test Standards Compendium</h3>
@@ -320,8 +383,8 @@
           </a>
         </div>
 
-        <!-- 5. ACI 301-20 -->
-        <div class="code-card">
+        <!-- 5. ACI 301-20 (Slides from Left) -->
+        <div class="code-card" data-animate="slide-left">
           <div>
             <span class="code-badge">Construction Specification</span>
             <h3>ACI 301-20: Specifications for Concrete Construction</h3>
@@ -340,8 +403,8 @@
           </a>
         </div>
 
-        <!-- 6. ACI 544.1R Fiber Concrete -->
-        <div class="code-card">
+        <!-- 6. ACI 544.1R Fiber Concrete (Slides from Left) -->
+        <div class="code-card" data-animate="slide-left">
           <div>
             <span class="code-badge">Advanced Materials</span>
             <h3>ACI 544.1R: State-of-the-Art Report on Fiber-Reinforced Concrete (FRC)</h3>
@@ -361,12 +424,12 @@
         </div>
       </div>
 
-      <!-- Mega Gateway to 95 Government Documents Portal -->
-      <div style="background: #f0fdf4; border: 2px solid #166534; padding: 2.5rem; margin: 3.5rem 0; box-shadow: 6px 6px 0px rgba(22, 101, 52, 0.9);">
+      <!-- Mega Gateway to 95 Government Documents Portal (Emerges from Within) -->
+      <div data-animate="pop-inside" style="background: #f0fdf4; border: 2px solid #15803D; padding: 2.5rem; margin: 3.5rem 0; box-shadow: 6px 6px 0px rgba(22, 101, 52, 0.9);">
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
           <div style="max-width: 750px;">
-            <span style="background: #166534; color: #ffffff; font-size: 0.8rem; font-weight: 800; padding: 0.35rem 0.85rem; text-transform: uppercase; letter-spacing: 1px; display: inline-block; margin-bottom: 0.75rem;">NEW &bull; OFFICIAL KNOWLEDGE BASE</span>
-            <h3 style="font-family: 'Merriweather', serif; font-size: 1.8rem; font-weight: 900; color: #000000; margin-bottom: 0.5rem;">
+            <span style="background: #15803D; color: #ffffff; font-size: 0.8rem; font-weight: 800; padding: 0.35rem 0.85rem; text-transform: uppercase; letter-spacing: 1px; display: inline-block; margin-bottom: 0.75rem;">NEW &bull; OFFICIAL KNOWLEDGE BASE</span>
+            <h3 style="font-family: 'Merriweather', serif; font-size: 1.8rem; font-weight: 900; color: #052E16; margin-bottom: 0.5rem;">
               Civil Engineering &amp; Building Estimation Knowledge Base (95 Official Documents)
             </h3>
             <p style="font-size: 1rem; color: #14532d; line-height: 1.6; margin: 0;">
@@ -379,20 +442,20 @@
         </div>
       </div>
 
-      <!-- Section 2.1: KUET Departmental Estimation & Materials Reference Archive -->
-      <div class="section-clean-head" style="margin-top: 5rem;">
+      <!-- Section 2.1: KUET Departmental Estimation & Materials Reference Archive (Rises from Bottom) -->
+      <div class="section-clean-head" data-animate="slide-bottom" style="margin-top: 5rem;">
         <span class="section-tag">KUET Civil Engineering Archive</span>
         <h2 class="section-title">Departmental Course Manuals &amp; Estimation References</h2>
-        <p style="color: #000000; font-size: 1.05rem; margin-top: 0.5rem; max-width: 820px; margin-inline: auto;">
+        <p style="color: #052E16; font-size: 1.05rem; margin-top: 0.5rem; max-width: 820px; margin-inline: auto;">
           Curated undergraduate lecture manuals, quantity estimation workbooks, and laboratory procedures from the Department of Civil Engineering, KUET. Protected by ACI Student Member Access.
         </p>
       </div>
 
       <div class="code-card-grid">
-        <!-- 1. KUET CE Estimation, Costing & Rate Analysis -->
-        <div class="code-card" style="border-top: 4px solid #166534;">
+        <!-- 1. KUET CE Estimation, Costing & Rate Analysis (Rises from Bottom with Green Border) -->
+        <div class="code-card" data-animate="slide-bottom" style="border: 1.5px solid #15803D; border-top: 4px solid #15803D;">
           <div>
-            <span class="code-badge" style="background: #f0fdf4; color: #166534;">Departmental Course Manual</span>
+            <span class="code-badge" style="background: #f0fdf4; color: #15803D;">Departmental Course Manual</span>
             <h3>KUET CE: Estimation, Costing &amp; Quantity Analysis Manual</h3>
             <p>
               Comprehensive practical guide to detailed quantity surveying, Bar Bending Schedule (BBS) calculations for beams, slabs, and columns, materials volumetric calculations (cement, sand, stone ballast), and PWD Schedule of Rates.
@@ -409,10 +472,10 @@
           </button>
         </div>
 
-        <!-- 2. KUET Concrete & Materials Testing Lab Manual -->
-        <div class="code-card" style="border-top: 4px solid #166534;">
+        <!-- 2. KUET Concrete & Materials Testing Lab Manual (Rises from Bottom with Green Border) -->
+        <div class="code-card" data-animate="slide-bottom" style="border: 1.5px solid #15803D; border-top: 4px solid #15803D;">
           <div>
-            <span class="code-badge" style="background: #f0fdf4; color: #166534;">Laboratory Manual (CE 2100)</span>
+            <span class="code-badge" style="background: #f0fdf4; color: #15803D;">Laboratory Manual (CE 2100)</span>
             <h3>KUET Materials Lab: Concrete Testing &amp; Quality Control Handbook</h3>
             <p>
               Standard operating procedures (SOP) for experiments conducted in the KUET Concrete Materials Lab: Fineness Modulus (FM) of Sylhet sand, aggregate specific gravity, absorption testing, slump test, and cylinder compressive strength.
@@ -429,10 +492,10 @@
           </button>
         </div>
 
-        <!-- 3. BNBC 2020 Gazetted Part 6 Structural Design -->
-        <div class="code-card" style="border-top: 4px solid #166534;">
+        <!-- 3. BNBC 2020 Gazetted Part 6 Structural Design (Rises from Bottom with Green Border) -->
+        <div class="code-card" data-animate="slide-bottom" style="border: 1.5px solid #15803D; border-top: 4px solid #15803D;">
           <div>
-            <span class="code-badge" style="background: #f0fdf4; color: #166534;">Bangladesh National Code</span>
+            <span class="code-badge" style="background: #f0fdf4; color: #15803D;">Bangladesh National Code</span>
             <h3>BNBC 2020: Part 6 Structural Design Compendium (Gazetted)</h3>
             <p>
               Official compilation of BNBC 2020 Part 6 covering structural design standards for buildings in Bangladesh, including Wind Loads (Chapter 2), Earthquake Design (Chapter 3), Soils &amp; Foundations (Chapter 4), and Concrete (Chapter 5).
@@ -450,78 +513,110 @@
         </div>
       </div>
 
-      <!-- Section 3: Software Mastery Roadmaps -->
-      <div class="section-clean-head" style="margin-top: 5rem;">
+      <!-- Section 3: Software Mastery Roadmaps (Pops out from Inside) -->
+      <div class="section-clean-head" data-animate="pop-inside" style="margin-top: 5rem;">
         <span class="section-tag">Digital Engineering Toolkit</span>
         <h2 class="section-title">Civil Engineering Software Learning Roadmaps</h2>
-        <p style="color: #000000; font-size: 1.05rem; margin-top: 0.5rem; max-width: 800px; margin-inline: auto;">
+        <p style="color: #052E16; font-size: 1.05rem; margin-top: 0.5rem; max-width: 800px; margin-inline: auto;">
           Curated step-by-step pathways for students to achieve industry-ready competence in computational structural modeling, finite element analysis, and building information modeling (BIM).
         </p>
       </div>
 
       <div class="software-grid">
-        <!-- 1. ETABS 21 -->
-        <div class="software-card">
-          <h3>CSI ETABS 21</h3>
-          <div class="software-tag">High-Rise Analysis &amp; RCC Design</div>
-          <p style="font-size: 0.92rem; color: #000000; line-height: 1.6; margin-bottom: 1.25rem;">
-            Primary industry software for 3D modeling of multistorey commercial towers, seismic response spectrum, wind tunnel simulations, and automated reinforcement scheduling.
-          </p>
-          <ul class="software-topics">
-            <li>Grid generation &amp; story data assignment</li>
-            <li>Diaphragm constraints &amp; mass center calculation</li>
-            <li>BNBC 2020 Equivalent Static vs Response Spectrum</li>
-            <li>P-Delta non-linear geometric stiffness effects</li>
-            <li>Shear wall design (Pier &amp; Spandrel detailing)</li>
-          </ul>
+        <!-- 1. ETABS 21 (Rises from Bottom, Pure English) -->
+        <div class="software-card" data-animate="slide-bottom" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 0; border: 1.5px solid #15803D;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+              <h3 style="margin: 0;">CSI ETABS 21</h3>
+              <span style="background: #f0fdf4; color: #15803D; border: 1px solid #bbf7d0; font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.5rem; font-family: 'Space Mono', monospace;">Zero to Pro &bull; Beginner to Pro</span>
+            </div>
+            <div class="software-tag">High-Rise Analysis &amp; RCC Design</div>
+            <p style="font-size: 0.92rem; color: #052E16; line-height: 1.6; margin-bottom: 1.25rem;">
+              Primary industry software for 3D modeling of multistorey commercial towers, seismic response spectrum, wind tunnel simulations, and automated reinforcement scheduling.
+            </p>
+            <ul class="software-topics">
+              <li>Grid generation &amp; story data assignment</li>
+              <li>Diaphragm constraints &amp; mass center calculation</li>
+              <li>BNBC 2020 Equivalent Static vs Response Spectrum</li>
+              <li>P-Delta non-linear geometric stiffness effects</li>
+              <li>Shear wall design (Pier &amp; Spandrel detailing)</li>
+            </ul>
+          </div>
+          <a href="learn-etabs.html" class="btn-reinforce" style="margin-top: 1.5rem; width: 100%; justify-content: center; padding: 0.85rem; font-size: 0.95rem; border-radius: 0;">
+            <i class="fa-solid fa-graduation-cap"></i> Explore ETABS Roadmap &rarr;
+          </a>
         </div>
 
-        <!-- 2. CSI SAP2000 -->
-        <div class="software-card">
-          <h3>CSI SAP2000</h3>
-          <div class="software-tag">General FEM, Trusses &amp; Bridges</div>
-          <p style="font-size: 0.92rem; color: #000000; line-height: 1.6; margin-bottom: 1.25rem;">
-            Finite element powerhouse for arbitrary 2D/3D civil geometries: space trusses, cable-stayed spans, culverts, transmission towers, and industrial precast frames.
-          </p>
-          <ul class="software-topics">
-            <li>Joint restraints, springs &amp; support releases</li>
-            <li>Shell element meshing &amp; out-of-plane bending</li>
-            <li>Moving vehicular loads (AASHTO / Roads &amp; Highways)</li>
-            <li>Eigenvalue modal frequency extraction</li>
-            <li>Time-history earthquake ground motion analysis</li>
-          </ul>
+        <!-- 2. CSI SAP2000 (Rises from Bottom, Pure English) -->
+        <div class="software-card" data-animate="slide-bottom" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 0; border: 1.5px solid #15803D;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+              <h3 style="margin: 0;">CSI SAP2000</h3>
+              <span style="background: #f0fdf4; color: #15803D; border: 1px solid #bbf7d0; font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.5rem; font-family: 'Space Mono', monospace;">Zero to Pro &bull; Beginner to Pro</span>
+            </div>
+            <div class="software-tag">General FEM, Trusses &amp; Bridges</div>
+            <p style="font-size: 0.92rem; color: #052E16; line-height: 1.6; margin-bottom: 1.25rem;">
+              Finite element powerhouse for arbitrary 2D/3D civil geometries: space trusses, cable-stayed spans, culverts, transmission towers, and industrial precast frames.
+            </p>
+            <ul class="software-topics">
+              <li>Joint restraints, springs &amp; support releases</li>
+              <li>Shell element meshing &amp; out-of-plane bending</li>
+              <li>Moving vehicular loads (AASHTO / Roads &amp; Highways)</li>
+              <li>Eigenvalue modal frequency extraction</li>
+              <li>Time-history earthquake ground motion analysis</li>
+            </ul>
+          </div>
+          <a href="learn-sap2000.html" class="btn-reinforce" style="margin-top: 1.5rem; width: 100%; justify-content: center; padding: 0.85rem; font-size: 0.95rem; border-radius: 0;">
+            <i class="fa-solid fa-graduation-cap"></i> Explore SAP2000 Roadmap &rarr;
+          </a>
         </div>
 
-        <!-- 3. CSI SAFE -->
-        <div class="software-card">
-          <h3>CSI SAFE</h3>
-          <div class="software-tag">Foundations, Footings &amp; Slabs</div>
-          <p style="font-size: 0.92rem; color: #000000; line-height: 1.6; margin-bottom: 1.25rem;">
-            Specialized tool for foundation engineering, mat/raft foundations, pile caps, subgrade soil spring stiffness distribution, and punching shear design.
-          </p>
-          <ul class="software-topics">
-            <li>Modulus of subgrade reaction (k-value) modeling</li>
-            <li>Isolated, combined &amp; strap footing design</li>
-            <li>Mat foundation with nonlinear tension-free soil</li>
-            <li>Column punching shear critical perimeter check</li>
-            <li>Post-tensioned tendon profiling &amp; stress losses</li>
-          </ul>
+        <!-- 3. CSI SAFE (Rises from Bottom, Pure English) -->
+        <div class="software-card" data-animate="slide-bottom" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 0; border: 1.5px solid #15803D;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+              <h3 style="margin: 0;">CSI SAFE</h3>
+              <span style="background: #f0fdf4; color: #15803D; border: 1px solid #bbf7d0; font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.5rem; font-family: 'Space Mono', monospace;">Zero to Pro &bull; Beginner to Pro</span>
+            </div>
+            <div class="software-tag">Foundations, Footings &amp; Slabs</div>
+            <p style="font-size: 0.92rem; color: #052E16; line-height: 1.6; margin-bottom: 1.25rem;">
+              Specialized tool for foundation engineering, mat/raft foundations, pile caps, subgrade soil spring stiffness distribution, and punching shear design.
+            </p>
+            <ul class="software-topics">
+              <li>Modulus of subgrade reaction (k-value) modeling</li>
+              <li>Isolated, combined &amp; strap footing design</li>
+              <li>Mat foundation with nonlinear tension-free soil</li>
+              <li>Column punching shear critical perimeter check</li>
+              <li>Post-tensioned tendon profiling &amp; stress losses</li>
+            </ul>
+          </div>
+          <a href="learn-safe.html" class="btn-reinforce" style="margin-top: 1.5rem; width: 100%; justify-content: center; padding: 0.85rem; font-size: 0.95rem; border-radius: 0;">
+            <i class="fa-solid fa-graduation-cap"></i> Explore CSI SAFE Roadmap &rarr;
+          </a>
         </div>
 
-        <!-- 4. AutoCAD & Detailing -->
-        <div class="software-card">
-          <h3>AutoCAD Structural Drafting</h3>
-          <div class="software-tag">Engineering Working Drawings &amp; Rebar Schedules</div>
-          <p style="font-size: 0.92rem; color: #000000; line-height: 1.6; margin-bottom: 1.25rem;">
-            The foundation of site communication. Mastery in structural layout plans, beam schedules, column rebar bend diagrams, and bar bending schedule (BBS) calculation.
-          </p>
-          <ul class="software-topics">
-            <li>Dynamic blocks, layers &amp; standard lineweights</li>
-            <li>Beam longitudinal elevation &amp; section cross-cuts</li>
-            <li>Column ties, crossties &amp; splice confinement zones</li>
-            <li>Foundation pile layout coordinates &amp; grids</li>
-            <li>Automated Bar Bending Schedule (BBS) spreadsheet link</li>
-          </ul>
+        <!-- 4. AutoCAD & Detailing (Rises from Bottom, Pure English) -->
+        <div class="software-card" data-animate="slide-bottom" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 0; border: 1.5px solid #15803D;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+              <h3 style="margin: 0;">AutoCAD Structural Drafting</h3>
+              <span style="background: #f0fdf4; color: #15803D; border: 1px solid #bbf7d0; font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.5rem; font-family: 'Space Mono', monospace;">Zero to Pro &bull; Beginner to Pro</span>
+            </div>
+            <div class="software-tag">Engineering Working Drawings &amp; Rebar Schedules</div>
+            <p style="font-size: 0.92rem; color: #052E16; line-height: 1.6; margin-bottom: 1.25rem;">
+              The foundation of site communication. Mastery in structural layout plans, beam schedules, column rebar bend diagrams, and bar bending schedule (BBS) calculation.
+            </p>
+            <ul class="software-topics">
+              <li>Dynamic blocks, layers &amp; standard lineweights</li>
+              <li>Beam longitudinal elevation &amp; section cross-cuts</li>
+              <li>Column ties, crossties &amp; splice confinement zones</li>
+              <li>Foundation pile layout coordinates &amp; grids</li>
+              <li>Automated Bar Bending Schedule (BBS) spreadsheet link</li>
+            </ul>
+          </div>
+          <a href="learn-autocad.html" class="btn-reinforce" style="margin-top: 1.5rem; width: 100%; justify-content: center; padding: 0.85rem; font-size: 0.95rem; border-radius: 0;">
+            <i class="fa-solid fa-graduation-cap"></i> Explore AutoCAD Roadmap &rarr;
+          </a>
         </div>
       </div>
 
@@ -530,13 +625,13 @@
 
   <!-- Member Access Verification Modal (Protected Engineering Library) -->
   <div id="member-gate-modal" class="member-modal-overlay" style="display: none; position: fixed; inset: 0; background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(4px); z-index: 9999; align-items: center; justify-content: center; padding: 1.5rem;">
-    <div class="member-modal-card" style="background: #ffffff; width: 100%; max-width: 520px; border: 2px solid #166534; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); border-radius: 0;">
+    <div class="member-modal-card" style="background: #ffffff; width: 100%; max-width: 520px; border: 2px solid #15803D; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); border-radius: 0;">
       <div class="member-modal-header" style="background: #f0fdf4; border-bottom: 1.5px solid #bbf7d0; padding: 1.25rem 1.75rem; display: flex; align-items: center; justify-content: space-between;">
         <div style="display: flex; align-items: center; gap: 0.75rem;">
           <img src="images/aci-kuet-official-logo.webp" alt="ACI KUET" style="height: 38px; width: auto;">
           <div>
-            <h4 style="margin: 0; font-size: 1.15rem; font-weight: 800; color: #000000;">Member Access Verification</h4>
-            <div style="font-size: 0.75rem; color: #166534; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">ACI Student Chapter &bull; KUET</div>
+            <h4 style="margin: 0; font-size: 1.15rem; font-weight: 800; color: #052E16;">Member Access Verification</h4>
+            <div style="font-size: 0.75rem; color: #15803D; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">ACI Student Chapter &bull; KUET</div>
           </div>
         </div>
         <button type="button" onclick="closeMemberGateModal()" style="background: none; border: none; font-size: 1.35rem; color: #64748b; cursor: pointer; padding: 0.25rem;">
@@ -546,20 +641,20 @@
       
       <div class="member-modal-body" style="padding: 2rem 1.75rem 1.5rem;">
         <p style="font-size: 0.95rem; color: #334155; line-height: 1.6; margin-bottom: 1.5rem;">
-          The selected technical document (<strong id="modal-target-doc-name" style="color: #166534;">Manual</strong>) is reserved for verified student members of the <strong>ACI Student Chapter at KUET</strong>. Enter your student roll or Member ID to unlock.
+          The selected technical document (<strong id="modal-target-doc-name" style="color: #15803D;">Manual</strong>) is reserved for verified student members of the <strong>ACI Student Chapter at KUET</strong>. Enter your student roll or Member ID to unlock.
         </p>
 
         <form id="member-verify-form" onsubmit="handleMemberVerification(event)">
           <div style="margin-bottom: 1.25rem;">
-            <label style="display: block; font-size: 0.88rem; font-weight: 700; color: #000000; margin-bottom: 0.4rem;">KUET Student Roll or ACI Member ID *</label>
+            <label style="display: block; font-size: 0.88rem; font-weight: 700; color: #052E16; margin-bottom: 0.4rem;">KUET Student Roll or ACI Member ID *</label>
             <input type="text" id="member-input-roll" class="verify-input" style="width: 100%; border-radius: 0;" placeholder="e.g. 2301044 or 2301045" required>
           </div>
           <div style="margin-bottom: 1.25rem;">
-            <label style="display: block; font-size: 0.88rem; font-weight: 700; color: #000000; margin-bottom: 0.4rem;">Access Passkey *</label>
+            <label style="display: block; font-size: 0.88rem; font-weight: 700; color: #052E16; margin-bottom: 0.4rem;">Access Passkey *</label>
             <input type="password" id="member-input-pass" class="verify-input" style="width: 100%; border-radius: 0;" placeholder="Default passkey: aci2026 or your roll" required>
           </div>
           <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-size: 0.88rem; color: #475569;">
-            <input type="checkbox" id="member-remember" checked style="accent-color: #166534; cursor: pointer;">
+            <input type="checkbox" id="member-remember" checked style="accent-color: #15803D; cursor: pointer;">
             <label for="member-remember" style="cursor: pointer;">Remember access on this browser (Persistent Session)</label>
           </div>
           <div id="member-verify-error" style="display: none; color: #dc2626; background: #fef2f2; border: 1px solid #fecaca; padding: 0.65rem 0.85rem; font-size: 0.85rem; margin-bottom: 1rem; font-weight: 600;"></div>
@@ -570,7 +665,7 @@
       </div>
 
       <div style="background: #f8fafc; border-top: 1px solid #e2e8f0; padding: 1rem 1.75rem; font-size: 0.82rem; color: #64748b; text-align: center;">
-        Need credentials? Apply via <a href="about-membership.html" style="color: #166534; font-weight: 700;">Student Membership</a> or email <strong>aci.kuet.student.chapter@gmail.com</strong>
+        Need credentials? Apply via <a href="about-membership.html" style="color: #15803D; font-weight: 700;">Student Membership</a> or email <strong>aci.kuet.student.chapter@gmail.com</strong>
       </div>
     </div>
   </div>
@@ -582,9 +677,9 @@
         <div class="footer-left-club-intro">
           <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.15rem;">
             <img src="images/aci-kuet-official-logo.webp" alt="ACI KUET Logo" style="height: 52px; width: auto; object-fit: contain;">
-            <h3 style="margin: 0; font-size: 1.4rem; font-weight: 900; color: #000000;">ACI KUET Student Chapter</h3>
+            <h3 style="margin: 0; font-size: 1.4rem; font-weight: 900; color: #052E16;">ACI KUET Student Chapter</h3>
           </div>
-          <p style="color: #000000; font-weight: 500; font-size: 0.95rem; line-height: 1.75;">
+          <p style="color: #052E16; font-weight: 500; font-size: 0.95rem; line-height: 1.75;">
             Rooted in the Department of Civil Engineering at KUET and chartered by the American Concrete Institute (ACI), the ACI KUET Student Chapter is a dynamic platform for aspiring civil and materials engineers. We strive to cultivate hands-on innovation, sustainable construction practices, and leadership, connecting KUET students with nationwide industry networks and global engineering forums.
           </p>
           <div class="footer-social-row">
@@ -640,14 +735,14 @@
           <div>
             <h4 class="footer-col-title">Department Coordinates</h4>
             <div class="footer-location-block">
-              <i class="fa-solid fa-location-dot" style="color: #166534; font-size: 1.15rem; margin-top: 3px;"></i>
-              <p style="color: #000000; font-size: 0.92rem; line-height: 1.6; font-weight: 500;">
+              <i class="fa-solid fa-location-dot" style="color: #15803D; font-size: 1.15rem; margin-top: 3px;"></i>
+              <p style="color: #052E16; font-size: 0.92rem; line-height: 1.6; font-weight: 500;">
                 Department of Civil Engineering<br>
                 Khulna University of Engineering &amp; Technology (KUET)<br>
                 Teligati, Khulna-9203, Bangladesh.
               </p>
             </div>
-            <div style="margin-top: 1rem; font-size: 0.88rem; color: #000000; font-weight: 600; line-height: 1.6;">
+            <div style="margin-top: 1rem; font-size: 0.88rem; color: #052E16; font-weight: 600; line-height: 1.6;">
               <strong>Convener:</strong> Shakil Ilhan (2301044)<br>
               <strong>Email:</strong> aci.kuetsc@gmail.com
             </div>
@@ -655,7 +750,7 @@
         </div>
       </div>
 
-      <div class="footer-bottom-legal" style="text-align: center; border-top: 1px solid var(--border-light); padding-top: 2rem; color: #000000; font-size: 0.88rem; font-weight: 500;">
+      <div class="footer-bottom-legal" style="text-align: center; border-top: 1px solid var(--border-light); padding-top: 2rem; color: #052E16; font-size: 0.88rem; font-weight: 500;">
         <p>&copy; 2026 ACI Student Chapter, KUET. All rights reserved. Department of Civil Engineering, Khulna University of Engineering &amp; Technology.</p>
       </div>
     </div>
@@ -708,6 +803,33 @@
           document.getElementById('res-water').innerHTML = '<strong>' + Math.round(waterWeight * vol) + ' kg (L)</strong>';
           document.getElementById('res-sand').innerHTML = '<strong>' + Math.round(sandWeight * vol) + ' kg</strong>';
           document.getElementById('res-stone').innerHTML = '<strong>' + Math.round(stoneWeight * vol) + ' kg</strong>';
+
+          // Update Proportion Graph / Stacked Bar
+          const totalKg = cementWeight + waterWeight + sandWeight + stoneWeight;
+          const pCement = ((cementWeight / totalKg) * 100).toFixed(1);
+          const pWater = ((waterWeight / totalKg) * 100).toFixed(1);
+          const pSand = ((sandWeight / totalKg) * 100).toFixed(1);
+          const pStone = ((stoneWeight / totalKg) * 100).toFixed(1);
+
+          const barCement = document.getElementById('bar-cement');
+          const barWater = document.getElementById('bar-water');
+          const barSand = document.getElementById('bar-sand');
+          const barStone = document.getElementById('bar-stone');
+
+          if (barCement) barCement.style.width = pCement + '%';
+          if (barWater) barWater.style.width = pWater + '%';
+          if (barSand) barSand.style.width = pSand + '%';
+          if (barStone) barStone.style.width = pStone + '%';
+
+          const pctCement = document.getElementById('pct-cement');
+          const pctWater = document.getElementById('pct-water');
+          const pctSand = document.getElementById('pct-sand');
+          const pctStone = document.getElementById('pct-stone');
+
+          if (pctCement) pctCement.textContent = pCement + '%';
+          if (pctWater) pctWater.textContent = pWater + '%';
+          if (pctSand) pctSand.textContent = pSand + '%';
+          if (pctStone) pctStone.textContent = pStone + '%';
         });
       }
     });

@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#166534">
+  <meta name="theme-color" content="#15803D">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <title>Inside KUET Concrete Lab | Testing Equipment & Facilities</title>
+  <title>ACI KUET Student Chapter | Inside Concrete Lab</title>
   <meta name="description" content="Tour the state-of-the-art concrete and structural materials laboratory facilities at Department of Civil Engineering, KUET.">
   <link rel="canonical" href="https://acikuet.org/about-lab.html">
   
@@ -23,29 +23,44 @@
   <meta name="twitter:title" content="Inside KUET Concrete Lab | Testing Equipment & Facilities">
   <meta name="twitter:description" content="Tour the state-of-the-art concrete and structural materials laboratory facilities at Department of Civil Engineering, KUET.">
   <meta name="twitter:image" content="https://acikuet.org/images/hero-group-photo.webp">
-  <link rel="icon" href="images/aci-kuet-official-logo.webp" type="image/webp">
+    <!-- Favicon with Solid White Circular Backing (Dark Mode Proof for Browser Tabs) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="shortcut icon" href="images/favicon.ico">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="css/styles.css?v=6.1">
+  <link rel="stylesheet" href="css/styles.css?v=8.6">
 </head>
 <body>
 
-  <!-- Main Slim White Navbar -->
-    <!-- Main Slim White Navbar -->
+    <!-- Persistent Sticky Top Ribbon (Stays pinned at top as page scrolls) -->
+  <div class="persistent-top-ribbon">
+    <div class="top-ribbon-inner">
+      <span>ACI KUET Student Chapter</span>
+    </div>
+  </div>
+
+  <!-- Main Slim White Navbar (0.8x Compact, Logo shifted to far left, 3-step stacked brand) -->
   <header class="main-header">
     <div class="navbar-container">
       <nav class="navbar">
-        <!-- Far Left: Official Logo + Text -->
+        <!-- Far Left: Official Logo with Solid White Backing + 3-Step Stacked Text -->
         <a href="index.html" class="nav-brand">
-          <img src="images/aci-kuet-official-logo.webp" alt="ACI KUET Official Logo" class="nav-brand-logo">
-          <span class="nav-brand-text">
-            <span class="brand-aci">ACI</span> <span class="brand-kuet">KUET</span> <span class="brand-sub">Student Chapter</span>
+          <div class="nav-brand-logo-box">
+            <img src="images/aci-kuet-official-logo.webp" alt="ACI KUET Official Logo" class="nav-brand-logo">
+          </div>
+          <span class="nav-brand-stacked">
+            <span class="brand-step-1">ACI KUET</span>
+            <span class="brand-step-2">STUDENT</span>
+            <span class="brand-step-3">CHAPTER</span>
           </span>
         </a>
 
-        <!-- Right Side: Navigation Menu -->
+        <!-- Right Side: Navigation Menu (0.8x compact, bold on click/active) -->
         <ul class="nav-menu">
           <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
           
@@ -73,9 +88,8 @@
 
           <li class="nav-item"><a href="achievements.html" class="nav-link">Achievements</a></li>
           <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>
-          <li class="nav-item"><a href="estimation.html" class="nav-link">Civil Estimation</a></li>
           <li class="nav-item"><a href="resources.html" class="nav-link">Resources</a></li>
-          <li class="nav-item"><a href="verify-certificate.html" class="nav-link"><i class="fa-solid fa-certificate"></i> Verify Certificate</a></li>
+          <li class="nav-item"><a href="verify-certificate.html" class="nav-link">Verify Certificate</a></li>
           <li class="nav-item"><a href="sponsors.html" class="nav-link">Sponsors</a></li>
           <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
 
@@ -116,60 +130,60 @@
   <!-- Lab Overview Introduction -->
   <section style="background: var(--bg-cream); padding: 4.5rem 0 3.5rem;">
     <div class="container">
-      <div style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 3.5rem; align-items: center; margin-bottom: 4rem;">
-        <div>
-          <span style="display: inline-block; background: transparent; color: #166534; font-size: 0.82rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.75rem;">Experimental Research Hub</span>
-          <h2 style="font-size: 2.3rem; font-weight: 900; color: #000000; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 1.25rem;">
-            Where Advanced Concrete Science Meets Hands-on Engineering
-          </h2>
-          <p style="font-size: 1.05rem; line-height: 1.75; color: #000000; font-weight: 500; margin-bottom: 1.25rem;">
-            The Concrete and Materials Testing Laboratory of the Department of Civil Engineering at KUET is the primary experimental backbone for our undergraduate research, national competition prototyping, and industry consultancy verification.
-          </p>
-          <p style="font-size: 1rem; line-height: 1.75; color: #000000; font-weight: 500;">
-            Operating under rigorous ASTM International and British Standard (BS/EN) testing protocols, our chapter members gain direct access to hydraulic universal testing frames, ultrasonic integrity scanners, and precision micro-aggregate sieving apparatus.
-          </p>
-        </div>
+      <!-- 1. Text narrative: Where Advanced Concrete Science Meets Hands-on Engineering (Full-width) -->
+      <div data-animate="pop-inside" style="max-width: 900px; margin: 0 auto 3rem;">
+        <span style="display: inline-block; background: transparent; color: #15803D; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.75rem;">Experimental Research Hub</span>
+        <h2 style="font-size: 2.3rem; font-weight: 900; color: #052E16; letter-spacing: -0.5px; line-height: 1.25; margin-bottom: 1.25rem;">
+          Where Advanced Concrete Science Meets Hands-on Engineering
+        </h2>
+        <p style="font-size: 1.05rem; line-height: 1.8; color: #1e293b; font-weight: 500; margin-bottom: 1.25rem;">
+          The Concrete and Materials Testing Laboratory of the Department of Civil Engineering at KUET is the primary experimental backbone for our undergraduate research, national competition prototyping, and industry consultancy verification.
+        </p>
+        <p style="font-size: 1.02rem; line-height: 1.8; color: #1e293b; font-weight: 500;">
+          Operating under rigorous ASTM International and British Standard (BS/EN) testing protocols, our chapter members gain direct access to hydraulic universal testing frames, ultrasonic integrity scanners, and precision micro-aggregate sieving apparatus.
+        </p>
+      </div>
 
-        <div style="background: #ffffff; padding: 2.5rem; border-radius: var(--radius-lg); border: 1.5px solid var(--border-light); box-shadow: var(--shadow-sm);">
-          <h3 style="font-size: 1.35rem; font-weight: 900; color: #000000; margin-bottom: 1.25rem;">
-            <i class="fa-solid fa-microscope" style="color: #166534; margin-right: 0.5rem;"></i> Lab Capabilities at a Glance
-          </h3>
-          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.85rem; font-size: 0.95rem; color: #000000; font-weight: 600;">
-            <li style="display: flex; align-items: center; gap: 0.65rem;">
-              <i class="fa-solid fa-circle-check" style="color: #16a34a;"></i> 2000 kN Digital Universal Testing Machine (UTM)
-            </li>
-            <li style="display: flex; align-items: center; gap: 0.65rem;">
-              <i class="fa-solid fa-circle-check" style="color: #16a34a;"></i> Standard Slump, Flow Table &amp; Vebe Consistometer
-            </li>
-            <li style="display: flex; align-items: center; gap: 0.65rem;">
-              <i class="fa-solid fa-circle-check" style="color: #16a34a;"></i> Ultrasonic Pulse Velocity (UPV) Non-Destructive Rig
-            </li>
-            <li style="display: flex; align-items: center; gap: 0.65rem;">
-              <i class="fa-solid fa-circle-check" style="color: #16a34a;"></i> Temperature &amp; Humidity Controlled Curing Tanks
-            </li>
-            <li style="display: flex; align-items: center; gap: 0.65rem;">
-              <i class="fa-solid fa-circle-check" style="color: #16a34a;"></i> Motorized Sieve Shakers &amp; Aggregate Pycnometers
-            </li>
-            <li style="display: flex; align-items: center; gap: 0.65rem;">
-              <i class="fa-solid fa-circle-check" style="color: #16a34a;"></i> Schmidt Rebound Hammers &amp; Covermeters
-            </li>
-          </ul>
-        </div>
+      <!-- 2. Lab Capabilities at a Glance (Directly underneath, full-width architectural box) -->
+      <div data-animate="slide-bottom" style="max-width: 900px; margin: 0 auto 4.5rem; background: #ffffff; padding: 2.5rem; border-radius: 0; border: 1.5px solid var(--border-light); box-shadow: var(--shadow-sm);">
+        <h3 style="font-size: 1.35rem; font-weight: 900; color: #052E16; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.65rem;">
+          <i class="fa-solid fa-microscope" style="color: #15803D;"></i> Lab Capabilities at a Glance
+        </h3>
+        <ul style="list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.15rem; font-size: 0.95rem; color: #1e293b; font-weight: 600;">
+          <li style="display: flex; align-items: center; gap: 0.65rem;">
+            <i class="fa-solid fa-circle-check" style="color: #15803D; font-size: 1.1rem;"></i> 2000 kN Digital Universal Testing Machine (UTM)
+          </li>
+          <li style="display: flex; align-items: center; gap: 0.65rem;">
+            <i class="fa-solid fa-circle-check" style="color: #15803D; font-size: 1.1rem;"></i> Standard Slump, Flow Table &amp; Vebe Consistometer
+          </li>
+          <li style="display: flex; align-items: center; gap: 0.65rem;">
+            <i class="fa-solid fa-circle-check" style="color: #15803D; font-size: 1.1rem;"></i> Ultrasonic Pulse Velocity (UPV) Non-Destructive Rig
+          </li>
+          <li style="display: flex; align-items: center; gap: 0.65rem;">
+            <i class="fa-solid fa-circle-check" style="color: #15803D; font-size: 1.1rem;"></i> Temperature &amp; Humidity Controlled Curing Tanks
+          </li>
+          <li style="display: flex; align-items: center; gap: 0.65rem;">
+            <i class="fa-solid fa-circle-check" style="color: #15803D; font-size: 1.1rem;"></i> Motorized Sieve Shakers &amp; Aggregate Pycnometers
+          </li>
+          <li style="display: flex; align-items: center; gap: 0.65rem;">
+            <i class="fa-solid fa-circle-check" style="color: #15803D; font-size: 1.1rem;"></i> Schmidt Rebound Hammers &amp; Covermeters
+          </li>
+        </ul>
       </div>
 
       <!-- Equipment Showcase Grid -->
-      <div style="text-align: center; max-width: 760px; margin: 0 auto 3rem;">
-        <h2 style="font-size: 2.1rem; font-weight: 900; color: #000000; letter-spacing: -0.4px;">
+      <div data-animate="pop-inside" style="text-align: center; max-width: 760px; margin: 0 auto 3rem;">
+        <h2 style="font-size: 2.1rem; font-weight: 900; color: #052E16; letter-spacing: -0.4px;">
           Primary Laboratory Testing Equipment
         </h2>
-        <p style="font-size: 1.02rem; color: #000000; margin-top: 0.45rem; font-weight: 500;">
+        <p style="font-size: 1.02rem; color: #052E16; margin-top: 0.45rem; font-weight: 500;">
           Precision instruments utilized during ACI student chapter mix trials and competition sample preparation
         </p>
       </div>
 
       <div class="lab-equip-grid">
         <!-- Equipment 1 -->
-        <div class="lab-equip-card">
+        <div class="lab-equip-card" data-animate="slide-bottom" style="transition-delay: 0.1s;">
           <div class="lab-equip-badge">Compressive &amp; Flexural</div>
           <h3 class="lab-equip-title">Digital 2000 kN Universal Testing Machine (UTM)</h3>
           <p class="lab-equip-desc">
@@ -178,7 +192,7 @@
         </div>
 
         <!-- Equipment 2 -->
-        <div class="lab-equip-card">
+        <div class="lab-equip-card" data-animate="slide-bottom" style="transition-delay: 0.2s;">
           <div class="lab-equip-badge">Rheology &amp; Workability</div>
           <h3 class="lab-equip-title">ASTM Standard Slump Cone &amp; Flow Table</h3>
           <p class="lab-equip-desc">
@@ -187,7 +201,7 @@
         </div>
 
         <!-- Equipment 3 -->
-        <div class="lab-equip-card">
+        <div class="lab-equip-card" data-animate="slide-bottom" style="transition-delay: 0.3s;">
           <div class="lab-equip-badge">Hydration &amp; Curing</div>
           <h3 class="lab-equip-title">Thermostatically Controlled Curing Tanks</h3>
           <p class="lab-equip-desc">
@@ -196,7 +210,7 @@
         </div>
 
         <!-- Equipment 4 -->
-        <div class="lab-equip-card">
+        <div class="lab-equip-card" data-animate="slide-bottom" style="transition-delay: 0.1s;">
           <div class="lab-equip-badge">Non-Destructive Testing (NDT)</div>
           <h3 class="lab-equip-title">Ultrasonic Pulse Velocity (UPV) Pundit Rig</h3>
           <p class="lab-equip-desc">
@@ -205,7 +219,7 @@
         </div>
 
         <!-- Equipment 5 -->
-        <div class="lab-equip-card">
+        <div class="lab-equip-card" data-animate="slide-bottom" style="transition-delay: 0.2s;">
           <div class="lab-equip-badge">Aggregate Characterization</div>
           <h3 class="lab-equip-title">Motorized Sieve Shakers &amp; Pycnometers</h3>
           <p class="lab-equip-desc">
@@ -214,7 +228,7 @@
         </div>
 
         <!-- Equipment 6 -->
-        <div class="lab-equip-card">
+        <div class="lab-equip-card" data-animate="slide-bottom" style="transition-delay: 0.3s;">
           <div class="lab-equip-badge">Micro-Batching</div>
           <h3 class="lab-equip-title">High-Shear Pan Mixer &amp; Compaction Table</h3>
           <p class="lab-equip-desc">
@@ -228,52 +242,52 @@
   <!-- Laboratory Workflow & Standard Operating Procedure (SOP) -->
   <section style="background: var(--bg-subtle); padding: 4.5rem 0; border-top: 1.5px solid var(--border-light); border-bottom: 1.5px solid var(--border-light);">
     <div class="container">
-      <div style="text-align: center; max-width: 760px; margin: 0 auto 3.5rem;">
-        <h2 style="font-size: 2.1rem; font-weight: 900; color: #000000; letter-spacing: -0.4px;">
+      <div data-animate="pop-inside" style="text-align: center; max-width: 760px; margin: 0 auto 3.5rem;">
+        <h2 style="font-size: 2.1rem; font-weight: 900; color: #052E16; letter-spacing: -0.4px;">
           Standard Experimental Testing Cycle
         </h2>
-        <p style="font-size: 1.02rem; color: #000000; margin-top: 0.45rem; font-weight: 500;">
+        <p style="font-size: 1.02rem; color: #052E16; margin-top: 0.45rem; font-weight: 500;">
           From aggregate moisture correction to high-speed digital crushing data logging
         </p>
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;">
-        <div style="background: #ffffff; padding: 2rem 1.5rem; border-radius: var(--radius-lg); border: 1.5px solid var(--border-light); text-align: center;">
-          <div style="color: #166534; font-size: 2rem; margin-bottom: 1rem;"><i class="fa-solid fa-scale-balanced"></i></div>
-          <h4 style="font-size: 1.15rem; font-weight: 800; color: #000000; margin-bottom: 0.5rem;">1. Proportioning</h4>
-          <p style="font-size: 0.9rem; color: #000000; line-height: 1.6;">
+        <div data-animate="slide-bottom" style="background: #ffffff; padding: 2rem 1.5rem; border-radius: var(--radius-lg); border: 1.5px solid var(--border-light); text-align: center; transition-delay: 0.1s;">
+          <div style="color: #15803D; font-size: 2rem; margin-bottom: 1rem;"><i class="fa-solid fa-scale-balanced"></i></div>
+          <h4 style="font-size: 1.15rem; font-weight: 800; color: #052E16; margin-bottom: 0.5rem;">1. Proportioning</h4>
+          <p style="font-size: 0.9rem; color: #052E16; line-height: 1.6;">
             Weighing cement, aggregates, water, and chemical admixtures with moisture compensation.
           </p>
         </div>
 
-        <div style="background: #ffffff; padding: 2rem 1.5rem; border-radius: var(--radius-lg); border: 1.5px solid var(--border-light); text-align: center;">
-          <div style="color: #166534; font-size: 2rem; margin-bottom: 1rem;"><i class="fa-solid fa-blender"></i></div>
-          <h4 style="font-size: 1.15rem; font-weight: 800; color: #000000; margin-bottom: 0.5rem;">2. Batch Mixing</h4>
-          <p style="font-size: 0.9rem; color: #000000; line-height: 1.6;">
+        <div data-animate="slide-bottom" style="background: #ffffff; padding: 2rem 1.5rem; border-radius: var(--radius-lg); border: 1.5px solid var(--border-light); text-align: center; transition-delay: 0.2s;">
+          <div style="color: #15803D; font-size: 2rem; margin-bottom: 1rem;"><i class="fa-solid fa-blender"></i></div>
+          <h4 style="font-size: 1.15rem; font-weight: 800; color: #052E16; margin-bottom: 0.5rem;">2. Batch Mixing</h4>
+          <p style="font-size: 0.9rem; color: #052E16; line-height: 1.6;">
             Sequential charging: coarse aggregate, water, cement, and high-range water reducers.
           </p>
         </div>
 
-        <div style="background: #ffffff; padding: 2rem 1.5rem; border-radius: var(--radius-lg); border: 1.5px solid var(--border-light); text-align: center;">
-          <div style="color: #166534; font-size: 2rem; margin-bottom: 1rem;"><i class="fa-solid fa-water"></i></div>
-          <h4 style="font-size: 1.15rem; font-weight: 800; color: #000000; margin-bottom: 0.5rem;">3. Slump &amp; Casting</h4>
-          <p style="font-size: 0.9rem; color: #000000; line-height: 1.6;">
+        <div data-animate="slide-bottom" style="background: #ffffff; padding: 2rem 1.5rem; border-radius: var(--radius-lg); border: 1.5px solid var(--border-light); text-align: center; transition-delay: 0.3s;">
+          <div style="color: #15803D; font-size: 2rem; margin-bottom: 1rem;"><i class="fa-solid fa-water"></i></div>
+          <h4 style="font-size: 1.15rem; font-weight: 800; color: #052E16; margin-bottom: 0.5rem;">3. Slump &amp; Casting</h4>
+          <p style="font-size: 0.9rem; color: #052E16; line-height: 1.6;">
             Fresh state testing (slump, unit weight, air content) followed by 3-layer cylinder rodding.
           </p>
         </div>
 
-        <div style="background: #ffffff; padding: 2rem 1.5rem; border-radius: var(--radius-lg); border: 1.5px solid var(--border-light); text-align: center;">
-          <div style="color: #166534; font-size: 2rem; margin-bottom: 1rem;"><i class="fa-solid fa-droplet"></i></div>
-          <h4 style="font-size: 1.15rem; font-weight: 800; color: #000000; margin-bottom: 0.5rem;">4. Moist Curing</h4>
-          <p style="font-size: 0.9rem; color: #000000; line-height: 1.6;">
+        <div data-animate="slide-bottom" style="background: #ffffff; padding: 2rem 1.5rem; border-radius: var(--radius-lg); border: 1.5px solid var(--border-light); text-align: center; transition-delay: 0.4s;">
+          <div style="color: #15803D; font-size: 2rem; margin-bottom: 1rem;"><i class="fa-solid fa-droplet"></i></div>
+          <h4 style="font-size: 1.15rem; font-weight: 800; color: #052E16; margin-bottom: 0.5rem;">4. Moist Curing</h4>
+          <p style="font-size: 0.9rem; color: #052E16; line-height: 1.6;">
             24-hour demolding followed by immediate submerged curing at 23&deg;C until test maturity.
           </p>
         </div>
 
         <div style="background: #ffffff; padding: 2rem 1.5rem; border-radius: var(--radius-lg); border: 1.5px solid var(--border-light); text-align: center;">
-          <div style="color: #166534; font-size: 2rem; margin-bottom: 1rem;"><i class="fa-solid fa-burst"></i></div>
-          <h4 style="font-size: 1.15rem; font-weight: 800; color: #000000; margin-bottom: 0.5rem;">5. UTM Crushing</h4>
-          <p style="font-size: 0.9rem; color: #000000; line-height: 1.6;">
+          <div style="color: #15803D; font-size: 2rem; margin-bottom: 1rem;"><i class="fa-solid fa-burst"></i></div>
+          <h4 style="font-size: 1.15rem; font-weight: 800; color: #052E16; margin-bottom: 0.5rem;">5. UTM Crushing</h4>
+          <p style="font-size: 0.9rem; color: #052E16; line-height: 1.6;">
             Sulfur or neoprene capping and compressive loading at 0.25 &plusmn; 0.05 MPa/sec to fracture.
           </p>
         </div>
@@ -284,16 +298,16 @@
   <!-- Lab Access & Safety Protocols -->
   <section style="background: var(--bg-cream); padding: 4.5rem 0 5.5rem;">
     <div class="container">
-      <div style="background: #ffffff; padding: 3.5rem; border-radius: var(--radius-lg); border: 1.5px solid var(--border-light); box-shadow: var(--shadow-sm); display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center;">
+      <div class="content-two-col-box">
         <div>
-          <span style="color: #166534; font-weight: 800; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.5px;">Safety &amp; Compliance</span>
-          <h3 style="font-size: 1.85rem; font-weight: 900; color: #000000; margin-top: 0.35rem; letter-spacing: -0.4px;">
+          <span style="color: #15803D; font-weight: 800; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.5px;">Safety &amp; Compliance</span>
+          <h3 style="font-size: 1.85rem; font-weight: 900; color: #052E16; margin-top: 0.35rem; letter-spacing: -0.4px;">
             Laboratory Operating Standards
           </h3>
-          <p style="font-size: 1rem; color: #000000; line-height: 1.7; margin-top: 0.75rem; font-weight: 500;">
+          <p style="font-size: 1rem; color: #052E16; line-height: 1.7; margin-top: 0.75rem; font-weight: 500;">
             All chapter members and student researchers working inside the concrete lab must strictly adhere to departmental safety guidelines:
           </p>
-          <ul style="list-style: none; padding: 0; margin: 1.25rem 0 0; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.95rem; color: #000000; font-weight: 600;">
+          <ul style="list-style: none; padding: 0; margin: 1.25rem 0 0; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.95rem; color: #052E16; font-weight: 600;">
             <li><i class="fa-solid fa-triangle-exclamation" style="color: #ca8a04; margin-right: 0.5rem;"></i> Mandatory Personal Protective Equipment (PPE): Safety boots, gloves, and impact goggles.</li>
             <li><i class="fa-solid fa-triangle-exclamation" style="color: #ca8a04; margin-right: 0.5rem;"></i> Complete equipment cleaning and pan mixer wash-out immediately after casting.</li>
             <li><i class="fa-solid fa-triangle-exclamation" style="color: #ca8a04; margin-right: 0.5rem;"></i> Digital logbook registration of all specimen dimensions and 28-day target grades.</li>
@@ -302,8 +316,8 @@
 
         <div style="background: var(--bg-subtle); padding: 2.5rem; border-radius: var(--radius-md); border: 1.5px solid var(--border-light); text-align: center;">
           
-          <h4 style="font-size: 1.35rem; font-weight: 900; color: #000000; margin-bottom: 0.5rem;">Book Lab Slot or Training</h4>
-          <p style="font-size: 0.92rem; color: #000000; line-height: 1.6; margin-bottom: 1.5rem;">
+          <h4 style="font-size: 1.35rem; font-weight: 900; color: #052E16; margin-bottom: 0.5rem;">Book Lab Slot or Training</h4>
+          <p style="font-size: 0.92rem; color: #052E16; line-height: 1.6; margin-bottom: 1.5rem;">
             Undergraduate project groups, ReinforCE competition teams, and student chapter fellows can schedule laboratory testing hours through the ACI KUET Secretariat.
           </p>
           <a href="contact.html" class="btn-reinforce" style="padding: 0.85rem 1.75rem; font-size: 0.98rem; border-radius: 0;">
@@ -321,9 +335,9 @@
         <div class="footer-left-club-intro">
           <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.15rem;">
             <img src="images/aci-kuet-official-logo.webp" alt="ACI KUET Logo" style="height: 52px; width: auto; object-fit: contain;">
-            <h3 style="margin: 0; font-size: 1.4rem; font-weight: 900; color: #000000;">ACI KUET Student Chapter</h3>
+            <h3 style="margin: 0; font-size: 1.4rem; font-weight: 900; color: #052E16;">ACI KUET Student Chapter</h3>
           </div>
-          <p style="color: #000000; font-weight: 500; font-size: 0.95rem; line-height: 1.75;">
+          <p style="color: #052E16; font-weight: 500; font-size: 0.95rem; line-height: 1.75;">
             Rooted in the Department of Civil Engineering at KUET and chartered by the American Concrete Institute (ACI), the ACI KUET Student Chapter is a dynamic platform for aspiring civil and materials engineers. We strive to cultivate hands-on innovation, sustainable construction practices, and leadership, connecting KUET students with nationwide industry networks and global engineering forums.
           </p>
           <div class="footer-social-row">
@@ -379,14 +393,14 @@
           <div>
             <h4 class="footer-col-title">Department Coordinates</h4>
             <div class="footer-location-block">
-              <i class="fa-solid fa-location-dot" style="color: #166534; font-size: 1.15rem; margin-top: 3px;"></i>
-              <p style="color: #000000; font-size: 0.92rem; line-height: 1.6; font-weight: 500;">
+              <i class="fa-solid fa-location-dot" style="color: #15803D; font-size: 1.15rem; margin-top: 3px;"></i>
+              <p style="color: #052E16; font-size: 0.92rem; line-height: 1.6; font-weight: 500;">
                 Department of Civil Engineering<br>
                 Khulna University of Engineering &amp; Technology (KUET)<br>
                 Teligati, Khulna-9203, Bangladesh.
               </p>
             </div>
-            <div style="margin-top: 1rem; font-size: 0.88rem; color: #000000; font-weight: 600; line-height: 1.6;">
+            <div style="margin-top: 1rem; font-size: 0.88rem; color: #052E16; font-weight: 600; line-height: 1.6;">
               <strong>Convener:</strong> Shakil Ilhan (2301044)<br>
               <strong>Email:</strong> aci.kuetsc@gmail.com
             </div>
@@ -394,7 +408,7 @@
         </div>
       </div>
 
-      <div class="footer-bottom-legal" style="text-align: center; border-top: 1px solid var(--border-light); padding-top: 2rem; color: #000000; font-size: 0.88rem; font-weight: 500;">
+      <div class="footer-bottom-legal" style="text-align: center; border-top: 1px solid var(--border-light); padding-top: 2rem; color: #052E16; font-size: 0.88rem; font-weight: 500;">
         <p>&copy; 2026 ACI Student Chapter, KUET. All rights reserved. Department of Civil Engineering, Khulna University of Engineering &amp; Technology.</p>
       </div>
     </div>

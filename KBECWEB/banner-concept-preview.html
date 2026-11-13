@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACI KUET Student Chapter - Official Portal (Remians Style Concept)</title>
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root {
+      --remians-top-bar: #041d0e;
+      --remians-gold: #f59e0b;
+      --remians-gold-bright: #fbbf24;
+      --remians-green-panel: #0d2818;
+      --remians-green-shadow: #05190e;
+      --remians-dark-section: #080d0a;
+      --brand-primary: #15803D;
+      --brand-accent: #0284C7;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #000000;
+      color: #ffffff;
+      overflow-x: hidden;
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       1. Topmost Thin Ribbon (রেমিয়ানদের মতো একদম উপরের চিকন স্ট্রিপ)
+       ========================================================================== */
+    .top-utility-strip {
+      background: var(--remians-top-bar);
+      border-bottom: 1px solid rgba(245, 158, 11, 0.25);
+      text-align: center;
+      padding: 5px 1rem;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 2px;
+      color: var(--remians-gold-bright);
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    /* ==========================================================================
+       2. Hero Header Section with 3D Concrete Wall Panel Texture (RDS Style)
+       ========================================================================== */
+    .remians-hero-section {
+      position: relative;
+      background-color: #081c10;
+      /* Authentic 3D Beveled Acoustic / Concrete Wall Panel Pattern matching media_1794558434531_1d015d4a.jpg */
+      background-image: 
+        radial-gradient(circle at 50% 50%, rgba(21, 128, 61, 0.18) 0%, rgba(3, 15, 8, 0.95) 100%),
+        linear-gradient(45deg, rgba(0, 0, 0, 0.45) 25%, transparent 25%), 
+        linear-gradient(-45deg, rgba(0, 0, 0, 0.45) 25%, transparent 25%), 
+        linear-gradient(45deg, transparent 75%, rgba(0, 0, 0, 0.45) 75%), 
+        linear-gradient(-45deg, transparent 75%, rgba(0, 0, 0, 0.45) 75%),
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 100% 100%, 70px 70px, 70px 70px, 70px 70px, 70px 70px, 140px 140px, 140px 140px;
+      background-position: center center, 0 0, 0 35px, 35px -35px, -35px 0px, 0 0, 0 0;
+      min-height: 520px;
+      display: flex;
+      flex-direction: column;
+      border-bottom: 2px solid rgba(245, 158, 11, 0.3);
+      box-shadow: inset 0 -30px 50px rgba(0, 0, 0, 0.7);
+    }
+
+    /* Integrated Top Navbar resting directly over the textured background */
+    .hero-integrated-nav {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1.25rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 10;
+    }
+
+    .nav-brand-group {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+    }
+
+    .nav-brand-group img {
+      height: 48px;
+      width: auto;
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.8));
+    }
+
+    .nav-brand-title-wrap {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .nav-brand-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: 0.5px;
+      text-transform: lowercase;
+    }
+
+    .nav-brand-sub {
+      font-size: 0.72rem;
+      color: #94a3b8;
+      text-transform: lowercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Horizontal Nav Links */
+    .nav-links-row {
+      display: flex;
+      align-items: center;
+      gap: 1.6rem;
+      list-style: none;
+    }
+
+    .nav-item-link {
+      color: #ffffff;
+      text-decoration: none;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.88rem;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: color 0.2s;
+      position: relative;
+    }
+
+    .nav-item-link:hover {
+      color: var(--remians-gold-bright);
+    }
+
+    .nav-item-link.active {
+      color: var(--remians-gold-bright);
+      font-weight: 700;
+    }
+
+    .nav-item-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--remians-gold-bright);
+    }
+
+    .nav-item-link .icon-drop {
+      font-size: 0.65rem;
+      margin-left: 2px;
+      opacity: 0.7;
+    }
+
+    /* Centerpiece Hero Content matching RDS */
+    .hero-center-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 3rem 1.5rem 4.5rem;
+      z-index: 5;
+    }
+
+    /* Big Bold Stacked Titles (REMIANS DEBATING SOCIETY style -> ACI KUET STUDENT CHAPTER) */
+    .hero-big-title-stacked {
+      font-family: 'Playfair Display', 'Cinzel', serif;
+      font-size: 3.4rem;
+      font-weight: 900;
+      color: var(--remians-gold-bright);
+      line-height: 1.08;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-shadow: 0 4px 18px rgba(0, 0, 0, 0.9), 0 1px 3px rgba(0, 0, 0, 0.8);
+      margin-bottom: 1.15rem;
+    }
+
+    .hero-big-title-stacked span {
+      display: block;
+    }
+
+    .hero-legacy-tagline {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #f1f5f9;
+      letter-spacing: 0.4px;
+      margin-bottom: 0.35rem;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    }
+
+    .hero-est-year {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #cbd5e1;
+      margin-bottom: 1.6rem;
+    }
+
+    /* RDS-style Center Gold Button */
+    .btn-remians-center {
+      background: var(--remians-gold-bright);
+      color: #000000;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 800;
+      padding: 0.65rem 1.85rem;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 4px 16px rgba(245, 158, 11, 0.45), 0 2px 4px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      transition: all 0.2s;
+    }
+
+    .btn-remians-center:hover {
+      background: #f59e0b;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(245, 158, 11, 0.6);
+    }
+
+    /* ==========================================================================
+       3. Signature National Event Spotlight Section (RDS 14th DRMC Nationals Style)
+       ========================================================================== */
+    .remians-event-spotlight {
+      background: var(--remians-dark-section);
+      padding: 3.5rem 2rem;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .event-spotlight-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 460px 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    /* Event Poster Graphic Card (Left) */
+    .event-poster-card {
+      position: relative;
+      background: linear-gradient(135deg, #0284C7 0%, #052E16 60%, #15803D 100%);
+      border: 3px solid rgba(245, 158, 11, 0.5);
+      border-radius: 14px;
+      padding: 2.2rem 1.8rem;
+      text-align: center;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(2, 132, 199, 0.25);
+      overflow: hidden;
+    }
+
+    /* Decorative corner filigree style pattern */
+    .event-poster-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: 
+        radial-gradient(circle at top left, rgba(245, 158, 11, 0.25) 0%, transparent 40%),
+        radial-gradient(circle at bottom right, rgba(21, 128, 61, 0.3) 0%, transparent 40%);
+      pointer-events: none;
+    }
+
+    .poster-inner-badge {
+      background: rgba(0, 0, 0, 0.65);
+      border: 2px solid var(--remians-gold-bright);
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .poster-inner-logo {
+      height: 48px;
+      margin: 0 auto 0.6rem;
+      display: block;
+    }
+
+    .poster-fest-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      line-height: 1.1;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    }
+
+    .poster-fest-sub {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.82rem;
+      color: var(--remians-gold-bright);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-top: 0.35rem;
+    }
+
+    /* Event Info Column (Right) */
+    .event-info-col {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .event-big-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.7rem;
+      font-weight: 900;
+      color: #ffffff;
+      line-height: 1.15;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .event-date-row {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem;
+      color: #94a3b8;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+
+    /* Pill Action Button matching RDS 'CLICK FOR MORE' */
+    .btn-event-pill {
+      background: transparent;
+      color: #ffffff;
+      border: 1.5px solid rgba(255, 255, 255, 0.8);
+      border-radius: 30px;
+      padding: 0.75rem 2.2rem;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-event-pill:hover {
+      background: #ffffff;
+      color: #000000;
+      border-color: #ffffff;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+      transform: translateY(-2px);
+    }
+
+    /* Mobile Responsive Adaptation */
+    @media (max-width: 992px) {
+      .hero-integrated-nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .nav-links-row {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+      .hero-big-title-stacked {
+        font-size: 2.3rem;
+      }
+      .event-spotlight-container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        text-align: center;
+      }
+      .event-info-col {
+        align-items: center;
+      }
+      .event-big-headline {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. Topmost Thin Ribbon (রেমিয়ানদের মতো চিকন ব্যানার) -->
+  <div class="top-utility-strip">
+    AMERICAN CONCRETE INSTITUTE &bull; KUET STUDENT CHAPTER
+  </div>
+
+  <!-- 2. Hero Header with 3D Textured Background (রেমিয়ানদের আদলে হিরো ব্যানার) -->
+  <header class="remians-hero-section">
+    
+    <!-- Integrated Navigation Bar resting on top of texture -->
+    <nav class="hero-integrated-nav">
+      <a href="index.html" class="nav-brand-group">
+        <img src="images/aci-kuet-official-logo.webp" alt="ACI KUET Official Logo">
+        <div class="nav-brand-title-wrap">
+          <span class="nav-brand-name">aci kuet</span>
+          <span class="nav-brand-sub">student chapter</span>
+        </div>
+      </a>
+
+      <ul class="nav-links-row">
+        <li><a href="index.html" class="nav-item-link active">HOME</a></li>
+        <li><a href="about-us.html" class="nav-item-link">AUTHORITY</a></li>
+        <li><a href="events-national.html" class="nav-item-link">REINFORCE 2.0</a></li>
+        <li><a href="achievements.html" class="nav-item-link">ACHIEVEMENTS</a></li>
+        <li><a href="about-lab.html" class="nav-item-link">LAB &amp; RESEARCH</a></li>
+        <li><a href="events-major.html" class="nav-item-link">EVENTS <i class="fa-solid fa-chevron-down icon-drop"></i></a></li>
+        <li><a href="panel-officers.html" class="nav-item-link">EXECUTIVE COMMITTEE</a></li>
+        <li><a href="resources.html" class="nav-item-link">বাণী / RESOURCES</a></li>
+        <li><a href="contact.html" class="nav-item-link">CONTACT</a></li>
+      </ul>
+    </nav>
+
+    <!-- Centerpiece Hero Stacked Titles & Button -->
+    <div class="hero-center-content">
+      <h1 class="hero-big-title-stacked">
+        <span>ACI KUET</span>
+        <span>STUDENT</span>
+        <span>CHAPTER</span>
+      </h1>
+      
+      <p class="hero-legacy-tagline">
+        A Legacy of Concrete Engineering Excellence
+      </p>
+      
+      <p class="hero-est-year">
+        Department of Civil Engineering &bull; Chartered Since 2023
+      </p>
+
+      <a href="about-membership.html" class="btn-remians-center">
+        Join ACI KUET
+      </a>
+    </div>
+
+  </header>
+
+  <!-- 3. Signature Event Spotlight Section (RDS 14th DRMC Nationals Style) -->
+  <section class="remians-event-spotlight">
+    <div class="event-spotlight-container">
+      
+      <!-- Event Poster Card (Left) -->
+      <div class="event-poster-card">
+        <div class="poster-inner-badge">
+          <img src="images/aci-kuet-official-logo.webp" alt="ACI Emblem" class="poster-inner-logo">
+          <div class="poster-fest-title">REINFORCE 2.0</div>
+          <div class="poster-fest-sub">National Civil Engineering Festival</div>
+        </div>
+      </div>
+
+      <!-- Event Details & Action Button (Right) -->
+      <div class="event-info-col">
+        <h2 class="event-big-headline">
+          REINFORCE 2.0<br>NATIONALS 2026
+        </h2>
+        
+        <div class="event-date-row">
+          10TH APRIL &ndash; 13TH APRIL 2026 &bull; KUET CAMPUS
+        </div>
+
+        <a href="events-national.html" class="btn-event-pill">
+          CLICK FOR MORE
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>

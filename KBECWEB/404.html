@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#166534">
+  <meta name="theme-color" content="#15803D">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <title>404 - Page Not Found | ACI Student Chapter - KUET</title>
+  <title>ACI KUET Student Chapter | 404 - Page Not Found</title>
   <meta name="description" content="The requested page was not found on the official web portal of ACI Student Chapter at KUET.">
   <link rel="canonical" href="https://acikuet.org/404.html">
   
@@ -24,28 +24,44 @@
   <meta name="twitter:description" content="The requested page was not found on the official web portal of ACI Student Chapter at KUET.">
   <meta name="twitter:image" content="https://acikuet.org/images/hero-group-photo.webp">
   
-  <link rel="icon" href="images/aci-kuet-official-logo.webp" type="image/webp">
+    <!-- Favicon with Solid White Circular Backing (Dark Mode Proof for Browser Tabs) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="shortcut icon" href="images/favicon.ico">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="css/styles.css?v=6.1">
+  <link rel="stylesheet" href="css/styles.css?v=8.6">
 </head>
 <body>
 
-  <!-- Main Slim White Navbar -->
+    <!-- Persistent Sticky Top Ribbon (Stays pinned at top as page scrolls) -->
+  <div class="persistent-top-ribbon">
+    <div class="top-ribbon-inner">
+      <span>ACI KUET Student Chapter</span>
+    </div>
+  </div>
+
+  <!-- Main Slim White Navbar (0.8x Compact, Logo shifted to far left, 3-step stacked brand) -->
   <header class="main-header">
     <div class="navbar-container">
       <nav class="navbar">
-        <!-- Far Left: Official Logo + Text -->
+        <!-- Far Left: Official Logo with Solid White Backing + 3-Step Stacked Text -->
         <a href="index.html" class="nav-brand">
-          <img src="images/aci-kuet-official-logo.webp" alt="ACI KUET Official Logo" class="nav-brand-logo">
-          <span class="nav-brand-text">
-            <span class="brand-aci">ACI</span> <span class="brand-kuet">KUET</span> <span class="brand-sub">Student Chapter</span>
+          <div class="nav-brand-logo-box">
+            <img src="images/aci-kuet-official-logo.webp" alt="ACI KUET Official Logo" class="nav-brand-logo">
+          </div>
+          <span class="nav-brand-stacked">
+            <span class="brand-step-1">ACI KUET</span>
+            <span class="brand-step-2">STUDENT</span>
+            <span class="brand-step-3">CHAPTER</span>
           </span>
         </a>
 
-        <!-- Right Side: Navigation Menu -->
+        <!-- Right Side: Navigation Menu (0.8x compact, bold on click/active) -->
         <ul class="nav-menu">
           <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
           
@@ -73,9 +89,8 @@
 
           <li class="nav-item"><a href="achievements.html" class="nav-link">Achievements</a></li>
           <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>
-          <li class="nav-item"><a href="estimation.html" class="nav-link">Civil Estimation</a></li>
           <li class="nav-item"><a href="resources.html" class="nav-link">Resources</a></li>
-          <li class="nav-item"><a href="verify-certificate.html" class="nav-link"><i class="fa-solid fa-certificate"></i> Verify Certificate</a></li>
+          <li class="nav-item"><a href="verify-certificate.html" class="nav-link">Verify Certificate</a></li>
           <li class="nav-item"><a href="sponsors.html" class="nav-link">Sponsors</a></li>
           <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
 
@@ -105,11 +120,11 @@
     <div class="container" style="max-width: 760px;">
       
       <!-- Architectural Monogram -->
-      <div style="font-family: 'Merriweather', serif; font-size: clamp(5.5rem, 14vw, 9.5rem); font-weight: 900; line-height: 1; color: #166534; letter-spacing: -3px; margin-bottom: 1rem; text-shadow: 0 4px 20px rgba(22, 101, 52, 0.12);">
+      <div style="font-family: 'Merriweather', serif; font-size: clamp(5.5rem, 14vw, 9.5rem); font-weight: 900; line-height: 1; color: #15803D; letter-spacing: -3px; margin-bottom: 1rem; text-shadow: 0 4px 20px rgba(22, 101, 52, 0.12);">
         404
       </div>
 
-      <h1 style="font-size: clamp(1.5rem, 3.5vw, 2.2rem); font-weight: 800; color: #000000; margin-bottom: 1rem; letter-spacing: -0.5px;">
+      <h1 style="font-size: clamp(1.5rem, 3.5vw, 2.2rem); font-weight: 800; color: #052E16; margin-bottom: 1rem; letter-spacing: -0.5px;">
         Structural Landmark Not Found
       </h1>
       
@@ -132,14 +147,14 @@
 
       <!-- Quick Directory Shortcuts -->
       <div style="background: #ffffff; border: 1.5px solid var(--border-light); padding: 1.75rem 2rem; border-radius: 0; text-align: left; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);">
-        <h4 style="font-size: 0.95rem; font-weight: 800; color: #000000; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 1rem;">
-          <i class="fa-solid fa-compass" style="color: #166534; margin-right: 0.4rem;"></i> Popular Destinations
+        <h4 style="font-size: 0.95rem; font-weight: 800; color: #052E16; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 1rem;">
+          <i class="fa-solid fa-compass" style="color: #15803D; margin-right: 0.4rem;"></i> Popular Destinations
         </h4>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.75rem; font-size: 0.92rem;">
-          <a href="events-inhouse.html" style="color: #166534; font-weight: 600; text-decoration: none;"><i class="fa-solid fa-arrow-right" style="font-size: 0.75rem;"></i> In-House Events</a>
-          <a href="panel-officers.html" style="color: #166534; font-weight: 600; text-decoration: none;"><i class="fa-solid fa-arrow-right" style="font-size: 0.75rem;"></i> Executive Committee</a>
-          <a href="resources.html" style="color: #166534; font-weight: 600; text-decoration: none;"><i class="fa-solid fa-arrow-right" style="font-size: 0.75rem;"></i> Concrete Mix Calculator</a>
-          <a href="verify-certificate.html" style="color: #166534; font-weight: 600; text-decoration: none;"><i class="fa-solid fa-arrow-right" style="font-size: 0.75rem;"></i> Verify Certificate</a>
+          <a href="events-inhouse.html" style="color: #15803D; font-weight: 600; text-decoration: none;"><i class="fa-solid fa-arrow-right" style="font-size: 0.75rem;"></i> In-House Events</a>
+          <a href="panel-officers.html" style="color: #15803D; font-weight: 600; text-decoration: none;"><i class="fa-solid fa-arrow-right" style="font-size: 0.75rem;"></i> Executive Committee</a>
+          <a href="resources.html" style="color: #15803D; font-weight: 600; text-decoration: none;"><i class="fa-solid fa-arrow-right" style="font-size: 0.75rem;"></i> Concrete Mix Calculator</a>
+          <a href="verify-certificate.html" style="color: #15803D; font-weight: 600; text-decoration: none;"><i class="fa-solid fa-arrow-right" style="font-size: 0.75rem;"></i> Verify Certificate</a>
         </div>
       </div>
 
@@ -153,9 +168,9 @@
         <div class="footer-left-club-intro">
           <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.15rem;">
             <img src="images/aci-kuet-official-logo.webp" alt="ACI KUET Logo" style="height: 52px; width: auto; object-fit: contain;">
-            <h3 style="margin: 0; font-size: 1.4rem; font-weight: 900; color: #000000;">ACI KUET Student Chapter</h3>
+            <h3 style="margin: 0; font-size: 1.4rem; font-weight: 900; color: #052E16;">ACI KUET Student Chapter</h3>
           </div>
-          <p style="color: #000000; font-weight: 500; font-size: 0.95rem; line-height: 1.75;">
+          <p style="color: #052E16; font-weight: 500; font-size: 0.95rem; line-height: 1.75;">
             Rooted in the Department of Civil Engineering at KUET and chartered by the American Concrete Institute (ACI), the ACI KUET Student Chapter is a dynamic platform for aspiring civil and materials engineers. We strive to cultivate hands-on innovation, sustainable construction practices, and leadership, connecting KUET students with nationwide industry networks and global engineering forums.
           </p>
           <div class="footer-social-row">
@@ -207,14 +222,14 @@
           <div>
             <h4 class="footer-col-title">Department Coordinates</h4>
             <div class="footer-location-block">
-              <i class="fa-solid fa-location-dot" style="color: #166534; font-size: 1.15rem; margin-top: 3px;"></i>
-              <p style="color: #000000; font-size: 0.92rem; line-height: 1.6; font-weight: 500;">
+              <i class="fa-solid fa-location-dot" style="color: #15803D; font-size: 1.15rem; margin-top: 3px;"></i>
+              <p style="color: #052E16; font-size: 0.92rem; line-height: 1.6; font-weight: 500;">
                 Department of Civil Engineering<br>
                 Khulna University of Engineering &amp; Technology (KUET)<br>
                 Teligati, Khulna-9203, Bangladesh.
               </p>
             </div>
-            <div style="margin-top: 1rem; font-size: 0.88rem; color: #000000; font-weight: 600; line-height: 1.6;">
+            <div style="margin-top: 1rem; font-size: 0.88rem; color: #052E16; font-weight: 600; line-height: 1.6;">
               <strong>Convener:</strong> Shakil Ilhan (2301044)<br>
               <strong>Email:</strong> aci.kuetsc@gmail.com
             </div>
@@ -222,7 +237,7 @@
         </div>
       </div>
 
-      <div class="footer-bottom-legal" style="text-align: center; border-top: 1px solid var(--border-light); padding-top: 2rem; color: #000000; font-size: 0.88rem; font-weight: 500;">
+      <div class="footer-bottom-legal" style="text-align: center; border-top: 1px solid var(--border-light); padding-top: 2rem; color: #052E16; font-size: 0.88rem; font-weight: 500;">
         <p>&copy; 2026 ACI Student Chapter, KUET. All rights reserved. Department of Civil Engineering, Khulna University of Engineering &amp; Technology.</p>
       </div>
     </div>

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#15803D">
+  <title>ACI KUET Student Chapter | CSI SAP2000 Master Roadmap</title>
+  <meta name="description" content="Civil engineering learning roadmap for CSI SAP2000: Finite Element Analysis (FEM), Space Trusses, Bridge Girders, and Culverts. Department of Civil Engineering, KUET.">
+  <link rel="canonical" href="https://acikuet.org/learn-sap2000.html">
+    <!-- Favicon with Solid White Circular Backing (Dark Mode Proof for Browser Tabs) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="shortcut icon" href="images/favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css?v=8.6">
+  <style>
+    .roadmap-track-switch {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2.5rem 0 3.5rem;
+      flex-wrap: wrap;
+    }
+    .track-btn {
+      background: #ffffff;
+      border: 2px solid #000000;
+      color: #052E16;
+      padding: 1.15rem 2.25rem;
+      font-size: 1.1rem;
+      font-weight: 800;
+      border-radius: 0;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.9);
+      transition: all 0.2s ease;
+    }
+    .track-btn:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.9);
+    }
+    .track-btn.active {
+      background: #15803D;
+      color: #ffffff;
+      border-color: #15803D;
+      box-shadow: 4px 4px 0px rgba(22, 101, 52, 0.6);
+    }
+    .track-pane {
+      display: none;
+    }
+    .track-pane.active {
+      display: block;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .video-hero-card {
+      background: #000000;
+      border: 2px solid #000000;
+      border-radius: 0;
+      padding: 1.5rem;
+      color: #ffffff;
+      box-shadow: 8px 8px 0px rgba(22, 101, 52, 0.9);
+      margin-bottom: 3.5rem;
+    }
+    .video-aspect-wrap {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      background: #0f172a;
+      border: 1px solid #334155;
+    }
+    .video-aspect-wrap iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .milestone-step {
+      background: #ffffff;
+      border: 1.5px solid #15803D;
+      border-left: 6px solid #15803D;
+      box-shadow: 0 4px 16px rgba(21, 128, 61, 0.08);
+      padding: 2rem 2.25rem;
+      margin-bottom: 2rem;
+      border-radius: 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    }
+    .milestone-badge {
+      display: inline-block;
+      background: #f0fdf4;
+      color: #15803D;
+      border: 1px solid #bbf7d0;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 0.25rem 0.65rem;
+      margin-bottom: 0.75rem;
+    }
+    .milestone-title {
+      font-family: 'Merriweather', serif;
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: #052E16;
+      margin-bottom: 0.75rem;
+    }
+    .pro-tip-box {
+      background: #f8fafc;
+      border-left: 4px solid #ca8a04;
+      padding: 1.25rem 1.5rem;
+      margin-top: 1.25rem;
+      font-size: 0.92rem;
+      color: #334155;
+      line-height: 1.65;
+    }
+    .interactive-checklist {
+      list-style: none;
+      padding: 0;
+      margin: 1.25rem 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .interactive-checklist li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+      color: #1e293b;
+      font-weight: 500;
+    }
+    .interactive-checklist input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: #15803D;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+    <!-- Persistent Sticky Top Ribbon (Stays pinned at top as page scrolls) -->
+  <div class="persistent-top-ribbon">
+    <div class="top-ribbon-inner">
+      <span>ACI KUET Student Chapter</span>
+    </div>
+  </div>
+
+  <!-- Main Slim White Navbar (0.8x Compact, Logo shifted to far left, 3-step stacked brand) -->
+  <header class="main-header">
+    <div class="navbar-container">
+      <nav class="navbar">
+        <!-- Far Left: Official Logo with Solid White Backing + 3-Step Stacked Text -->
+        <a href="index.html" class="nav-brand">
+          <div class="nav-brand-logo-box">
+            <img src="images/aci-kuet-official-logo.webp" alt="ACI KUET Official Logo" class="nav-brand-logo">
+          </div>
+          <span class="nav-brand-stacked">
+            <span class="brand-step-1">ACI KUET</span>
+            <span class="brand-step-2">STUDENT</span>
+            <span class="brand-step-3">CHAPTER</span>
+          </span>
+        </a>
+
+        <!-- Right Side: Navigation Menu (0.8x compact, bold on click/active) -->
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          
+          <!-- Events Dropdown -->
+          <li class="nav-item">
+            <span class="nav-link">Events <i class="fa-solid fa-chevron-down dropdown-icon"></i></span>
+            <ul class="dropdown-menu">
+              <li><a href="events-major.html" class="dropdown-item">ACI Events</a></li>
+              <li><a href="events-national.html" class="dropdown-item">National Events (ReinforCE 1.0 &amp; 2.0)</a></li>
+              <li><a href="events-technical.html" class="dropdown-item">Technical Events</a></li>
+              <li><a href="events-inhouse.html" class="dropdown-item">In-House Competitions (1.1, 1.2, 1.3)</a></li>
+              <li><a href="events-tours.html" class="dropdown-item">Technical Tours</a></li>
+              <li><a href="events-seminars.html" class="dropdown-item">Seminars &amp; Webinars</a></li>
+            </ul>
+          </li>
+
+          <!-- Panel Dropdown -->
+          <li class="nav-item">
+            <span class="nav-link">Panel <i class="fa-solid fa-chevron-down dropdown-icon"></i></span>
+            <ul class="dropdown-menu">
+              <li><a href="panel-officers.html" class="dropdown-item">Executive Committee</a></li>
+              <li><a href="panel-webteam.html" class="dropdown-item">Webpage Team</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a href="achievements.html" class="nav-link">Achievements</a></li>
+          <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>
+          <li class="nav-item"><a href="resources.html" class="nav-link active">Resources</a></li>
+          <li class="nav-item"><a href="verify-certificate.html" class="nav-link">Verify Certificate</a></li>
+          <li class="nav-item"><a href="sponsors.html" class="nav-link">Sponsors</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+
+          <!-- About Us Dropdown -->
+          <li class="nav-item">
+            <span class="nav-link">About Us <i class="fa-solid fa-chevron-down dropdown-icon"></i></span>
+            <ul class="dropdown-menu">
+              <li><a href="about-membership.html" class="dropdown-item">Why Join ACI KUET?</a></li>
+              <li><a href="about-lab.html" class="dropdown-item">Inside KUET Concrete Lab</a></li>
+              <li><a href="about-alumni.html" class="dropdown-item">Alumni in Industry Spotlight</a></li>
+              <li><a href="about-us.html" class="dropdown-item">Chapter Overview &amp; Mission</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="mobile-menu-toggle" aria-label="Menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Banner Section -->
+  <section class="page-banner" style="background: linear-gradient(135deg, #091322 0%, #0b2545 100%);">
+    <div class="container">
+      <div class="breadcrumb-nav">
+        <a href="index.html">Home</a> &gt; <a href="resources.html">Resources</a> &gt; <span>CSI SAP2000 Master Roadmap</span>
+      </div>
+      <h1 class="page-banner-title" style="color: #ffffff;">CSI SAP2000: General Finite Element Mastery</h1>
+      <p class="page-banner-desc" style="color: #e2e8f0;">
+        From 2D determinate/indeterminate trusses and continuous beam bending to 3D space frames, box culverts, bridge moving loads, and dynamic response analysis.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Roadmap Content Container -->
+  <section style="background: #ffffff; padding: 4rem 0 6rem;">
+    <div class="container" style="max-width: 1050px;">
+
+      <!-- Track Switcher -->
+      <div style="text-align: center;">
+        <span style="color: #15803D; font-weight: 800; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px;">Choose Your Learning Trajectory</span>
+        <h2 style="font-family: 'Merriweather', serif; font-size: 2rem; font-weight: 900; color: #052E16; margin-top: 0.35rem;">
+          Select Your Current Expertise Level
+        </h2>
+        <p style="color: #64748b; font-size: 1rem; margin-top: 0.35rem;">
+        Whether you are learning SAP2000 for the first time or performing advanced dynamic analysis on bridges and space frames, choose your roadmap track below:
+        </p>
+      </div>
+
+      <div class="roadmap-track-switch">
+        <button type="button" class="track-btn active" id="btn-track-zero" onclick="switchTrack('zero')">
+          <i class="fa-solid fa-seedling"></i> Track 1: Zero to Pro (Foundations)
+        </button>
+        <button type="button" class="track-btn" id="btn-track-beg" onclick="switchTrack('beginner')">
+          <i class="fa-solid fa-bridge"></i> Track 2: Beginner to Pro (Advanced Infrastructure)
+        </button>
+      </div>
+
+      <!-- TRACK 1: ZERO TO PRO -->
+      <div id="pane-zero" class="track-pane active">
+
+        <div class="video-hero-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+            <div>
+              <span style="background: #15803D; color: #ffffff; font-size: 0.75rem; font-weight: 800; padding: 0.2rem 0.6rem; text-transform: uppercase;">Most-Viewed SAP2000 Beginner Guide</span>
+              <h3 style="font-size: 1.25rem; font-weight: 800; margin-top: 0.35rem; color: #ffffff;">SAP2000 Complete Structural Analysis Tutorial: From Trusses to Frames</h3>
+            </div>
+            <div style="font-size: 0.85rem; color: #94a3b8; font-family: 'Space Mono', monospace;">
+              <i class="fa-solid fa-eye"></i> 850K+ Views &bull; Curated for Undergrads
+            </div>
+          </div>
+          <div class="video-aspect-wrap">
+            <iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=PLzje_yq4m4q79jHjP6w7mP0V-wQ6e7L" title="SAP2000 Beginner Course" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p style="font-size: 0.88rem; color: #cbd5e1; margin-top: 0.85rem; line-height: 1.5;">
+            <strong>Video Overview:</strong> Step-by-step demonstration of nodal coordinates, member drafting, joint moment releases for pin-jointed trusses, and deflection verification.
+          </p>
+        </div>
+
+        <div style="margin-bottom: 2.5rem;">
+          <h3 style="font-family: 'Merriweather', serif; font-size: 1.7rem; font-weight: 900; color: #052E16; margin-bottom: 0.75rem;">
+            Why Civil Engineers Must Master SAP2000
+          </h3>
+          <p style="font-size: 1.02rem; color: #334155; line-height: 1.75;">
+            While ETABS specializes in multi-storey regular building systems, <strong>CSI SAP2000 is the universal finite element solver for all civil infrastructure</strong> - including industrial roof trusses, space frames, footover bridges, box culverts, and water reservoirs. Follow the structured milestones below:
+          </p>
+        </div>
+
+        <div class="milestone-step">
+          <span class="milestone-badge">Step 01 &bull; Fundamentals</span>
+          <h4 class="milestone-title">Node Coordinates, Grid Systems & Boundary Support Setup</h4>
+          <p style="font-size: 0.98rem; color: #334155; line-height: 1.7;">
+            SAP2000 operates on a rigorous node-based finite element formulation. Modeling begins with establishing precise joint coordinates in global space (X, Y, Z).
+          </p>
+          <ul class="interactive-checklist">
+            <li><input type="checkbox"> Master Global Coordinate Systems &amp; Standard Templates (2D Truss, 3D Space Frame, Portal Frames)</li>
+            <li><input type="checkbox"> Assigning Boundary Conditions: Fixed (U1, U2, U3, R1, R2, R3), Pinned (U1, U2, U3), Roller (U3)</li>
+            <li><input type="checkbox"> Configure Self-Weight Multiplier (Multiplier = 0 for pure textbook verification problems)</li>
+          </ul>
+        </div>
+
+        <div class="milestone-step">
+          <span class="milestone-badge">Step 02 &bull; Truss Analysis</span>
+          <h4 class="milestone-title">Creating Ideal Pin-Jointed Truss Members via Internal Moment Releases (M22 &amp; M33)</h4>
+          <p style="font-size: 0.98rem; color: #334155; line-height: 1.7;">
+            By fundamental mechanics, ideal truss members carry zero bending moments - only pure axial tension or compression.
+          </p>
+          <ul class="interactive-checklist">
+            <li><input type="checkbox"> Select frames and go to <strong>Assign &gt; Frame &gt; Releases/Partial Fixity</strong> to release moments (M22, M33)</li>
+            <li><input type="checkbox"> Apply concentrated nodal loads directly to joint coordinates (Assign &gt; Joint Loads &gt; Forces)</li>
+            <li><input type="checkbox"> Run structural analysis to inspect Axial Force Diagrams (AFD) and distinguish compression versus tension members</li>
+          </ul>
+          <div class="pro-tip-box">
+          <div style="background: #f0fdf4; border: 1.5px solid #15803D; padding: 1.25rem; margin-top: 1.5rem; font-size: 0.92rem; color: #052E16;"><strong>KUET Lab Tip:</strong> If you omit moment releases on truss members, SAP2000 treats them as rigid frame joints, generating erroneous parasitic bending moments!</div>
+          </div>
+        </div>
+
+        <div class="milestone-step">
+          <span class="milestone-badge">Step 03 &bull; Continuous Beams</span>
+          <h4 class="milestone-title">Continuous Beam Modeling & Moment Distribution Verification</h4>
+          <p style="font-size: 0.98rem; color: #334155; line-height: 1.7;">
+          <p style="font-size: 0.98rem; color: #334155; line-height: 1.7;">Verify theoretical continuous beam solutions calculated via Moment Distribution and Slope Deflection methods directly in SAP2000:</p>
+          </p>
+          <ul class="interactive-checklist">
+            <li><input type="checkbox"> Model multi-span continuous beams subject to uniformly distributed (UDL) and concentrated loads</li>
+            <li><input type="checkbox"> Simulate support settlement and differential sinking via joint displacement loads</li>
+            <li><input type="checkbox"> Extract accurate Shear Force Diagrams (SFD) and Bending Moment Diagrams (BMD) with numerical values</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- TRACK 2: BEGINNER TO PRO -->
+      <div id="pane-beginner" class="track-pane">
+
+        <div class="video-hero-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+            <div>
+              <span style="background: #15803D; color: #ffffff; font-size: 0.75rem; font-weight: 800; padding: 0.2rem 0.6rem; text-transform: uppercase;">Master-Level Bridge Engineering</span>
+              <h3 style="font-size: 1.25rem; font-weight: 800; margin-top: 0.35rem; color: #ffffff;">Prestressed Concrete Girder Bridge &amp; Moving Vehicle Load Analysis</h3>
+            </div>
+            <div style="font-size: 0.85rem; color: #94a3b8; font-family: 'Space Mono', monospace;">
+              <i class="fa-solid fa-graduation-cap"></i> RHD / AASHTO Standards
+            </div>
+          </div>
+          <div class="video-aspect-wrap">
+            <iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=PLzje_yq4m4q7u1V6B5L7E1a3_W1p4A9b" title="Advanced SAP2000 Bridge Design" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p style="font-size: 0.88rem; color: #cbd5e1; margin-top: 0.85rem; line-height: 1.5;">
+            <strong>Lecture Overview:</strong> Comprehensive procedure for applying AASHTO HL-93 moving truck loads per RHD bridge design standards and finite element shell meshing.
+          </p>
+        </div>
+
+        <div class="milestone-step">
+          <span class="milestone-badge">Pro Step 01 &bull; Bridge Engineering</span>
+          <h4 class="milestone-title">Moving Vehicle Load Analysis & Traffic Lane Definition (AASHTO HL-93 / BS 5400)</h4>
+          <p style="font-size: 0.98rem; color: #334155; line-height: 1.7;">
+          <p style="font-size: 0.98rem; color: #334155; line-height: 1.7;">Bridge engineering standards require generating maximum moment and shear envelopes as vehicular traffic moves across defined lanes:</p>
+          </p>
+          <ul class="interactive-checklist">
+            <li><input type="checkbox"> Define traffic lane geometry and vehicular travel paths (Define &gt; Moving Loads &gt; Lanes)</li>
+            <li><input type="checkbox"> Assign standard vehicular load classes (AASHTO HL-93 Design Truck, Tandem, and Design Lane Load)</li>
+            <li><input type="checkbox"> Generate Influence Line Diagrams (ILD) to identify critical truck loading positions for maximum shear and bending moments</li>
+          </ul>
+        </div>
+
+        <div class="milestone-step">
+          <span class="milestone-badge">Pro Step 02 &bull; Shell Meshing</span>
+          <h4 class="milestone-title">RCC Box Culverts, Water Reservoirs & Surface Shell Meshing</h4>
+          <p style="font-size: 0.98rem; color: #334155; line-height: 1.7;">
+            Rigorous finite element modeling of plates and walls requires adequate element discretization and aspect ratio control:
+          </p>
+          <ul class="interactive-checklist">
+            <li><input type="checkbox"> Apply Thick Shell element formulation (Mindlin-Reissner) to capture transverse out-of-plane shear stresses</li>
+            <li><input type="checkbox"> Define hydrostatic water pressure and lateral soil pressure using triangular Joint Patterns</li>
+            <li><input type="checkbox"> Perform mesh convergence verification using max 0.5m x 0.5m quadrilateral finite elements</li>
+          </ul>
+        </div>
+
+        <div class="milestone-step">
+          <span class="milestone-badge">Pro Step 03 &bull; Dynamic Analysis</span>
+          <h4 class="milestone-title">Modal Analysis, Natural Frequencies & Seismic Time-History Simulation</h4>
+          <p style="font-size: 0.98rem; color: #334155; line-height: 1.7;">
+          <p style="font-size: 0.98rem; color: #334155; line-height: 1.7;">Verify structural natural frequencies to ensure aerodynamic resonance and excessive wind vortex shedding are prevented:</p>
+          </p>
+          <ul class="interactive-checklist">
+            <li><input type="checkbox"> Eigenvector versus Load-Dependent Ritz Vector formulation for rapid modal convergence</li>
+            <li><input type="checkbox"> Verify cumulative modal mass participation ratio reaches at least 90% in principal orthogonal directions (X, Y)</li>
+            <li><input type="checkbox"> Execute linear and nonlinear Time-History analysis using recorded earthquake accelerograms (El Centro / Chittagong data)</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div style="text-align: center; margin-top: 4rem;">
+        <a href="resources.html" class="btn-reinforce" style="padding: 1rem 2rem; font-size: 1.05rem; border-radius: 0;">
+          <i class="fa-solid fa-arrow-left"></i> Back to Technical Resource Library
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Split Footer -->
+  <footer class="split-footer">
+    <div class="container">
+      <div class="split-footer-top">
+        <div class="footer-left-club-intro">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.15rem;">
+            <img src="images/aci-kuet-official-logo.webp" alt="ACI KUET Logo" style="height: 52px; width: auto; object-fit: contain;">
+            <h3 style="margin: 0; font-size: 1.4rem; font-weight: 900; color: #052E16;">ACI KUET Student Chapter</h3>
+          </div>
+          <p style="color: #052E16; font-weight: 500; font-size: 0.95rem; line-height: 1.75;">
+            Department of Civil Engineering, Khulna University of Engineering &amp; Technology (KUET). Fostering analytical rigor and computational civil engineering mastery.
+          </p>
+        </div>
+        <div class="footer-right-columns">
+          <div>
+            <h4 class="footer-col-title">Navigation</h4>
+            <ul class="footer-links-list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="events-major.html">Events &amp; Competitions</a></li>
+              <li><a href="resources.html">Resources</a></li>
+              <li><a href="verify-certificate.html">Verify Certificate</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer-col-title">Software Roadmaps</h4>
+            <ul class="footer-links-list">
+              <li><a href="learn-etabs.html">CSI ETABS 21</a></li>
+              <li><a href="learn-sap2000.html">CSI SAP2000</a></li>
+              <li><a href="learn-safe.html">CSI SAFE 20</a></li>
+              <li><a href="learn-autocad.html">AutoCAD Structural</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer-col-title">Coordinates</h4>
+            <p style="font-size: 0.9rem; line-height: 1.6; color: #052E16; font-weight: 500;">
+              KUET, Teligati, Khulna-9203<br>
+              <strong>Email:</strong> aci.kuetsc@gmail.com
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom-legal" style="text-align: center; border-top: 1px solid var(--border-light); padding-top: 2rem; color: #052E16; font-size: 0.88rem; font-weight: 500;">
+        <p>&copy; 2026 ACI Student Chapter, KUET. Department of Civil Engineering.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js?v=6.2"></script>
+  <script>
+    function switchTrack(track) {
+      const btnZero = document.getElementById('btn-track-zero');
+      const btnBeg = document.getElementById('btn-track-beg');
+      const paneZero = document.getElementById('pane-zero');
+      const paneBeg = document.getElementById('pane-beginner');
+
+      if (track === 'zero') {
+        btnZero.classList.add('active');
+        btnBeg.classList.remove('active');
+        paneZero.classList.add('active');
+        paneBeg.classList.remove('active');
+      } else {
+        btnBeg.classList.add('active');
+        btnZero.classList.remove('active');
+        paneBeg.classList.add('active');
+        paneZero.classList.remove('active');
+      }
+    }
+  </script>
+</body>
+</html>

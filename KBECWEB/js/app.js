@@ -4,104 +4,404 @@
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
+  removeNetlifyHud();
   initTheme();
   initMobileNav();
   initNavDropdowns();
   initSocialDropdown();
   initCertificateVerifier();
   initScrollAnimations();
-  initHomepageEventsSlideAnimation();
-  initModeratorAnimation();
+  initHeroTypewriter();
+  initHomepageCinematicAnimations();
   initContactForm();
   initAllNetlifyForms();
 });
 
-// Homepage Events Arena Animations (Tag from Right, Title drops from Top, Cards slide from 2 sides)
-function initHomepageEventsSlideAnimation() {
-  const head = document.querySelector('.events-head-anim');
-  const grid = document.querySelector('.events-interactive-grid');
-  const cards = document.querySelectorAll('.events-interactive-grid .event-box-link');
-
-  if (head) {
-    const headObserver = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          head.classList.add('is-visible');
-          obs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
-    headObserver.observe(head);
-  }
-
-  if (grid && cards.length) {
-    cards.forEach((card, i) => {
-      // 0, 2, 4 (left column) come from left; 1, 3, 5 (right column) come from right
-      if (i % 2 === 0) {
-        card.classList.add('slide-from-left');
-      } else {
-        card.classList.add('slide-from-right');
-      }
-    });
-
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          cards.forEach((card, i) => {
-            const delay = (i % 2) * 120 + Math.floor(i / 2) * 140;
-            setTimeout(() => {
-              card.classList.add('is-visible');
-            }, delay);
-          });
-          obs.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.05,
-      rootMargin: '0px 0px 50px 0px'
-    });
-
-    observer.observe(grid);
-
-    // Fast check fallback
-    const checkEvents = () => {
-      const vh = window.innerHeight || 800;
-      if (head && head.getBoundingClientRect().top < vh + 150) {
-        head.classList.add('is-visible');
-      }
-      if (grid && grid.getBoundingClientRect().top < vh + 150) {
-        cards.forEach(card => card.classList.add('is-visible'));
-      }
-    };
-    window.addEventListener('scroll', checkEvents, { passive: true });
-    setTimeout(checkEvents, 300);
+// Suppress Netlify HUD & Injected Badges
+function removeNetlifyHud() {
+  const killBadge = () => {
+    const targets = document.querySelectorAll(
+      '#nl-badge-frame, #nl-hud-frame, iframe[title="Powered by Netlify"], iframe[title="Netlify"], iframe[id^="nl-"], .nl-wrap, .nl-badge, [data-netlify-badge], script[data-nf-variant], a[href*="netlify.com"]:not(.footer-legal-link), div:has(> a[href*="netlify.com"])'
+    );
+    targets.forEach(el => el.remove());
+    suppressNetlifyBadge();
+  };
+  killBadge();
+  const observer = new MutationObserver(killBadge);
+  if (document.body) {
+    observer.observe(document.body, { childList: true, subtree: true });
   }
 }
 
-// Moderator Section Staggered Animation: 1. Text -> 2. Photo -> 3. Meta below
-function initModeratorAnimation() {
-  const modBox = document.querySelector('.moderator-card-box');
-  if (!modBox) return;
+// ==========================================================================
+// Hero Section: Live Typewriter Effect & Bottom Snap Pop-Up Animation
+// ==========================================================================
+function initHeroTypewriter() {
+  const mottoEl = document.getElementById('hero-typewriter-motto');
+  const bottomWrap = document.getElementById('hero-bottom-wrap');
 
-  const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        modBox.classList.add('is-visible');
-        obs.unobserve(entry.target);
+  if (!mottoEl) return;
+
+  const fullText = "Design. Build. Endure.";
+  mottoEl.textContent = '';
+  mottoEl.classList.add('is-typing');
+
+  const charDelay = 45; // ~1.0s crisp cadence across 60Hz and 120Hz displays
+  let startTime = null;
+  let lastCharCount = 0;
+  let bottomShown = false;
+
+  function step(timestamp) {
+    if (!startTime) startTime = timestamp;
+    const elapsed = timestamp - startTime;
+    const targetChars = Math.min(fullText.length, Math.floor(elapsed / charDelay));
+
+    if (targetChars > lastCharCount) {
+      mottoEl.textContent = fullText.slice(0, targetChars);
+      lastCharCount = targetChars;
+    }
+
+    // Trigger bottom snap pop-up midway through motto typing (~400ms)
+    if (!bottomShown && elapsed >= 400) {
+      bottomShown = true;
+      if (bottomWrap) {
+        bottomWrap.classList.add('is-visible');
       }
+    }
+
+    if (targetChars < fullText.length) {
+      requestAnimationFrame(step);
+    } else {
+      mottoEl.textContent = fullText;
+      if (!bottomShown && bottomWrap) {
+        bottomWrap.classList.add('is-visible');
+        bottomShown = true;
+      }
+      setTimeout(() => {
+        mottoEl.classList.remove('is-typing');
+      }, 1800);
+    }
+  }
+
+  // Kick off frame-synchronized typewriter
+  requestAnimationFrame(step);
+}
+
+// ==========================================================================
+// Homepage Cinematic Animations (2.0s / 2.2s Transitions & Looping Gallery)
+// ==========================================================================
+function initHomepageCinematicAnimations() {
+  // 1. Events Section (3-line header drops down over 2.0s; Row 1 from right 2.0s, Row 2 from left 2.0s)
+  const eventsSec = document.getElementById('events-section');
+  const eventsHead = document.querySelector('.events-head-anim');
+  const rowTop = document.querySelector('.events-row-top');
+  const rowBottom = document.querySelector('.events-row-bottom');
+
+  if (eventsSec) {
+    const eventsObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // 3-line header drops with slight 250ms delay for human eye notice
+          if (eventsHead) {
+            setTimeout(() => {
+              eventsHead.classList.add('is-visible');
+            }, 250);
+          }
+          // Row 1 slides from right over 2.0s
+          if (rowTop) {
+            setTimeout(() => {
+              rowTop.classList.add('is-visible');
+            }, 450);
+          }
+          // Row 2 slides from left over 2.0s
+          if (rowBottom) {
+            setTimeout(() => {
+              rowBottom.classList.add('is-visible');
+            }, 650);
+          }
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px 40px 0px' });
+    eventsObserver.observe(eventsSec);
+  }
+
+  // 2. Achievements Section (Header zooms inside-out over 2.2s, Cards slide from right)
+  const achieveSec = document.getElementById('achievements-section');
+  const achieveHeadZoom = document.getElementById('achieve-head-zoom');
+  const achieveGrid = document.getElementById('achieve-grid');
+
+  if (achieveSec) {
+    const achieveObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (achieveHeadZoom) achieveHeadZoom.classList.add('is-visible');
+          if (achieveGrid) {
+            setTimeout(() => {
+              achieveGrid.classList.add('is-visible');
+            }, 300);
+          }
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px 40px 0px' });
+    achieveObserver.observe(achieveSec);
+  }
+
+  // 3. Main Media Gallery Section (Slides up over 2.0s + 6-second Looping Carousel)
+  const gallerySec = document.getElementById('gallery-section');
+  const galleryContainer = document.getElementById('gallery-slide-container');
+
+  if (gallerySec) {
+    const galleryObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (galleryContainer) galleryContainer.classList.add('is-visible');
+          initGalleryCarousel();
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px 40px 0px' });
+    galleryObserver.observe(gallerySec);
+  }
+
+  // Active click bold handler for nav links
+  const navLinks = document.querySelectorAll('.nav-link');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
     });
-  }, { threshold: 0.05, rootMargin: '0px 0px 50px 0px' });
+  });
 
-  observer.observe(modBox);
+  // 4. Message from Moderator (Card drops, photo pops, statement types out in 2.5s)
+  const modSec = document.getElementById('moderator-section');
+  const modBox = document.querySelector('.moderator-card-box');
+  const modTypeBlock = document.getElementById('moderator-type-block');
 
-  // Fast check fallback
-  const checkMod = () => {
-    if (modBox.getBoundingClientRect().top < (window.innerHeight || 800) + 200) {
-      modBox.classList.add('is-visible');
+  if (modSec && modBox) {
+    const modObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          modBox.classList.add('is-visible');
+          if (modTypeBlock) {
+            setTimeout(() => {
+              runSmoothTypewriter(modTypeBlock, 2600);
+            }, 300);
+          }
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px 40px 0px' });
+    modObserver.observe(modSec);
+  }
+
+  // 5. Message from President & Convener (Zooms from inside out over 2.5s)
+  const leadersSec = document.getElementById('leaders-section');
+  const leadersZoomContainer = document.getElementById('leaders-zoom-container');
+  const presCard = document.getElementById('president-card');
+  const convCard = document.getElementById('convener-card');
+
+  if (leadersSec) {
+    const leadersObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (leadersZoomContainer) leadersZoomContainer.classList.add('is-visible');
+          if (presCard) presCard.classList.add('is-visible');
+          if (convCard) convCard.classList.add('is-visible');
+          setTimeout(() => {
+            if (presCard) {
+              const body = presCard.querySelector('.leader-type-body');
+              if (body) runSmoothTypewriter(body, 2500);
+            }
+            if (convCard) {
+              const body = convCard.querySelector('.leader-type-body');
+              if (body) runSmoothTypewriter(body, 2500);
+            }
+          }, 350);
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px 40px 0px' });
+    leadersObserver.observe(leadersSec);
+  }
+
+  // Viewport Fallback Check (in case user already scrolled on load)
+  const checkInitialScroll = () => {
+    const vh = window.innerHeight || 800;
+    if (eventsHead && eventsHead.getBoundingClientRect().top < vh) {
+      eventsHead.classList.add('is-visible');
+      if (rowTop) rowTop.classList.add('is-visible');
+      if (rowBottom) rowBottom.classList.add('is-visible');
     }
   };
-  window.addEventListener('scroll', checkMod, { passive: true });
-  setTimeout(checkMod, 300);
+  setTimeout(checkInitialScroll, 350);
+}
+
+// ==========================================================================
+// 6-Second Looping Main Media Gallery Carousel Engine
+// ==========================================================================
+function initGalleryCarousel() {
+  const slides = document.querySelectorAll('.gallery-slide-card');
+  const dots = document.querySelectorAll('#gallery-carousel-dots .carousel-dot');
+  const prevBtn = document.getElementById('gallery-prev-btn');
+  const nextBtn = document.getElementById('gallery-next-btn');
+  const wrap = document.getElementById('gallery-carousel-wrap');
+
+  if (!slides.length) return;
+
+  let currentIndex = 0;
+  let autoTimer = null;
+
+  function updateCarousel(idx) {
+    if (idx >= slides.length) currentIndex = 0;
+    else if (idx < 0) currentIndex = slides.length - 1;
+    else currentIndex = idx;
+
+    slides.forEach((slide, i) => {
+      if (i === currentIndex) {
+        slide.classList.add('active-slide', 'active-featured');
+      } else {
+        slide.classList.remove('active-slide', 'active-featured');
+      }
+    });
+
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === currentIndex);
+    });
+  }
+
+  function startTimer() {
+    stopTimer();
+    autoTimer = setInterval(() => {
+      updateCarousel(currentIndex + 1);
+    }, 6000); // 6.0 seconds per user request
+  }
+
+  function stopTimer() {
+    if (autoTimer) {
+      clearInterval(autoTimer);
+      autoTimer = null;
+    }
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      updateCarousel(currentIndex + 1);
+      startTimer();
+    });
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      updateCarousel(currentIndex - 1);
+      startTimer();
+    });
+  }
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', (e) => {
+      const targetIndex = parseInt(e.currentTarget.getAttribute('data-slide'), 10);
+      if (!isNaN(targetIndex)) {
+        updateCarousel(targetIndex);
+        startTimer();
+      }
+    });
+  });
+
+  if (wrap) {
+    wrap.addEventListener('mouseenter', stopTimer);
+    wrap.addEventListener('mouseleave', startTimer);
+  }
+
+  // Initialize first state
+  updateCarousel(0);
+  startTimer();
+}
+
+// High-Speed Tokenized Typewriter Engine (HTML-Safe, finishes strictly within totalDurationMs)
+function runSmoothTypewriter(container, totalDurationMs = 2500) {
+  if (!container || container.dataset.typed === 'true') return;
+  container.dataset.typed = 'true';
+
+  const paragraphs = Array.from(container.querySelectorAll('p.type-target'));
+  if (!paragraphs.length) return;
+
+  const items = paragraphs.map(p => {
+    const raw = p.innerHTML;
+    p.innerHTML = '';
+    return { element: p, html: raw };
+  });
+
+  // Calculate total visible characters across all paragraphs
+  let totalChars = 0;
+  items.forEach(it => {
+    const temp = document.createElement('div');
+    temp.innerHTML = it.html;
+    totalChars += temp.textContent.length || it.html.length;
+  });
+
+  if (totalChars === 0) return;
+
+  const cursor = document.createElement('span');
+  cursor.className = 'typewriter-cursor';
+
+  let currentItemIndex = 0;
+  const frameRate = 16; // ~60fps
+  const totalFrames = Math.max(1, Math.floor(totalDurationMs / frameRate));
+  const tokensPerFrame = Math.max(1, Math.ceil(totalChars / totalFrames));
+
+  function typeNext() {
+    if (currentItemIndex >= items.length) {
+      if (cursor.parentNode) cursor.parentNode.removeChild(cursor);
+      return;
+    }
+
+    const current = items[currentItemIndex];
+    if (!current.tokens) {
+      // Tokenize HTML: keep tags like <strong> and entities &amp; as atomic single tokens
+      const fullHtml = current.html;
+      const tokens = [];
+      let i = 0;
+      while (i < fullHtml.length) {
+        if (fullHtml[i] === '<') {
+          const closeIdx = fullHtml.indexOf('>', i);
+          if (closeIdx !== -1) {
+            tokens.push(fullHtml.substring(i, closeIdx + 1));
+            i = closeIdx + 1;
+            continue;
+          }
+        }
+        if (fullHtml[i] === '&') {
+          const semiIdx = fullHtml.indexOf(';', i);
+          if (semiIdx !== -1 && semiIdx - i < 10) {
+            tokens.push(fullHtml.substring(i, semiIdx + 1));
+            i = semiIdx + 1;
+            continue;
+          }
+        }
+        tokens.push(fullHtml[i]);
+        i++;
+      }
+      current.tokens = tokens;
+      current.tokenIndex = 0;
+    }
+
+    for (let b = 0; b < tokensPerFrame && current.tokenIndex < current.tokens.length; b++) {
+      current.tokenIndex++;
+    }
+
+    current.element.innerHTML = current.tokens.slice(0, current.tokenIndex).join('');
+    current.element.appendChild(cursor);
+
+    if (current.tokenIndex >= current.tokens.length) {
+      currentItemIndex++;
+    }
+
+    setTimeout(typeNext, frameRate);
+  }
+
+  typeNext();
 }
 
 // Scroll Reveal Animations
@@ -142,16 +442,57 @@ function initMobileNav() {
   const navMenu = document.querySelector('.nav-menu');
 
   if (toggleBtn && navMenu) {
-    toggleBtn.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-      toggleBtn.innerHTML = navMenu.classList.contains('active') 
+    // Ensure backdrop exists
+    let backdrop = document.querySelector('.nav-backdrop');
+    if (!backdrop) {
+      backdrop = document.createElement('div');
+      backdrop.className = 'nav-backdrop';
+      document.body.appendChild(backdrop);
+    }
+
+    const closeMenu = () => {
+      navMenu.classList.remove('active');
+      if (backdrop) backdrop.classList.remove('active');
+      toggleBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      toggleBtn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    };
+
+    toggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isActive = navMenu.classList.toggle('active');
+      if (backdrop) backdrop.classList.toggle('active', isActive);
+      toggleBtn.innerHTML = isActive 
         ? '<i class="fa-solid fa-xmark"></i>' 
         : '<i class="fa-solid fa-bars"></i>';
+      toggleBtn.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+      document.body.style.overflow = isActive ? 'hidden' : '';
+    });
+
+    // Close when tapping backdrop
+    if (backdrop) {
+      backdrop.addEventListener('click', closeMenu);
+    }
+
+    // Close when tapping outside
+    document.addEventListener('click', (e) => {
+      if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && !toggleBtn.contains(e.target)) {
+        closeMenu();
+      }
+    });
+
+    // Close when tapping any regular link inside menu
+    navMenu.querySelectorAll('a.nav-link, .dropdown-item').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 1040) {
+          closeMenu();
+        }
+      });
     });
   }
 }
 
-// Nav Dropdown Click Toggle Support (Events & Panel)
+// Nav Dropdown Click Toggle Support (Events & Panel & About Us)
 function initNavDropdowns() {
   const navItems = document.querySelectorAll('.nav-item');
   navItems.forEach(item => {
@@ -159,23 +500,33 @@ function initNavDropdowns() {
     const menu = item.querySelector('.dropdown-menu');
     if (trigger && menu) {
       trigger.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        const isOpen = item.classList.contains('open');
-        navItems.forEach(other => other.classList.remove('open'));
-        if (!isOpen) {
-          item.classList.add('open');
+        // Toggle accordion on mobile or when trigger is a category header
+        if (window.innerWidth <= 1040 || trigger.tagName.toLowerCase() === 'span') {
+          e.preventDefault();
+          e.stopPropagation();
+          const isOpen = item.classList.contains('open');
+          // If already open, close it; otherwise close siblings and open this one
+          if (isOpen) {
+            item.classList.remove('open');
+          } else {
+            navItems.forEach(other => {
+              if (other !== item) other.classList.remove('open');
+            });
+            item.classList.add('open');
+          }
         }
       });
     }
   });
 
   document.addEventListener('click', (e) => {
-    navItems.forEach(item => {
-      if (!item.contains(e.target)) {
-        item.classList.remove('open');
-      }
-    });
+    if (window.innerWidth > 1040) {
+      navItems.forEach(item => {
+        if (!item.contains(e.target)) {
+          item.classList.remove('open');
+        }
+      });
+    }
   });
 }
 
@@ -230,6 +581,15 @@ const VERIFIED_CERTIFICATES = {
   }
 };
 
+function escapeHtml(str) {
+  if (!str) return '';
+  return String(str).replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;')
+                    .replace(/'/g, '&#039;');
+}
+
 function initCertificateVerifier() {
   const btn = document.getElementById('btn-verify-cert');
   const input = document.getElementById('cert-id-input');
@@ -252,13 +612,13 @@ function initCertificateVerifier() {
           <h4 style="color: #16a34a; font-size: 1.15rem; font-weight: 800;">
             <i class="fa-solid fa-circle-check"></i> Authentic Certificate Verified
           </h4>
-          <span style="background: #16a34a; color: #fff; padding: 0.2rem 0.6rem; border-radius: 0; font-size: 0.75rem; font-weight: 700;">${cert.status}</span>
+          <span style="background: #16a34a; color: #fff; padding: 0.2rem 0.6rem; border-radius: 0; font-size: 0.75rem; font-weight: 700;">${escapeHtml(cert.status)}</span>
         </div>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; font-size: 0.9rem;">
-          <div><strong>Recipient:</strong> ${cert.recipient}</div>
-          <div><strong>Roll / Affiliation:</strong> ${cert.roll}</div>
-          <div><strong>Event / Program:</strong> ${cert.event}</div>
-          <div><strong>Issue Date:</strong> ${cert.issueDate}</div>
+          <div><strong>Recipient:</strong> ${escapeHtml(cert.recipient)}</div>
+          <div><strong>Roll / Affiliation:</strong> ${escapeHtml(cert.roll)}</div>
+          <div><strong>Event / Program:</strong> ${escapeHtml(cert.event)}</div>
+          <div><strong>Issue Date:</strong> ${escapeHtml(cert.issueDate)}</div>
         </div>
         <div style="margin-top: 1rem; font-size: 0.78rem; color: #64748b;">
           Cryptographically registered under ACI KUET Student Chapter Archive Records.
@@ -271,7 +631,7 @@ function initCertificateVerifier() {
           <i class="fa-solid fa-triangle-exclamation"></i> Certificate Not Found
         </div>
         <p style="font-size: 0.88rem; color: #64748b; margin-top: 0.5rem;">
-          No verified certificate matches ID "<strong>${certId}</strong>". Please verify the code or contact ACI KUET Academic Secretariat.
+          No verified certificate matches ID "<strong>${escapeHtml(certId)}</strong>". Please verify the code or contact ACI KUET Academic Secretariat.
         </p>
       `;
     }
@@ -289,33 +649,51 @@ function initContactForm() {
     btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Dispatching Message...';
 
     const formData = new FormData(form);
-    fetch('/', {
+    
+    // Direct dispatch payload to aci.kuet.student.chapter@gmail.com
+    const emailPayload = {
+      name: form.elements['name'] ? form.elements['name'].value : '',
+      email: form.elements['email'] ? form.elements['email'].value : '',
+      subject: form.elements['subject'] ? form.elements['subject'].value : 'Official Inquiry from acikuet.org',
+      message: form.elements['message'] ? form.elements['message'].value : '',
+      _subject: 'Official Message Desk Inquiry: ' + (form.elements['subject'] ? form.elements['subject'].value : 'General'),
+      _template: 'table',
+      _captcha: 'false'
+    };
+
+    // Parallel dispatch: 1) Direct Email to aci.kuet.student.chapter@gmail.com, 2) Netlify Form capture
+    const emailPromise = fetch('https://formsubmit.co/ajax/aci.kuet.student.chapter@gmail.com', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(emailPayload)
+    }).catch(e => console.warn('FormSubmit note:', e));
+
+    const netlifyPromise = fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams(formData).toString()
-    })
-    .then((res) => {
+    }).catch(e => console.warn('Netlify form note:', e));
+
+    Promise.allSettled([emailPromise, netlifyPromise]).then(() => {
       form.innerHTML = `
         <div style="background: #f0fdf4; border: 2px solid #166534; padding: 2.5rem 2rem; text-align: center; border-radius: 0; box-shadow: 0 4px 14px rgba(22, 101, 52, 0.08);">
           <div style="font-size: 3rem; color: #166534; margin-bottom: 1rem;">
             <i class="fa-solid fa-circle-check"></i>
           </div>
           <h4 style="font-size: 1.4rem; font-weight: 800; color: #166534; margin-bottom: 0.6rem;">
-            Official Inquiry Received
+            Official Inquiry Dispatched
           </h4>
           <p style="color: #0f172a; font-size: 0.98rem; line-height: 1.7; max-width: 500px; margin: 0 auto 1.25rem;">
-            Thank you! Your official inquiry has been routed directly to the ACI KUET Secretariat at <strong>aci.kuet.student.chapter@gmail.com</strong>. Our coordination panel will review and respond promptly.
+            Thank you! Your official message has been dispatched directly to our mailbox at <strong>aci.kuet.student.chapter@gmail.com</strong>. Our executive committee will review and respond promptly.
           </p>
           <div style="font-size: 0.85rem; color: #64748b; font-weight: 600;">
             Department of Civil Engineering &bull; Khulna University of Engineering &amp; Technology
           </div>
         </div>
       `;
-    })
-    .catch((err) => {
-      btn.disabled = false;
-      btn.innerHTML = originalText;
-      alert('Network issue encountered. Please email us directly at aci.kuet.student.chapter@gmail.com');
     });
   });
 }
@@ -744,6 +1122,83 @@ function initReinforCECountdown() {
   updateClock();
   setInterval(updateClock, 1000);
 }
+
+// ==========================================================================
+// 2.5s Cinematic Scroll Animations & Typewriter System
+// ==========================================================================
+function initEventCinematicAnimations() {
+  const animatedEls = document.querySelectorAll('[data-animate]');
+  if (!animatedEls.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-animated');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.02,
+    rootMargin: '80px 0px 80px 0px'
+  });
+
+  animatedEls.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight + 80 && rect.bottom > -80) {
+      el.classList.add('is-animated');
+    } else {
+      observer.observe(el);
+    }
+  });
+
+  // Safety fallback: ensure all animated elements become visible within 2.5s
+  setTimeout(() => {
+    animatedEls.forEach(el => el.classList.add('is-animated'));
+  }, 2500);
+}
+
+function initTypewriterEffect() {
+  const typewriterEls = document.querySelectorAll('[data-typewriter]');
+  if (!typewriterEls.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        observer.unobserve(el);
+        const fullText = el.getAttribute('data-typewriter') || el.textContent;
+        el.textContent = '';
+        el.classList.add('typing-cursor');
+
+        let charIdx = 0;
+        const totalChars = fullText.length;
+        const speed = Math.max(10, Math.min(28, Math.floor(2200 / Math.max(totalChars, 1))));
+
+        const typeInterval = setInterval(() => {
+          if (charIdx < totalChars) {
+            el.textContent += fullText.charAt(charIdx);
+            charIdx++;
+          } else {
+            clearInterval(typeInterval);
+            setTimeout(() => {
+              el.classList.remove('typing-cursor');
+            }, 800);
+          }
+        }, speed);
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  typewriterEls.forEach(el => observer.observe(el));
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initEventCinematicAnimations();
+  initTypewriterEffect();
+});
+
 
 
 

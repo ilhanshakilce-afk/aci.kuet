@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#166534">
+  <meta name="theme-color" content="#15803D">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <title>Webpage Architecture Team | ACI Student Chapter - KUET</title>
+  <title>ACI KUET Student Chapter | Web Architecture Team</title>
   <meta name="description" content="Meet the Webpage Team Leaders Shakil Ilhan and Ifat Hossain who engineered the acikuet.org web portal.">
   <link rel="canonical" href="https://acikuet.org/panel-webteam.html">
   
@@ -23,29 +23,44 @@
   <meta name="twitter:title" content="Webpage Architecture Team | ACI Student Chapter - KUET">
   <meta name="twitter:description" content="Meet the Webpage Team Leaders Shakil Ilhan and Ifat Hossain who engineered the acikuet.org web portal.">
   <meta name="twitter:image" content="https://acikuet.org/images/hero-group-photo.webp">
-  <link rel="icon" href="images/aci-kuet-official-logo.webp" type="image/webp">
+    <!-- Favicon with Solid White Circular Backing (Dark Mode Proof for Browser Tabs) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="shortcut icon" href="images/favicon.ico">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="css/styles.css?v=6.1">
+  <link rel="stylesheet" href="css/styles.css?v=8.6">
 </head>
 <body>
 
-    <!-- Main Slim White Navbar (সাদা অংশটা: স্লিম, পরিচ্ছন্ন ও কমপ্যাক্ট) -->
-    <!-- Main Slim White Navbar -->
+      <!-- Persistent Sticky Top Ribbon (Stays pinned at top as page scrolls) -->
+  <div class="persistent-top-ribbon">
+    <div class="top-ribbon-inner">
+      <span>ACI KUET Student Chapter</span>
+    </div>
+  </div>
+
+  <!-- Main Slim White Navbar (0.8x Compact, Logo shifted to far left, 3-step stacked brand) -->
   <header class="main-header">
     <div class="navbar-container">
       <nav class="navbar">
-        <!-- Far Left: Official Logo + Text -->
+        <!-- Far Left: Official Logo with Solid White Backing + 3-Step Stacked Text -->
         <a href="index.html" class="nav-brand">
-          <img src="images/aci-kuet-official-logo.webp" alt="ACI KUET Official Logo" class="nav-brand-logo">
-          <span class="nav-brand-text">
-            <span class="brand-aci">ACI</span> <span class="brand-kuet">KUET</span> <span class="brand-sub">Student Chapter</span>
+          <div class="nav-brand-logo-box">
+            <img src="images/aci-kuet-official-logo.webp" alt="ACI KUET Official Logo" class="nav-brand-logo">
+          </div>
+          <span class="nav-brand-stacked">
+            <span class="brand-step-1">ACI KUET</span>
+            <span class="brand-step-2">STUDENT</span>
+            <span class="brand-step-3">CHAPTER</span>
           </span>
         </a>
 
-        <!-- Right Side: Navigation Menu -->
+        <!-- Right Side: Navigation Menu (0.8x compact, bold on click/active) -->
         <ul class="nav-menu">
           <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
           
@@ -73,9 +88,8 @@
 
           <li class="nav-item"><a href="achievements.html" class="nav-link">Achievements</a></li>
           <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>
-          <li class="nav-item"><a href="estimation.html" class="nav-link">Civil Estimation</a></li>
           <li class="nav-item"><a href="resources.html" class="nav-link">Resources</a></li>
-          <li class="nav-item"><a href="verify-certificate.html" class="nav-link"><i class="fa-solid fa-certificate"></i> Verify Certificate</a></li>
+          <li class="nav-item"><a href="verify-certificate.html" class="nav-link">Verify Certificate</a></li>
           <li class="nav-item"><a href="sponsors.html" class="nav-link">Sponsors</a></li>
           <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
 
@@ -116,8 +130,8 @@
       <!-- Dual Team Leaders Grid -->
       <div class="webteam-dual-grid">
 
-        <!-- Team Leader 1: Shakil Ilhan -->
-        <div class="webteam-lead-wrapper">
+        <!-- Team Leader 1: Shakil Ilhan (Slides in from Left) -->
+        <div class="webteam-lead-wrapper" data-animate="slide-left">
           <div class="webteam-card-container">
             <!-- Background Code Watermark -->
             <div class="webteam-code-watermark" aria-hidden="true">
@@ -129,8 +143,8 @@
               &nbsp;&nbsp;&lt;title&gt;ACI KUET Student Chapter&lt;/title&gt;<br>
               &nbsp;&nbsp;&lt;style&gt;<br>
               &nbsp;&nbsp;&nbsp;&nbsp;body { background: #f0fdf4; color: #000; font-family: 'Plus Jakarta Sans', sans-serif; }<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;.team-leader { font-weight: 800; color: #166534; }<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;.code-glow { text-shadow: 0 0 10px #166534; }<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;.team-leader { font-weight: 800; color: #15803D; }<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;.code-glow { text-shadow: 0 0 10px #15803D; }<br>
               &nbsp;&nbsp;&lt;/style&gt;<br>
               &lt;/head&gt;<br>
               &lt;body&gt;<br>
@@ -175,7 +189,7 @@
               Convener &amp; Initiator | Roll: 2301044 | Department of Civil Engineering, KUET
             </p>
 
-            <!-- Golden Circular Action Buttons Matching Screenshot -->
+            <!-- Golden Circular Action Buttons -->
             <div class="webteam-social-row">
               <a href="https://www.facebook.com/shakil.ilhan.566" target="_blank" rel="noopener noreferrer" class="webteam-social-btn" title="Facebook Profile">
                 <i class="fa-brands fa-facebook-f"></i>
@@ -196,6 +210,9 @@
 
             <!-- Contact Pills -->
             <div class="webteam-contact-pills">
+              <span class="webteam-pill" title="Department of Civil Engineering, KUET">
+                <i class="fa-solid fa-graduation-cap"></i> KUET
+              </span>
               <a href="mailto:ilhanshakil.ce@gmail.com" class="webteam-pill" title="Send Email">
                 <i class="fa-solid fa-envelope"></i> ilhanshakil.ce@gmail.com
               </a>
@@ -206,8 +223,8 @@
           </div>
         </div>
 
-        <!-- Team Leader 2: Ifat Hossain -->
-        <div class="webteam-lead-wrapper">
+        <!-- Team Leader 2: Ifat Hossain (Slides in from Right) -->
+        <div class="webteam-lead-wrapper" data-animate="slide-right">
           <div class="webteam-card-container">
             <!-- Background Code Watermark -->
             <div class="webteam-code-watermark" aria-hidden="true">
@@ -219,8 +236,8 @@
               &nbsp;&nbsp;&lt;title&gt;ACI KUET Student Chapter&lt;/title&gt;<br>
               &nbsp;&nbsp;&lt;style&gt;<br>
               &nbsp;&nbsp;&nbsp;&nbsp;body { background: #f0fdf4; color: #000; font-family: 'Plus Jakarta Sans', sans-serif; }<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;.team-leader { font-weight: 800; color: #166534; }<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;.code-glow { text-shadow: 0 0 10px #166534; }<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;.team-leader { font-weight: 800; color: #15803D; }<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;.code-glow { text-shadow: 0 0 10px #15803D; }<br>
               &nbsp;&nbsp;&lt;/style&gt;<br>
               &lt;/head&gt;<br>
               &lt;body&gt;<br>
@@ -257,15 +274,15 @@
             </div>
           </div>
 
-          <!-- Identity & Social Directory Under the Card -->
+          <!-- Identity & Social Directory Under the Card (Clean & Blanked Details as requested) -->
           <div class="webteam-under-info">
             <h2 class="webteam-under-name">Ifat Hossain</h2>
             <div class="webteam-under-role">Team Leader</div>
-            <p style="font-size: 0.95rem; color: var(--text-dark); font-weight: 600; margin-bottom: 1.25rem;">
-              Team Leader | Roll: 2301045 | Department of Civil Engineering, KUET
+            <p style="font-size: 0.95rem; color: var(--text-dark); font-weight: 600; margin-bottom: 1.25rem; min-height: 1.45rem;">
+              &nbsp;
             </p>
 
-            <!-- Golden Circular Action Buttons Matching Screenshot (No Instagram as requested) -->
+            <!-- 4 Social Action Buttons (No Phone, Clean & Consistent) -->
             <div class="webteam-social-row">
               <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="webteam-social-btn" title="Facebook Profile">
                 <i class="fa-brands fa-facebook-f"></i>
@@ -276,31 +293,28 @@
               <a href="mailto:aci.kuetsc@gmail.com" class="webteam-social-btn" title="Email Secretariat">
                 <i class="fa-solid fa-envelope"></i>
               </a>
-              <a href="tel:01723150767" class="webteam-social-btn" title="Phone: 01723150767">
-                <i class="fa-solid fa-phone"></i>
+              <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="webteam-social-btn" title="GitHub Profile">
+                <i class="fa-brands fa-github"></i>
               </a>
             </div>
 
-            <!-- Contact Pills -->
+            <!-- Contact Pills: Matching KUET at Bottom, No Phone, No Roll -->
             <div class="webteam-contact-pills">
-              <span class="webteam-pill" title="Department of Civil Engineering, KUET">
-                <i class="fa-solid fa-graduation-cap"></i> Civil Engineering, KUET (Roll: 2301045)
+              <span class="webteam-pill" title="Khulna University of Engineering & Technology">
+                <i class="fa-solid fa-graduation-cap"></i> KUET
               </span>
-              <a href="tel:01723150767" class="webteam-pill" title="Call Direct">
-                <i class="fa-solid fa-phone"></i> 01723150767
-              </a>
             </div>
           </div>
         </div>
 
       </div>
 
-      <!-- Infrastructure Architecture Note -->
-      <div style="background: #ffffff; border: 1.5px solid var(--border-light);  border-radius: var(--radius-lg); padding: 2.25rem 2rem; margin-top: 4rem; box-shadow: 0 4px 18px rgba(22, 101, 52, 0.05); text-align: left;">
-        <h3 style="font-size: 1.3rem; font-weight: 800; color: #000000; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.6rem;">
+      <!-- Infrastructure Architecture Note (Animated & Typewriter Description) -->
+      <div data-animate="pop-inside" style="background: #ffffff; border: 1.5px solid var(--border-light); border-radius: var(--radius-lg); padding: 2.25rem 2rem; margin-top: 4rem; box-shadow: 0 4px 18px rgba(22, 101, 52, 0.05); text-align: left;">
+        <h3 style="font-size: 1.3rem; font-weight: 800; color: #052E16; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.6rem;">
           <i class="fa-solid fa-server" style="color: var(--stripe-green);"></i> Digital Architecture &amp; Platform Stack
         </h3>
-        <p style="color: #000000; line-height: 1.8; font-size: 0.95rem; font-weight: 500;">
+        <p data-typewriter style="color: #052E16; line-height: 1.8; font-size: 0.95rem; font-weight: 500;">
           The acikuet.org web portal is engineered on standard HTML5, CSS3, and modern vanilla JavaScript with zero framework bloat. It is architected for instant worldwide CDN deployment on Netlify and GitHub Pages with automatic SSL encryption, offline resilience, and cryptographic certificate verification.
         </p>
       </div>
@@ -315,9 +329,9 @@
         <div class="footer-left-club-intro">
           <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.15rem;">
             <img src="images/aci-kuet-official-logo.webp" alt="ACI KUET Logo" style="height: 52px; width: auto; object-fit: contain;">
-            <h3 style="margin: 0; font-size: 1.4rem; font-weight: 900; color: #000000;">ACI KUET Student Chapter</h3>
+            <h3 style="margin: 0; font-size: 1.4rem; font-weight: 900; color: #052E16;">ACI KUET Student Chapter</h3>
           </div>
-          <p style="color: #000000; font-weight: 500; font-size: 0.95rem; line-height: 1.75;">
+          <p style="color: #052E16; font-weight: 500; font-size: 0.95rem; line-height: 1.75;">
             Rooted in the Department of Civil Engineering at KUET and chartered by the American Concrete Institute (ACI), the ACI KUET Student Chapter is a dynamic platform for aspiring civil and materials engineers. We strive to cultivate hands-on innovation, sustainable construction practices, and leadership, connecting KUET students with nationwide industry networks and global engineering forums.
           </p>
           <div class="footer-social-row">
@@ -373,14 +387,14 @@
           <div>
             <h4 class="footer-col-title">Department Coordinates</h4>
             <div class="footer-location-block">
-              <i class="fa-solid fa-location-dot" style="color: #166534; font-size: 1.15rem; margin-top: 3px;"></i>
-              <p style="color: #000000; font-size: 0.92rem; line-height: 1.6; font-weight: 500;">
+              <i class="fa-solid fa-location-dot" style="color: #15803D; font-size: 1.15rem; margin-top: 3px;"></i>
+              <p style="color: #052E16; font-size: 0.92rem; line-height: 1.6; font-weight: 500;">
                 Department of Civil Engineering<br>
                 Khulna University of Engineering &amp; Technology (KUET)<br>
                 Teligati, Khulna-9203, Bangladesh.
               </p>
             </div>
-            <div style="margin-top: 1rem; font-size: 0.88rem; color: #000000; font-weight: 600; line-height: 1.6;">
+            <div style="margin-top: 1rem; font-size: 0.88rem; color: #052E16; font-weight: 600; line-height: 1.6;">
               <strong>Convener:</strong> Shakil Ilhan (2301044)<br>
               <strong>Email:</strong> aci.kuetsc@gmail.com
             </div>
@@ -388,7 +402,7 @@
         </div>
       </div>
 
-      <div class="footer-bottom-legal" style="text-align: center; border-top: 1px solid var(--border-light); padding-top: 2rem; color: #000000; font-size: 0.88rem; font-weight: 500;">
+      <div class="footer-bottom-legal" style="text-align: center; border-top: 1px solid var(--border-light); padding-top: 2rem; color: #052E16; font-size: 0.88rem; font-weight: 500;">
         <p>&copy; 2026 ACI Student Chapter, KUET. All rights reserved. Department of Civil Engineering, Khulna University of Engineering &amp; Technology.</p>
       </div>
     </div>

@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#166534">
+  <meta name="theme-color" content="#15803D">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <title>In-House Competitions (1.1, 1.2, 1.3) | ACI KUET Student Chapter</title>
+  <title>ACI KUET Student Chapter | In-House Competitions</title>
   <meta name="description" content="Internal departmental competitions for KUET Civil Engineering students: Mechanics Mania 1.1, Truss Challenge 1.2, and The Odyssey 1.3.">
   <link rel="canonical" href="https://acikuet.org/events-inhouse.html">
   
@@ -23,29 +23,44 @@
   <meta name="twitter:title" content="In-House Competitions (1.1, 1.2, 1.3) | ACI KUET Student Chapter">
   <meta name="twitter:description" content="Internal departmental competitions for KUET Civil Engineering students: Mechanics Mania 1.1, Truss Challenge 1.2, and The Odyssey 1.3.">
   <meta name="twitter:image" content="https://acikuet.org/images/hero-group-photo.webp">
-  <link rel="icon" href="images/aci-kuet-official-logo.webp" type="image/webp">
+    <!-- Favicon with Solid White Circular Backing (Dark Mode Proof for Browser Tabs) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="shortcut icon" href="images/favicon.ico">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="css/styles.css?v=6.1">
+  <link rel="stylesheet" href="css/styles.css?v=8.6">
 </head>
 <body>
 
-    <!-- Main Slim White Navbar (সাদা অংশটা: স্লিম, পরিচ্ছন্ন ও কমপ্যাক্ট) -->
-    <!-- Main Slim White Navbar -->
+      <!-- Persistent Sticky Top Ribbon (Stays pinned at top as page scrolls) -->
+  <div class="persistent-top-ribbon">
+    <div class="top-ribbon-inner">
+      <span>ACI KUET Student Chapter</span>
+    </div>
+  </div>
+
+  <!-- Main Slim White Navbar (0.8x Compact, Logo shifted to far left, 3-step stacked brand) -->
   <header class="main-header">
     <div class="navbar-container">
       <nav class="navbar">
-        <!-- Far Left: Official Logo + Text -->
+        <!-- Far Left: Official Logo with Solid White Backing + 3-Step Stacked Text -->
         <a href="index.html" class="nav-brand">
-          <img src="images/aci-kuet-official-logo.webp" alt="ACI KUET Official Logo" class="nav-brand-logo">
-          <span class="nav-brand-text">
-            <span class="brand-aci">ACI</span> <span class="brand-kuet">KUET</span> <span class="brand-sub">Student Chapter</span>
+          <div class="nav-brand-logo-box">
+            <img src="images/aci-kuet-official-logo.webp" alt="ACI KUET Official Logo" class="nav-brand-logo">
+          </div>
+          <span class="nav-brand-stacked">
+            <span class="brand-step-1">ACI KUET</span>
+            <span class="brand-step-2">STUDENT</span>
+            <span class="brand-step-3">CHAPTER</span>
           </span>
         </a>
 
-        <!-- Right Side: Navigation Menu -->
+        <!-- Right Side: Navigation Menu (0.8x compact, bold on click/active) -->
         <ul class="nav-menu">
           <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
           
@@ -73,9 +88,8 @@
 
           <li class="nav-item"><a href="achievements.html" class="nav-link">Achievements</a></li>
           <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>
-          <li class="nav-item"><a href="estimation.html" class="nav-link">Civil Estimation</a></li>
           <li class="nav-item"><a href="resources.html" class="nav-link">Resources</a></li>
-          <li class="nav-item"><a href="verify-certificate.html" class="nav-link"><i class="fa-solid fa-certificate"></i> Verify Certificate</a></li>
+          <li class="nav-item"><a href="verify-certificate.html" class="nav-link">Verify Certificate</a></li>
           <li class="nav-item"><a href="sponsors.html" class="nav-link">Sponsors</a></li>
           <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
 
@@ -117,98 +131,77 @@
   <section style="background: var(--bg-main); padding: 4rem 0 5rem;">
     <div class="container">
       
-      <!-- Nomenclature Architectural System -->
-      <div style="background: #ffffff; border: 1.5px solid var(--border-light);  border-radius: 0; padding: 2.25rem 2rem; margin-bottom: 3.5rem; box-shadow: 0 4px 18px rgba(22, 101, 52, 0.05);">
-        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
-          <i class="fa-solid fa-sitemap" style="color: #166534; font-size: 1.4rem;"></i>
-          <h3 style="font-size: 1.35rem; font-weight: 900; color: #000000; margin: 0;">ReinforCE Versioning &amp; Nomenclature Architecture</h3>
+      <!-- Completed Intra Competitions Roadmap Header (Pops from inside circle in 2.5s) -->
+      <div class="section-clean-head" style="text-align: center; margin-bottom: 3.5rem;">
+        <div data-animate="pop-inside">
+          <span style="display: inline-block; background: transparent; color: #15803D; font-size: 0.82rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.75rem;">Completed Intra Competitions</span>
+          <h2 class="section-title" style="font-size: 2.5rem; font-weight: 900; color: #052E16; margin-top: 0.5rem; letter-spacing: -0.5px;">
+            The Completed Intra Competitions
+          </h2>
+          <div style="font-size: 1.15rem; font-weight: 700; color: #15803D; margin-top: 0.35rem;">
+            Intra Series Roadmap
+          </div>
         </div>
-        <p style="font-size: 0.95rem; color: #000000; line-height: 1.7; font-weight: 500; margin-bottom: 1.25rem;">
-          Our annual national flagship fest is codified sequentially: <strong>ReinforCE 1.0 &rarr; 2.0 &rarr; 3.0 &rarr; 4.0</strong>. Every internal departmental competition held within that annual cycle is designated as a decimal branch: <strong>ReinforCE 1.1, 1.2, 1.3...</strong> and next cycle <strong>2.1, 2.2, 2.3...</strong>.
-        </p>
-        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-          <span style="display: inline-block; background: transparent; color: #166534; font-size: 0.82rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.75rem;"><i class="fa-solid fa-flag"></i> National Flagships: 1.0 &bull; 2.0 &bull; 3.0</span>
-          <span style="background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; font-weight: 800; font-size: 0.84rem; padding: 0.35rem 0.85rem; border-radius: 0;">
-            <i class="fa-solid fa-code-branch"></i> In-House Intras: 1.1 &bull; 1.2 &bull; 1.3
-          </span>
-        </div>
-      </div>
-
-      <!-- ReinforCE 1.0 Cycle Intra Series -->
-      <div class="section-clean-head" style="text-align: center; margin-bottom: 2.75rem;">
-        <span style="display: inline-block; background: transparent; color: #166534; font-size: 0.82rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.75rem;">ReinforCE 1.0 Cycle &bull; Completed Intra Competitions</span>
-        <h2 class="section-title" style="font-size: 2.3rem; font-weight: 900; color: #000000; margin-top: 0.85rem; letter-spacing: -0.4px;">
-          The 1.x Intra Series Roadmap
-        </h2>
       </div>
 
       <div class="cards-grid">
-        <!-- ReinforCE 1.1: Mechanics Mania -->
-        <div class="feature-card" style=" display: flex; flex-direction: column; justify-content: space-between;">
+        <!-- ReinforCE 1.1: Mechanics Mania (Slides in from Left) -->
+        <div class="feature-card" data-animate="slide-left" style="display: flex; flex-direction: column; justify-content: space-between; padding-top: 2rem;">
           <div>
-            <div style="font-size: 2.2rem; color: var(--stripe-green); margin-bottom: 0.75rem;">
-              <i class="fa-solid fa-brain"></i>
-            </div>
-            <span style="display: inline-block; background: transparent; color: #166534; font-size: 0.82rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.75rem;">ReinforCE 1.1 &bull; Intra Challenge</span>
-            <h3 style="margin-top: 0.75rem; font-size: 1.35rem; font-weight: 900; color: #000000;">Mechanics Mania (1.1)</h3>
-            <p style="color: #000000; font-size: 0.95rem; line-height: 1.65; font-weight: 500;">
+            <span style="display: inline-block; background: #f0fdf4; color: #15803D; border: 1px solid #bbf7d0; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 0.25rem 0.65rem; border-radius: 4px; margin-bottom: 0.75rem;">ReinforCE 1.1 Intra Challenge</span>
+            <h3 style="margin-top: 0.5rem; font-size: 1.35rem; font-weight: 900; color: #052E16;">Mechanics Mania (1.1)</h3>
+            <p style="color: #052E16; font-size: 0.95rem; line-height: 1.65; font-weight: 500;">
               Fast-paced engineering mechanics olympiad testing equilibrium, free-body diagrams (FBDs), stress-strain kinetics, and shear-moment intuition under high-adrenaline timed buzzer showdowns.
             </p>
-            <ul style="margin: 1rem 0; padding-left: 1.25rem; font-size: 0.9rem; color: #000000; font-weight: 600; line-height: 1.6;">
-              <li><strong>Outcome:</strong> Solidifying core engineering mechanics &amp; statics intuition.</li>
-              <li><strong>Format:</strong> Written rapid round + on-stage buzzer showdown.</li>
+            <ul style="margin: 1rem 0; padding-left: 1.25rem; font-size: 0.9rem; color: #052E16; font-weight: 600; line-height: 1.6;">
+              <li><strong>Outcome:</strong> Solidifying core engineering mechanics and statics intuition.</li>
+              <li><strong>Format:</strong> Written rapid round followed by on-stage live buzzer showdown.</li>
               <li><strong>Eligibility:</strong> Department of Civil Engineering underclassmen.</li>
             </ul>
           </div>
-          <div style="margin-top: 1.25rem; pt: 1rem; border-top: 1px solid var(--border-light);">
+          <div style="margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--border-light);">
             <a href="events-inhouse-1-1.html" class="btn-reg" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 0.5rem; text-decoration: none;">
               <span>View Event Dossier</span> <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
         </div>
 
-        <!-- ReinforCE 1.2: Truss Challenge -->
-        <div class="feature-card" style=" display: flex; flex-direction: column; justify-content: space-between;">
+        <!-- ReinforCE 1.2: Truss Challenge (Slides in from Right) -->
+        <div class="feature-card" data-animate="slide-right" style="display: flex; flex-direction: column; justify-content: space-between; padding-top: 2rem;">
           <div>
-            <div style="font-size: 2.2rem; color: var(--stripe-green); margin-bottom: 0.75rem;">
-              <i class="fa-solid fa-diagram-project"></i>
-            </div>
-            <span style="display: inline-block; background: transparent; color: #166534; font-size: 0.82rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.75rem;">ReinforCE 1.2 &bull; Intra Challenge</span>
-            <h3 style="margin-top: 0.75rem; font-size: 1.35rem; font-weight: 900; color: #000000;">Truss Challenge (1.2)</h3>
-            <p style="color: #000000; font-size: 0.95rem; line-height: 1.65; font-weight: 500;">
-              Design and construct lightweight balsa wood truss bridges under strict geometric bounds, learning tension/compression load paths and destructive failure load testing on the KUET testing floor.
+            <span style="display: inline-block; background: #f0fdf4; color: #15803D; border: 1px solid #bbf7d0; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 0.25rem 0.65rem; border-radius: 4px; margin-bottom: 0.75rem;">ReinforCE 1.2 Intra Challenge</span>
+            <h3 style="margin-top: 0.5rem; font-size: 1.35rem; font-weight: 900; color: #052E16;">Truss Challenge (1.2)</h3>
+            <p style="color: #052E16; font-size: 0.95rem; line-height: 1.65; font-weight: 500;">
+              Design and construct lightweight balsa wood truss bridges under strict geometric bounds, learning tension and compression load paths and destructive failure load testing on the KUET testing floor.
             </p>
-            <ul style="margin: 1rem 0; padding-left: 1.25rem; font-size: 0.9rem; color: #000000; font-weight: 600; line-height: 1.6;">
+            <ul style="margin: 1rem 0; padding-left: 1.25rem; font-size: 0.9rem; color: #052E16; font-weight: 600; line-height: 1.6;">
               <li><strong>Outcome:</strong> Hands-on structural load path deduction and truss statics.</li>
               <li><strong>Testing:</strong> Precision calibrated hydraulic loading floor at KUET.</li>
               <li><strong>Mentorship:</strong> Senior competition team leads and batch directors.</li>
             </ul>
           </div>
-          <div style="margin-top: 1.25rem; pt: 1rem; border-top: 1px solid var(--border-light);">
+          <div style="margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--border-light);">
             <a href="events-inhouse-1-2.html" class="btn-reg" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 0.5rem; text-decoration: none;">
               <span>View Event Dossier</span> <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
         </div>
 
-        <!-- ReinforCE 1.3: The Odyssey -->
-        <div class="feature-card" style=" display: flex; flex-direction: column; justify-content: space-between;">
+        <!-- ReinforCE 1.3: The Odyssey (Slides in from Left) -->
+        <div class="feature-card" data-animate="slide-left" style="display: flex; flex-direction: column; justify-content: space-between; padding-top: 2rem;">
           <div>
-            <div style="font-size: 2.2rem; color: var(--stripe-green); margin-bottom: 0.75rem;">
-              <i class="fa-solid fa-compass"></i>
-            </div>
-            <span style="display: inline-block; background: transparent; color: #166534; font-size: 0.82rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.75rem;">ReinforCE 1.3 &bull; Intra Flagship</span>
-            <h3 style="margin-top: 0.75rem; font-size: 1.35rem; font-weight: 900; color: #000000;">The Odyssey &bull; দ্য ওডিসি (1.3)</h3>
-            <p style="color: #000000; font-size: 0.95rem; line-height: 1.65; font-weight: 500;">
+            <span style="display: inline-block; background: #f0fdf4; color: #15803D; border: 1px solid #bbf7d0; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 0.25rem 0.65rem; border-radius: 4px; margin-bottom: 0.75rem;">ReinforCE 1.3 Intra Flagship</span>
+            <h3 style="margin-top: 0.5rem; font-size: 1.35rem; font-weight: 900; color: #052E16;">The Odyssey (1.3)</h3>
+            <p style="color: #052E16; font-size: 0.95rem; line-height: 1.65; font-weight: 500;">
               The premier campus-wide engineering treasure hunt and structural adventure across KUET. Squads decipher cryptic structural ciphers, navigate secret campus landmarks, and conquer rapid-fire buzzer challenges.
             </p>
-            <ul style="margin: 1rem 0; padding-left: 1.25rem; font-size: 0.9rem; color: #000000; font-weight: 600; line-height: 1.6;">
+            <ul style="margin: 1rem 0; padding-left: 1.25rem; font-size: 0.9rem; color: #052E16; font-weight: 600; line-height: 1.6;">
               <li><strong>Outcome:</strong> Dynamic teamwork, spatial navigation, and rapid problem-solving.</li>
               <li><strong>Arenas:</strong> Cryptic Landmark Clues, Live Buzzer, and Prototype Challenge.</li>
-              <li><strong>Grand Finale:</strong> Department auditorium crowning &amp; crest ceremonies.</li>
+              <li><strong>Grand Finale:</strong> Department auditorium crowning and crest ceremonies.</li>
             </ul>
           </div>
-          <div style="margin-top: 1.25rem; pt: 1rem; border-top: 1px solid var(--border-light);">
+          <div style="margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--border-light);">
             <a href="events-inhouse-1-3.html" class="btn-reg" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 0.5rem; text-decoration: none;">
               <span>View Event Dossier</span> <i class="fa-solid fa-arrow-right"></i>
             </a>
@@ -216,21 +209,24 @@
         </div>
       </div>
 
-      <!-- Upcoming ReinforCE 2.x Intra Teaser -->
+      <!-- Upcoming ReinforCE 2.x Intra Teaser (New Cycle Typing Text) -->
       <div style="background: #ffffff; border: 1.5px solid var(--border-light); border-radius: var(--radius-lg); padding: 2.5rem 2rem; margin-top: 4rem; text-align: center; box-shadow: 0 4px 18px rgba(22, 101, 52, 0.05);">
-        <span style="background: #166534; color: #ffffff; font-weight: 800; font-size: 0.82rem; padding: 0.35rem 0.95rem; border-radius: 0; text-transform: uppercase; letter-spacing: 0.5px;">
+        <span style="background: #15803D; color: #ffffff; font-weight: 800; font-size: 0.82rem; padding: 0.35rem 0.95rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">
           Next Cycle &bull; 2026
         </span>
-        <h3 style="font-size: 1.8rem; font-weight: 900; color: #000000; margin: 0.85rem 0 0.5rem;">
+        <h3 style="font-size: 1.8rem; font-weight: 900; color: #052E16; margin: 0.85rem 0 0.5rem;">
           ReinforCE 2.1, 2.2, 2.3 Coming Soon
         </h3>
-        <p style="font-size: 1rem; color: #000000; font-weight: 500; max-width: 680px; margin: 0 auto 1.5rem; line-height: 1.65;">
+        <p data-typewriter="The internal intra series for ReinforCE 2.0 will launch alongside the next academic intake with expanded problem tracks in concrete mix optimization and structural dynamics." style="font-size: 1rem; color: #052E16; font-weight: 500; max-width: 680px; margin: 0 auto 1.5rem; line-height: 1.65;">
           The internal intra series for ReinforCE 2.0 will launch alongside the next academic intake with expanded problem tracks in concrete mix optimization and structural dynamics.
         </p>
         <a href="events-national.html" class="btn-reg">
           <i class="fa-solid fa-trophy"></i> Explore National ReinforCE 1.0 &amp; 2.0
         </a>
       </div>
+
+    </div>
+  </section>
 
     </div>
   </section>
@@ -242,9 +238,9 @@
         <div class="footer-left-club-intro">
           <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.15rem;">
             <img src="images/aci-kuet-official-logo.webp" alt="ACI KUET Logo" style="height: 52px; width: auto; object-fit: contain;">
-            <h3 style="margin: 0; font-size: 1.4rem; font-weight: 900; color: #000000;">ACI KUET Student Chapter</h3>
+            <h3 style="margin: 0; font-size: 1.4rem; font-weight: 900; color: #052E16;">ACI KUET Student Chapter</h3>
           </div>
-          <p style="color: #000000; font-weight: 500; font-size: 0.95rem; line-height: 1.75;">
+          <p style="color: #052E16; font-weight: 500; font-size: 0.95rem; line-height: 1.75;">
             Rooted in the Department of Civil Engineering at KUET and chartered by the American Concrete Institute (ACI), the ACI KUET Student Chapter is a dynamic platform for aspiring civil and materials engineers. We strive to cultivate hands-on innovation, sustainable construction practices, and leadership, connecting KUET students with nationwide industry networks and global engineering forums.
           </p>
           <div class="footer-social-row">
@@ -300,14 +296,14 @@
           <div>
             <h4 class="footer-col-title">Department Coordinates</h4>
             <div class="footer-location-block">
-              <i class="fa-solid fa-location-dot" style="color: #166534; font-size: 1.15rem; margin-top: 3px;"></i>
-              <p style="color: #000000; font-size: 0.92rem; line-height: 1.6; font-weight: 500;">
+              <i class="fa-solid fa-location-dot" style="color: #15803D; font-size: 1.15rem; margin-top: 3px;"></i>
+              <p style="color: #052E16; font-size: 0.92rem; line-height: 1.6; font-weight: 500;">
                 Department of Civil Engineering<br>
                 Khulna University of Engineering &amp; Technology (KUET)<br>
                 Teligati, Khulna-9203, Bangladesh.
               </p>
             </div>
-            <div style="margin-top: 1rem; font-size: 0.88rem; color: #000000; font-weight: 600; line-height: 1.6;">
+            <div style="margin-top: 1rem; font-size: 0.88rem; color: #052E16; font-weight: 600; line-height: 1.6;">
               <strong>Convener:</strong> Shakil Ilhan (2301044)<br>
               <strong>Email:</strong> aci.kuetsc@gmail.com
             </div>
@@ -315,7 +311,7 @@
         </div>
       </div>
 
-      <div class="footer-bottom-legal" style="text-align: center; border-top: 1px solid var(--border-light); padding-top: 2rem; color: #000000; font-size: 0.88rem; font-weight: 500;">
+      <div class="footer-bottom-legal" style="text-align: center; border-top: 1px solid var(--border-light); padding-top: 2rem; color: #052E16; font-size: 0.88rem; font-weight: 500;">
         <p>&copy; 2026 ACI Student Chapter, KUET. All rights reserved. Department of Civil Engineering, Khulna University of Engineering &amp; Technology.</p>
       </div>
     </div>

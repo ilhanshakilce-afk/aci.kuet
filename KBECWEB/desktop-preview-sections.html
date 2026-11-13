@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desktop Sections Visual Inspection</title>
+  <link rel="stylesheet" href="css/styles.css?v=9.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Force animation completion for instant static capture */
+    .events-head-anim,
+    .anim-slide-right,
+    .anim-slide-left,
+    .achieve-zoom-anim,
+    .gallery-slide-up,
+    .leaders-zoom-anim {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  </style>
+</head>
+<body style="padding-top: 34px; background: #ffffff;">
+
+  <!-- 1. Top Ribbon -->
+  <div class="persistent-top-ribbon">
+    <div class="top-ribbon-inner">
+      <span>ACI KUET Student Chapter</span>
+    </div>
+  </div>
+
+  <!-- 2. Navbar with 1.4x Logo and 1.3x Matching Brand Text -->
+  <header class="main-header" style="position: static; margin-bottom: 2rem;">
+    <div class="navbar-container">
+      <nav class="navbar">
+        <a href="index.html" class="nav-brand">
+          <img src="images/aci-kuet-official-logo.webp" alt="ACI KUET Official Logo" class="nav-brand-logo">
+          <span class="nav-brand-stacked">
+            <span class="brand-step-1">ACI KUET</span>
+            <span class="brand-step-2">STUDENT</span>
+            <span class="brand-step-3">CHAPTER</span>
+          </span>
+        </a>
+
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+          <li class="nav-item"><a href="events-major.html" class="nav-link">Events</a></li>
+          <li class="nav-item"><a href="panel-officers.html" class="nav-link">Panel</a></li>
+          <li class="nav-item"><a href="achievements.html" class="nav-link">Achievements</a></li>
+          <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>
+          <li class="nav-item"><a href="resources.html" class="nav-link">Resources</a></li>
+          <li class="nav-item"><a href="verify-certificate.html" class="nav-link">Verify Certificate</a></li>
+          <li class="nav-item"><a href="sponsors.html" class="nav-link">Sponsors</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+          <li class="nav-item"><a href="about-us.html" class="nav-link">About Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 3. Our Achievements Section (Header zooms inside out, National Case Champions slides in from right) -->
+  <section style="background: #ffffff; padding: 3rem 0; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
+    <div class="container">
+      <div class="section-clean-head achieve-head-box">
+        <span class="section-tag">Institutional Milestones</span>
+        <h2 class="section-title">Our Achievements</h2>
+        <p style="color: var(--text-muted); font-size: 1.05rem; margin-top: 0.5rem;">
+          National laurels, inter-university championship trophies, and our global SYPAC award roadmap.
+        </p>
+      </div>
+
+      <div class="achieve-grid-slide-right" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+        <div class="human-card">
+          <h3>National Case Champions</h3>
+          <p>First place awards in structural forensic case analysis and composite FRP retrofitting challenges across premier university engineering festivals.</p>
+        </div>
+        <div class="human-card">
+          <h3>Global ACI SYPAC Pathway</h3>
+          <p>Qualified for the prestigious ACI Outstanding Student Chapter international designation under American Concrete Institute HQ scoring rubric.</p>
+        </div>
+        <div class="human-card">
+          <h3>150+ Certified Engineers</h3>
+          <p>Undergraduate civil engineering students certified in industry software (AutoCAD, ETABS, SAFE, Revit BIM, Civil 3D) within departmental computing labs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Media Gallery (4 Photos Side by Side & Clickable Links) -->
+  <section style="background: #ffffff; padding: 3rem 0; border-bottom: 1px solid var(--border-light);">
+    <div class="container">
+      <div class="section-clean-head gallery-head-box">
+        <span class="section-tag">Photo Archive</span>
+        <h2 class="section-title">ACI KUET Main Media Gallery</h2>
+        <p style="color: var(--text-muted); font-size: 1.05rem; margin-top: 0.5rem;">
+          Capturing the spirit of casting sessions, seminar-to-webinar handoffs, site visits, and celebration of engineering excellence. Click any photograph to view the full section.
+        </p>
+      </div>
+
+      <div class="photo-gallery-carousel-wrap">
+        <div class="photo-gallery-grid-four">
+          <!-- Photo 1: ICCESD Conference -->
+          <a href="events-major.html" class="photo-box-raised gallery-slide-card active-featured" title="Explore ACI Events & ICCESD Conference">
+            <img src="images/hero-group-photo.webp" alt="ICCESD 2024 KUET Delegation" class="photo-box-img">
+            <div class="photo-box-caption">
+              <div class="photo-caption-title">ICCESD International Conference</div>
+              <div class="photo-caption-sub">Department of Civil Engineering, KUET Delegation &rarr;</div>
+            </div>
+          </a>
+
+          <!-- Photo 2: KUET Concrete Materials Lab -->
+          <a href="about-lab.html" class="photo-box-raised gallery-slide-card" title="Inside KUET Concrete Testing Laboratory">
+            <img src="images/kuet-concrete-lab-testing.webp" alt="KUET Concrete Materials Testing Laboratory" class="photo-box-img">
+            <div class="photo-box-caption">
+              <div class="photo-caption-title">KUET Concrete Testing Laboratory</div>
+              <div class="photo-caption-sub">High-Strength Concrete Casting &amp; Digital UTM &rarr;</div>
+            </div>
+          </a>
+
+          <!-- Photo 3: ReinforCE Structural Truss Testing -->
+          <a href="events-national.html" class="photo-box-raised gallery-slide-card" title="ReinforCE National Civil Engineering Competition">
+            <img src="images/kuet-reinforce-competition.webp" alt="ReinforCE Structural Truss Testing Arena" class="photo-box-img">
+            <div class="photo-box-caption">
+              <div class="photo-caption-title">ReinforCE National Competition</div>
+              <div class="photo-caption-sub">Truss Triumph &bull; Structural Mechanics Challenge &rarr;</div>
+            </div>
+          </a>
+
+          <!-- Photo 4: Regional Technical Site Tour -->
+          <a href="events-tours.html" class="photo-box-raised gallery-slide-card" title="Regional Technical Tours & Field Expeditions">
+            <img src="images/kuet-technical-tour.webp" alt="Regional Technical Site Tour and Precast Yard Expedition" class="photo-box-img">
+            <div class="photo-box-caption">
+              <div class="photo-caption-title">Regional Technical Site Tour</div>
+              <div class="photo-caption-sub">Mega-Bridge &bull; Precast Concrete Infrastructure &rarr;</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="gallery-carousel-controls">
+          <button class="gallery-nav-btn prev-btn"><i class="fa-solid fa-chevron-left"></i></button>
+          <div class="gallery-carousel-dots">
+            <button class="carousel-dot active"></button>
+            <button class="carousel-dot"></button>
+            <button class="carousel-dot"></button>
+            <button class="carousel-dot"></button>
+          </div>
+          <button class="gallery-nav-btn next-btn"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Executive Voice (Message from President & Secretary) -->
+  <section style="background: #ffffff; padding: 3rem 0;">
+    <div class="container leaders-zoom-anim">
+      <div class="section-clean-head leaders-head-box">
+        <span class="section-tag">Executive Voice</span>
+        <h2 class="section-title">Message from President &amp; Secretary</h2>
+        <p style="color: var(--text-muted); font-size: 1.05rem; margin-top: 0.5rem; max-width: 780px; margin-inline: auto;">
+          Official statements from the Initiator &amp; Founding Convener and the Chapter President on strategic execution, student empowerment, and national competitive dominance.
+        </p>
+      </div>
+
+      <div class="leaders-message-grid">
+        <div class="leader-card">
+          <div class="leader-card-header">
+            <img src="images/officers/pres-maharajul.webp" alt="Maharajul Islam" class="leader-photo-cutout">
+            <div>
+              <h4>MAHARAJUL ISLAM</h4>
+              <span>President &bull; Executive Committee 2026&ndash;27</span>
+              <div style="font-size: 0.78rem; color: var(--text-muted);">Dept. of Civil Engineering, KUET | ACI Student Chapter</div>
+            </div>
+          </div>
+          <h5 style="font-size: 1.1rem; font-weight: 800; color: var(--text-dark); margin-bottom: 0.75rem;">
+            Execution, Community Growth &amp; National Excellence
+          </h5>
+          <p style="color: #334155; line-height: 1.65; font-size: 0.95rem;">
+            "Our operational commitment guarantees that every student—from freshman apprentices to graduating seniors—has direct access to technical mentors, hands-on materials testing, verified certification, and leadership succession without administrative friction."
+          </p>
+        </div>
+
+        <div class="leader-card">
+          <div class="leader-card-header">
+            <img src="images/shakil-webteam.webp" alt="Shakil Ilhan" class="leader-photo-cutout">
+            <div>
+              <h4>SHAKIL ILHAN</h4>
+              <span>Initiator &amp; Founding Convener | Roll: 2301044</span>
+              <div style="font-size: 0.78rem; color: var(--text-muted);">Dept. of Civil Engineering, KUET | ACI Student Chapter</div>
+            </div>
+          </div>
+          <h5 style="font-size: 1.1rem; font-weight: 800; color: var(--text-dark); margin-bottom: 0.75rem;">
+            Beyond Textbooks, Beyond Routine Labs
+          </h5>
+          <p style="color: #334155; line-height: 1.65; font-size: 0.95rem;">
+            "Civil Engineering is not meant to be confined to lecture slides, rigid formulas, or predictable lab quizzes. Real engineering lives in the grit of the field: in the heat of trial and error, in the tactile weight of high-performance aggregate mixes, and in the adrenaline of seeing a design withstand extreme structural loads."
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

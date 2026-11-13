@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#166534">
+  <meta name="theme-color" content="#15803D">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <title>ReinforCE 1.3: The Odyssey | ACI KUET Student Chapter</title>
+  <title>ACI KUET Student Chapter | The Odyssey 1.3</title>
   <meta name="description" content="Detailed event highlights and case solution presentations of The Odyssey 1.3 - concrete design optimization challenge.">
   <link rel="canonical" href="https://acikuet.org/events-inhouse-1-3.html">
   
@@ -23,28 +23,44 @@
   <meta name="twitter:title" content="ReinforCE 1.3: The Odyssey | ACI KUET Student Chapter">
   <meta name="twitter:description" content="Detailed event highlights and case solution presentations of The Odyssey 1.3 - concrete design optimization challenge.">
   <meta name="twitter:image" content="https://acikuet.org/images/hero-group-photo.webp">
-  <link rel="icon" href="images/aci-kuet-official-logo.webp" type="image/webp">
+    <!-- Favicon with Solid White Circular Backing (Dark Mode Proof for Browser Tabs) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="shortcut icon" href="images/favicon.ico">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="css/styles.css?v=6.1">
+  <link rel="stylesheet" href="css/styles.css?v=8.6">
 </head>
 <body>
 
-  <!-- Main Slim White Navbar -->
+    <!-- Persistent Sticky Top Ribbon (Stays pinned at top as page scrolls) -->
+  <div class="persistent-top-ribbon">
+    <div class="top-ribbon-inner">
+      <span>ACI KUET Student Chapter</span>
+    </div>
+  </div>
+
+  <!-- Main Slim White Navbar (0.8x Compact, Logo shifted to far left, 3-step stacked brand) -->
   <header class="main-header">
     <div class="navbar-container">
       <nav class="navbar">
-        <!-- Far Left: Official Logo + Text -->
+        <!-- Far Left: Official Logo with Solid White Backing + 3-Step Stacked Text -->
         <a href="index.html" class="nav-brand">
-          <img src="images/aci-kuet-official-logo.webp" alt="ACI KUET Official Logo" class="nav-brand-logo">
-          <span class="nav-brand-text">
-            <span class="brand-aci">ACI</span> <span class="brand-kuet">KUET</span> <span class="brand-sub">Student Chapter</span>
+          <div class="nav-brand-logo-box">
+            <img src="images/aci-kuet-official-logo.webp" alt="ACI KUET Official Logo" class="nav-brand-logo">
+          </div>
+          <span class="nav-brand-stacked">
+            <span class="brand-step-1">ACI KUET</span>
+            <span class="brand-step-2">STUDENT</span>
+            <span class="brand-step-3">CHAPTER</span>
           </span>
         </a>
 
-        <!-- Right Side: Navigation Menu -->
+        <!-- Right Side: Navigation Menu (0.8x compact, bold on click/active) -->
         <ul class="nav-menu">
           <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
           
@@ -72,9 +88,8 @@
 
           <li class="nav-item"><a href="achievements.html" class="nav-link">Achievements</a></li>
           <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>
-          <li class="nav-item"><a href="estimation.html" class="nav-link">Civil Estimation</a></li>
           <li class="nav-item"><a href="resources.html" class="nav-link">Resources</a></li>
-          <li class="nav-item"><a href="verify-certificate.html" class="nav-link"><i class="fa-solid fa-certificate"></i> Verify Certificate</a></li>
+          <li class="nav-item"><a href="verify-certificate.html" class="nav-link">Verify Certificate</a></li>
           <li class="nav-item"><a href="sponsors.html" class="nav-link">Sponsors</a></li>
           <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
 
@@ -106,9 +121,9 @@
         <a href="index.html">Home</a> &gt; <a href="events-inhouse.html">In-House Competitions</a> &gt; <span>ReinforCE 1.3: The Odyssey</span>
       </div>
       <div style="display: inline-block; margin-bottom: 0.75rem;">
-        <span style="display: inline-block; background: transparent; color: #166534; font-size: 0.82rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.75rem;"><i class="fa-solid fa-flag"></i> ReinforCE 1.0 Cycle &bull; Intra Flagship 1.3</span>
+        <span style="display: inline-block; background: transparent; color: #15803D; font-size: 0.82rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.75rem;"><i class="fa-solid fa-flag"></i> ReinforCE 1.0 Cycle &bull; Intra Flagship 1.3</span>
       </div>
-      <h1 class="page-banner-title">ReinforCE 1.3 — The Odyssey &bull; দ্য ওডিসি</h1>
+      <h1 class="page-banner-title">ReinforCE 1.3: The Odyssey</h1>
       <p class="page-banner-desc">
         The flagship campus-wide engineering treasure hunt and structural adventure across KUET. Blending encrypted structural ciphers, landmark navigation, live spot tests, and a high-stakes buzzer showdown.
       </p>
@@ -122,47 +137,47 @@
       <!-- Event Quick Facts Grid -->
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-bottom: 3.5rem;">
         <div style="background: #ffffff; border: 1.5px solid var(--border-light);  border-radius: 0; padding: 1.5rem; box-shadow: 0 4px 16px rgba(22, 101, 52, 0.04);">
-          <div style="color: #166534; font-size: 1.8rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-compass"></i></div>
-          <div style="font-size: 0.82rem; font-weight: 700; color: #166534; text-transform: uppercase;">Event Profile</div>
-          <div style="font-size: 1.15rem; font-weight: 800; color: #000000; margin-top: 0.25rem;">The Odyssey (1.3)</div>
-          <div style="font-size: 0.88rem; color: #000000; font-weight: 500;">Campus Engineering Hunt</div>
+          <div style="color: #15803D; font-size: 1.8rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-compass"></i></div>
+          <div style="font-size: 0.82rem; font-weight: 700; color: #15803D; text-transform: uppercase;">Event Profile</div>
+          <div style="font-size: 1.15rem; font-weight: 800; color: #052E16; margin-top: 0.25rem;">The Odyssey (1.3)</div>
+          <div style="font-size: 0.88rem; color: #052E16; font-weight: 500;">Campus Engineering Hunt</div>
         </div>
 
         <div style="background: #ffffff; border: 1.5px solid var(--border-light);  border-radius: 0; padding: 1.5rem; box-shadow: 0 4px 16px rgba(22, 101, 52, 0.04);">
-          <div style="color: #166534; font-size: 1.8rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-users"></i></div>
-          <div style="font-size: 0.82rem; font-weight: 700; color: #166534; text-transform: uppercase;">Participation</div>
-          <div style="font-size: 1.15rem; font-weight: 800; color: #000000; margin-top: 0.25rem;">30+ Squads</div>
-          <div style="font-size: 0.88rem; color: #000000; font-weight: 500;">3 Members per Squad</div>
+          <div style="color: #15803D; font-size: 1.8rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-users"></i></div>
+          <div style="font-size: 0.82rem; font-weight: 700; color: #15803D; text-transform: uppercase;">Participation</div>
+          <div style="font-size: 1.15rem; font-weight: 800; color: #052E16; margin-top: 0.25rem;">30+ Squads</div>
+          <div style="font-size: 0.88rem; color: #052E16; font-weight: 500;">3 Members per Squad</div>
         </div>
 
         <div style="background: #ffffff; border: 1.5px solid var(--border-light);  border-radius: 0; padding: 1.5rem; box-shadow: 0 4px 16px rgba(22, 101, 52, 0.04);">
-          <div style="color: #166534; font-size: 1.8rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-map-location-dot"></i></div>
-          <div style="font-size: 0.82rem; font-weight: 700; color: #166534; text-transform: uppercase;">Battleground</div>
-          <div style="font-size: 1.15rem; font-weight: 800; color: #000000; margin-top: 0.25rem;">Entire KUET Campus</div>
-          <div style="font-size: 0.88rem; color: #000000; font-weight: 500;">Civil Dept &bull; Landmarks &bull; Aud.</div>
+          <div style="color: #15803D; font-size: 1.8rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-map-location-dot"></i></div>
+          <div style="font-size: 0.82rem; font-weight: 700; color: #15803D; text-transform: uppercase;">Battleground</div>
+          <div style="font-size: 1.15rem; font-weight: 800; color: #052E16; margin-top: 0.25rem;">Entire KUET Campus</div>
+          <div style="font-size: 0.88rem; color: #052E16; font-weight: 500;">Civil Dept &bull; Landmarks &bull; Aud.</div>
         </div>
 
         <div style="background: #ffffff; border: 1.5px solid var(--border-light);  border-radius: 0; padding: 1.5rem; box-shadow: 0 4px 16px rgba(22, 101, 52, 0.04);">
-          <div style="color: #166534; font-size: 1.8rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-trophy"></i></div>
-          <div style="font-size: 0.82rem; font-weight: 700; color: #166534; text-transform: uppercase;">Honors &amp; Awards</div>
-          <div style="font-size: 1.15rem; font-weight: 800; color: #000000; margin-top: 0.25rem;">Acrylic Crests &amp; Cash</div>
-          <div style="font-size: 0.88rem; color: #000000; font-weight: 500;">Certified by ACI KUET</div>
+          <div style="color: #15803D; font-size: 1.8rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-trophy"></i></div>
+          <div style="font-size: 0.82rem; font-weight: 700; color: #15803D; text-transform: uppercase;">Honors &amp; Awards</div>
+          <div style="font-size: 1.15rem; font-weight: 800; color: #052E16; margin-top: 0.25rem;">Acrylic Crests &amp; Cash</div>
+          <div style="font-size: 0.88rem; color: #052E16; font-weight: 500;">Certified by ACI KUET</div>
         </div>
       </div>
 
       <!-- Event Narrative Dossier -->
       <div style="background: #ffffff; border: 1.5px solid var(--border-light); border-radius: 0; padding: 2.75rem 2.5rem; margin-bottom: 3.5rem; box-shadow: 0 4px 20px rgba(22, 101, 52, 0.05);">
         <div style="max-width: 900px; margin: 0 auto;">
-          <span style="display: inline-block; background: transparent; color: #166534; font-size: 0.82rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.75rem;">Event Dossier &bull; The Odyssey (দ্য ওডিসি)</span>
-          <h2 style="font-size: 2.2rem; font-weight: 900; color: #000000; margin: 1rem 0 1.25rem; letter-spacing: -0.4px;">
+          <span style="display: inline-block; background: transparent; color: #15803D; font-size: 0.82rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.75rem;">Event Dossier &bull; The Odyssey</span>
+          <h2 style="font-size: 2.2rem; font-weight: 900; color: #052E16; margin: 1rem 0 1.25rem; letter-spacing: -0.4px;">
             The Ultimate Campus Quest: Where Engineering Intelligence Meets Unstoppable Speed
           </h2>
-          <p style="font-size: 1.02rem; color: #000000; line-height: 1.8; font-weight: 500; margin-bottom: 1.5rem;">
-            <strong>ReinforCE 1.3: The Odyssey (দ্য ওডিসি)</strong> is the undisputed flagship intra competition organized by the <strong>American Concrete Institute (ACI) Student Chapter at KUET</strong>. Designed as a high-octane engineering treasure hunt, The Odyssey transformed the lush university campus into an interactive puzzle labyrinth. Teams of three had to combine physical stamina, sharp analytical deduction, and deep structural knowledge to track down encrypted checkpoints and conquer live on-stage rounds.
+          <p style="font-size: 1.02rem; color: #052E16; line-height: 1.8; font-weight: 500; margin-bottom: 1.5rem;">
+            <strong>ReinforCE 1.3: The Odyssey</strong> is the undisputed flagship intra competition organized by the <strong>American Concrete Institute (ACI) Student Chapter at KUET</strong>. Designed as a high-octane engineering treasure hunt, The Odyssey transformed the lush university campus into an interactive puzzle labyrinth. Teams of three had to combine physical stamina, sharp analytical deduction, and deep structural knowledge to track down encrypted checkpoints and conquer live on-stage rounds.
           </p>
 
           <!-- The Four Competition Arenas -->
-          <h3 style="font-size: 1.5rem; font-weight: 900; color: #000000; margin: 2.25rem 0 1rem; border-left: 4px solid #166534; padding-left: 0.75rem;">
+          <h3 style="font-size: 1.5rem; font-weight: 900; color: #052E16; margin: 2.25rem 0 1rem; border-left: 4px solid #15803D; padding-left: 0.75rem;">
             The Four Arenas of The Odyssey
           </h3>
 
@@ -170,25 +185,25 @@
             <!-- Arena 1 -->
             <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 1.5rem;">
               <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
-                <h4 style="font-size: 1.2rem; font-weight: 800; color: #166534; margin: 0;">
-                  <i class="fa-solid fa-key" style="margin-right: 0.35rem;"></i> Arena 1: Cryptic Landmark Ciphers (লুক্কায়িত সূত্র ও ক্যাম্পাস নেভিগেশন)
+                <h4 style="font-size: 1.2rem; font-weight: 800; color: #15803D; margin: 0;">
+                  <i class="fa-solid fa-key" style="margin-right: 0.35rem;"></i> Arena 1: Cryptic Landmark Ciphers
                 </h4>
-                <span style="background: #166534; color: #ffffff; font-size: 0.75rem; font-weight: 800; padding: 0.2rem 0.6rem; border-radius: 0;">Campus Sprint</span>
+                <span style="background: #15803D; color: #ffffff; font-size: 0.75rem; font-weight: 800; padding: 0.2rem 0.6rem; border-radius: 0;">Campus Sprint</span>
               </div>
-              <p style="font-size: 0.95rem; color: #000000; line-height: 1.7; font-weight: 500; margin: 0;">
-                Teams received encrypted riddles based on KUET's iconic civil structures—such as the Durbar Bangla monument, the Central Library portals, the historic Concrete Testing Lab, and lakeside pavilions. Decrypting the clues required understanding architectural features, orientation angles, and structural coordinates to locate concealed physical seals and QR tokens.
+              <p style="font-size: 0.95rem; color: #052E16; line-height: 1.7; font-weight: 500; margin: 0;">
+                Teams received encrypted riddles based on KUET's iconic civil structures such as the Durbar Bangla monument, the Central Library portals, the historic Concrete Testing Lab, and lakeside pavilions. Decrypting the clues required understanding architectural features, orientation angles, and structural coordinates to locate concealed physical seals and QR tokens.
               </p>
             </div>
 
             <!-- Arena 2 -->
             <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 1.5rem;">
               <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
-                <h4 style="font-size: 1.2rem; font-weight: 800; color: #166534; margin: 0;">
-                  <i class="fa-solid fa-vial-circle-check" style="margin-right: 0.35rem;"></i> Arena 2: Spot Engineering Pitstops (স্পট ইঞ্জিনিয়ারিং চ্যালেঞ্জ)
+                <h4 style="font-size: 1.2rem; font-weight: 800; color: #15803D; margin: 0;">
+                  <i class="fa-solid fa-vial-circle-check" style="margin-right: 0.35rem;"></i> Arena 2: Spot Engineering Pitstops
                 </h4>
-                <span style="background: #166534; color: #ffffff; font-size: 0.75rem; font-weight: 800; padding: 0.2rem 0.6rem; border-radius: 0;">Hands-On Station</span>
+                <span style="background: #15803D; color: #ffffff; font-size: 0.75rem; font-weight: 800; padding: 0.2rem 0.6rem; border-radius: 0;">Hands-On Station</span>
               </div>
-              <p style="font-size: 0.95rem; color: #000000; line-height: 1.7; font-weight: 500; margin: 0;">
+              <p style="font-size: 0.95rem; color: #052E16; line-height: 1.7; font-weight: 500; margin: 0;">
                 Scattered checkpoints were manned by senior chapter executives where teams encountered quick, hands-on structural trials: visually sizing aggregate grading sieves, identifying shear vs flexural cracking patterns on reinforced concrete failure specimens, and calculating rapid mix ratios on chalkboards before receiving their passage passport stamp.
               </p>
             </div>
@@ -196,12 +211,12 @@
             <!-- Arena 3 -->
             <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 1.5rem;">
               <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
-                <h4 style="font-size: 1.2rem; font-weight: 800; color: #166534; margin: 0;">
-                  <i class="fa-solid fa-bolt" style="margin-right: 0.35rem;"></i> Arena 3: The Grand Stage Buzzer Showdown (লাইভ বাজার শো-ডাউন)
+                <h4 style="font-size: 1.2rem; font-weight: 800; color: #15803D; margin: 0;">
+                  <i class="fa-solid fa-bolt" style="margin-right: 0.35rem;"></i> Arena 3: The Grand Stage Buzzer Showdown
                 </h4>
-                <span style="background: #166534; color: #ffffff; font-size: 0.75rem; font-weight: 800; padding: 0.2rem 0.6rem; border-radius: 0;">Auditorium Climax</span>
+                <span style="background: #15803D; color: #ffffff; font-size: 0.75rem; font-weight: 800; padding: 0.2rem 0.6rem; border-radius: 0;">Auditorium Climax</span>
               </div>
-              <p style="font-size: 0.95rem; color: #000000; line-height: 1.7; font-weight: 500; margin: 0;">
+              <p style="font-size: 0.95rem; color: #052E16; line-height: 1.7; font-weight: 500; margin: 0;">
                 The fastest squads to complete the campus circuit qualified for the ultimate showdown inside the Department of Civil Engineering Auditorium. Under intense spotlight, squads competed head-to-head on electronic buzzers covering structural trivia, Bangladesh National Building Code (BNBC) mandates, and rapid-fire mechanics calculations with zero margin for error.
               </p>
             </div>
@@ -209,31 +224,31 @@
             <!-- Arena 4 -->
             <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 1.5rem;">
               <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
-                <h4 style="font-size: 1.2rem; font-weight: 800; color: #166534; margin: 0;">
-                  <i class="fa-solid fa-video" style="margin-right: 0.35rem;"></i> Arena 4: Creative Reels &amp; Squad Chronicles (মিডিয়া ও ক্রিয়েটিভ স্পটলাইট)
+                <h4 style="font-size: 1.2rem; font-weight: 800; color: #15803D; margin: 0;">
+                  <i class="fa-solid fa-video" style="margin-right: 0.35rem;"></i> Arena 4: Creative Reels &amp; Squad Chronicles
                 </h4>
-                <span style="background: #166534; color: #ffffff; font-size: 0.75rem; font-weight: 800; padding: 0.2rem 0.6rem; border-radius: 0;">Digital Engagement</span>
+                <span style="background: #15803D; color: #ffffff; font-size: 0.75rem; font-weight: 800; padding: 0.2rem 0.6rem; border-radius: 0;">Digital Engagement</span>
               </div>
-              <p style="font-size: 0.95rem; color: #000000; line-height: 1.7; font-weight: 500; margin: 0;">
+              <p style="font-size: 0.95rem; color: #052E16; line-height: 1.7; font-weight: 500; margin: 0;">
                 Each team documented their expedition through short-form video reels that highlighted team chemistry, comical campus moments, and engineering pride. These reels were showcased during the grand auditorium interval and awarded bonus audience-choice points.
               </p>
             </div>
           </div>
 
           <!-- Grand Finale & Award Ceremony -->
-          <h3 style="font-size: 1.5rem; font-weight: 900; color: #000000; margin: 2.5rem 0 1rem; border-left: 4px solid #166534; padding-left: 0.75rem;">
+          <h3 style="font-size: 1.5rem; font-weight: 900; color: #052E16; margin: 2.5rem 0 1rem; border-left: 4px solid #15803D; padding-left: 0.75rem;">
             Grand Finale &amp; Awards Ceremony
           </h3>
-          <p style="font-size: 1.02rem; color: #000000; line-height: 1.8; font-weight: 500;">
+          <p style="font-size: 1.02rem; color: #052E16; line-height: 1.8; font-weight: 500;">
             The event concluded with an electrifying awards ceremony presided over by Chapter Moderator <strong>Prof. Dr. Abu Zakir Morshed</strong> alongside distinguished departmental faculty members. The Champions, 1st Runner-Up, and 2nd Runner-Up teams were decorated with custom-crafted acrylic crests, official certificates of achievement from ACI KUET, and prize money.
           </p>
 
           <!-- Core Legacy -->
           <div style="background: #ffffff; border: 1.5px solid var(--border-light); border-radius: 14px; padding: 1.75rem; margin-top: 2rem;">
-            <h4 style="font-size: 1.15rem; font-weight: 800; color: #166534; margin: 0 0 0.75rem;">
+            <h4 style="font-size: 1.15rem; font-weight: 800; color: #15803D; margin: 0 0 0.75rem;">
               <i class="fa-solid fa-crown"></i> The Enduring Legacy of The Odyssey
             </h4>
-            <ul style="margin: 0; padding-left: 1.25rem; font-size: 0.95rem; color: #000000; line-height: 1.75; font-weight: 500;">
+            <ul style="margin: 0; padding-left: 1.25rem; font-size: 0.95rem; color: #052E16; line-height: 1.75; font-weight: 500;">
               <li>Fostered unprecedented camaraderie and bond across senior, sophomore, and freshman batches of Civil Engineering.</li>
               <li>Proved that engineering competitions can be dynamic, thrilling, athletic, and mentally rigorous simultaneously.</li>
               <li>Cemented The Odyssey as a signature annual tradition under the ACI Student Chapter - KUET banner.</li>
@@ -269,9 +284,9 @@
         <div class="footer-left-club-intro">
           <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.15rem;">
             <img src="images/aci-kuet-official-logo.webp" alt="ACI KUET Logo" style="height: 52px; width: auto; object-fit: contain;">
-            <h3 style="margin: 0; font-size: 1.4rem; font-weight: 900; color: #000000;">ACI KUET Student Chapter</h3>
+            <h3 style="margin: 0; font-size: 1.4rem; font-weight: 900; color: #052E16;">ACI KUET Student Chapter</h3>
           </div>
-          <p style="color: #000000; font-weight: 500; font-size: 0.95rem; line-height: 1.75;">
+          <p style="color: #052E16; font-weight: 500; font-size: 0.95rem; line-height: 1.75;">
             Rooted in the Department of Civil Engineering at KUET and chartered by the American Concrete Institute (ACI), the ACI KUET Student Chapter is a dynamic platform for aspiring civil and materials engineers. We strive to cultivate hands-on innovation, sustainable construction practices, and leadership, connecting KUET students with nationwide industry networks and global engineering forums.
           </p>
           <div class="footer-social-row">
@@ -323,14 +338,14 @@
           <div>
             <h4 class="footer-col-title">Department Coordinates</h4>
             <div class="footer-location-block">
-              <i class="fa-solid fa-location-dot" style="color: #166534; font-size: 1.15rem; margin-top: 3px;"></i>
-              <p style="color: #000000; font-size: 0.92rem; line-height: 1.6; font-weight: 500;">
+              <i class="fa-solid fa-location-dot" style="color: #15803D; font-size: 1.15rem; margin-top: 3px;"></i>
+              <p style="color: #052E16; font-size: 0.92rem; line-height: 1.6; font-weight: 500;">
                 Department of Civil Engineering<br>
                 Khulna University of Engineering &amp; Technology (KUET)<br>
                 Teligati, Khulna-9203, Bangladesh.
               </p>
             </div>
-            <div style="margin-top: 1rem; font-size: 0.88rem; color: #000000; font-weight: 600; line-height: 1.6;">
+            <div style="margin-top: 1rem; font-size: 0.88rem; color: #052E16; font-weight: 600; line-height: 1.6;">
               <strong>Convener:</strong> Shakil Ilhan (2301044)<br>
               <strong>Email:</strong> aci.kuetsc@gmail.com
             </div>
@@ -338,7 +353,7 @@
         </div>
       </div>
 
-      <div class="footer-bottom-legal" style="text-align: center; border-top: 1px solid var(--border-light); padding-top: 2rem; color: #000000; font-size: 0.88rem; font-weight: 500;">
+      <div class="footer-bottom-legal" style="text-align: center; border-top: 1px solid var(--border-light); padding-top: 2rem; color: #052E16; font-size: 0.88rem; font-weight: 500;">
         <p>&copy; 2026 ACI Student Chapter, KUET. All rights reserved. Department of Civil Engineering, Khulna University of Engineering &amp; Technology.</p>
       </div>
     </div>

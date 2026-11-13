@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#166534">
+  <meta name="theme-color" content="#15803D">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <title>Civil Engineering &amp; Estimation Hub | ACI Student Chapter - KUET</title>
+  <title>ACI KUET Student Chapter | Civil Engineering Estimation</title>
   <meta name="description" content="Official ACI-KUET Civil Engineering & Building Estimation Knowledge Base & Document Registry. 95 Government Documents, PWD SoR 2022, BNBC 2020, ACI 318, and G+3 Turnkey BOQ Calculator.">
   <link rel="canonical" href="https://acikuet.org/estimation.html">
   
@@ -24,52 +24,50 @@
   <meta name="twitter:description" content="Official ACI-KUET Civil Engineering & Building Estimation Knowledge Base & Document Registry. 95 Government Documents, PWD SoR 2022, BNBC 2020, ACI 318, and G+3 Turnkey BOQ Calculator.">
   <meta name="twitter:image" content="https://acikuet.org/images/hero-group-photo.webp">
   
-  <link rel="icon" href="images/aci-kuet-official-logo.webp" type="image/webp">
+    <!-- Favicon with Solid White Circular Backing (Dark Mode Proof for Browser Tabs) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="shortcut icon" href="images/favicon.ico">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css?v=8.6">
 </head>
 <body>
 
-  <!-- Top Announcement Bar -->
-  <div class="top-announcement-bar">
-    <div class="container top-bar-inner">
-      <div class="top-bar-left">
-        <span class="announcement-pill">GOVERNMENT REGISTRY</span>
-        <span class="announcement-text">
-          Master Repository: PWD Schedule of Rates 2022 (2nd Revised) &bull; BNBC 2020 &bull; ACI 318-19 &bull; CPTU PPR 2008 &bull; 95 Indexed PDFs
-        </span>
-      </div>
-      <div class="top-bar-right">
-        <a href="#estimator" class="top-link" onclick="window.location.hash='estimator';"><i class="fa-solid fa-calculator"></i> G+3 BOQ Calculator</a>
-        <a href="https://www.kuet.ac.bd" target="_blank" rel="noopener noreferrer" class="top-link"><i class="fa-solid fa-graduation-cap"></i> KUET Portal</a>
-      </div>
+    <!-- Persistent Sticky Top Ribbon (Stays pinned at top as page scrolls) -->
+  <div class="persistent-top-ribbon">
+    <div class="top-ribbon-inner">
+      <span>ACI KUET Student Chapter</span>
     </div>
   </div>
 
-  <!-- Main Navigation Header -->
-  <header class="site-header">
-    <div class="container nav-container">
-      <div class="header-split-row">
-        
-        <!-- Left Side: Chapter Identity -->
+  <!-- Main Slim White Navbar (0.8x Compact, Logo shifted to far left, 3-step stacked brand) -->
+  <header class="main-header">
+    <div class="navbar-container">
+      <nav class="navbar">
+        <!-- Far Left: Official Logo with Solid White Backing + 3-Step Stacked Text -->
         <a href="index.html" class="nav-brand">
-          <img src="images/aci-kuet-official-logo.webp" alt="ACI KUET Official Logo" class="nav-brand-logo">
-          <span class="nav-brand-text">
-            <strong>AMERICAN CONCRETE INSTITUTE</strong>
-            <span>STUDENT CHAPTER &bull; KUET</span>
+          <div class="nav-brand-logo-box">
+            <img src="images/aci-kuet-official-logo.webp" alt="ACI KUET Official Logo" class="nav-brand-logo">
+          </div>
+          <span class="nav-brand-stacked">
+            <span class="brand-step-1">ACI KUET</span>
+            <span class="brand-step-2">STUDENT</span>
+            <span class="brand-step-3">CHAPTER</span>
           </span>
         </a>
 
-        <!-- Right Side: Navigation Menu -->
+        <!-- Right Side: Navigation Menu (0.8x compact, bold on click/active) -->
         <ul class="nav-menu">
           <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
           
           <!-- Events Dropdown -->
           <li class="nav-item">
-            <span class="nav-link">Events <i class="fa-solid fa-chevron-down dropdown-icon"></i></span>
+            <span class="nav-link active">Events <i class="fa-solid fa-chevron-down dropdown-icon"></i></span>
             <ul class="dropdown-menu">
               <li><a href="events-major.html" class="dropdown-item">ACI Events</a></li>
               <li><a href="events-national.html" class="dropdown-item">National Events (ReinforCE 1.0 &amp; 2.0)</a></li>
@@ -89,10 +87,11 @@
             </ul>
           </li>
 
-          <li class="nav-item"><a href="estimation.html" class="nav-link active"><i class="fa-solid fa-building-columns"></i> Civil Estimation</a></li>
-          <li class="nav-item"><a href="resources.html" class="nav-link">Resources</a></li>
           <li class="nav-item"><a href="achievements.html" class="nav-link">Achievements</a></li>
-          <li class="nav-item"><a href="verify-certificate.html" class="nav-link"><i class="fa-solid fa-certificate"></i> Verify Certificate</a></li>
+          <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>
+          <li class="nav-item"><a href="resources.html" class="nav-link">Resources</a></li>
+          <li class="nav-item"><a href="verify-certificate.html" class="nav-link">Verify Certificate</a></li>
+          <li class="nav-item"><a href="sponsors.html" class="nav-link">Sponsors</a></li>
           <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
 
           <!-- About Us Dropdown -->
@@ -100,21 +99,30 @@
             <span class="nav-link">About Us <i class="fa-solid fa-chevron-down dropdown-icon"></i></span>
             <ul class="dropdown-menu">
               <li><a href="about-membership.html" class="dropdown-item">Why Join ACI KUET?</a></li>
-              <li><a href="about-us.html" class="dropdown-item">History &amp; Mission</a></li>
-              <li><a href="about-lab.html" class="dropdown-item">KUET Concrete Lab</a></li>
-              <li><a href="about-alumni.html" class="dropdown-item">Alumni Network</a></li>
-              <li><a href="sponsors.html" class="dropdown-item">Sponsors &amp; Partners</a></li>
+              <li><a href="about-lab.html" class="dropdown-item">Inside KUET Concrete Lab</a></li>
+              <li><a href="about-alumni.html" class="dropdown-item">Alumni in Industry Spotlight</a></li>
+              <li><a href="about-us.html" class="dropdown-item">Chapter Overview &amp; Mission</a></li>
             </ul>
           </li>
         </ul>
 
-      </div>
+        <div class="nav-actions">
+          <button class="mobile-menu-toggle" aria-label="Menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </nav>
     </div>
   </header>
 
   <!-- Portal Hero Banner -->
   <section class="est-hero-section">
     <div class="container">
+      <div class="breadcrumb-nav" style="margin-bottom: 1.25rem;">
+        <a href="index.html" style="color: rgba(255, 255, 255, 0.7); text-decoration: none;">Home</a> &gt; 
+        <a href="resources.html" style="color: rgba(255, 255, 255, 0.7); text-decoration: none;">Resources</a> &gt; 
+        <span style="color: #ffffff; font-weight: 700;">Civil Engineering &amp; Estimation Hub</span>
+      </div>
       <span class="est-portal-tag"><i class="fa-solid fa-database"></i> ACI-KUET MASTER KNOWLEDGE BASE</span>
       <h1 class="est-hero-title">
         Civil Engineering &amp; Building Estimation Knowledge Base
@@ -153,8 +161,8 @@
           <div class="est-kpi-label">Civil Project Lifecycle</div>
           <div class="est-kpi-sub">Planning to Handover</div>
         </div>
-        <div class="est-kpi-card" style="border-color: #166534; background: #f0fdf4;">
-          <div class="est-kpi-num" style="color: #166534;">8,406 Sft</div>
+        <div class="est-kpi-card" style="border-color: #15803D; background: #f0fdf4;">
+          <div class="est-kpi-num" style="color: #15803D;">8,406 Sft</div>
           <div class="est-kpi-label">G+3 Project Model</div>
           <div class="est-kpi-sub">BDT 2.61 Cr (~ 3,100/Sft)</div>
         </div>
@@ -193,7 +201,7 @@
           </button>
         </li>
         <li>
-          <button type="button" class="est-nav-tab" data-route="estimator" style="color: #166534; font-weight: 900;">
+          <button type="button" class="est-nav-tab" data-route="estimator" style="color: #15803D; font-weight: 900;">
             <i class="fa-solid fa-calculator"></i> 6. G+3 BOQ Calculator
           </button>
         </li>
@@ -210,7 +218,7 @@
       <!-- Section Title -->
       <div style="margin-bottom: 3rem;">
         <span class="section-tag">ENGINEERING INTERCONNECTIVITY</span>
-        <h2 style="font-family: 'Merriweather', serif; font-size: 2.2rem; font-weight: 900; color: #000000; margin-bottom: 0.5rem;">
+        <h2 style="font-family: 'Merriweather', serif; font-size: 2.2rem; font-weight: 900; color: #052E16; margin-bottom: 0.5rem;">
           How Civil Construction Works in Bangladesh: The 6-Phase Relational Pipeline
         </h2>
         <p style="font-size: 1.05rem; color: #475569; max-width: 900px; line-height: 1.7;">
@@ -225,11 +233,11 @@
         <div class="phase-step-card">
           <div>
             <span class="phase-badge">Phase 01</span>
-            <h3 style="font-size: 1.25rem; font-weight: 800; color: #000000; margin-bottom: 0.25rem;">Planning &amp; Approval</h3>
+            <h3 style="font-size: 1.25rem; font-weight: 800; color: #052E16; margin-bottom: 0.25rem;">Planning &amp; Approval</h3>
             <span style="font-size: 0.85rem; color: #64748b;">Statutory Land Bylaws</span>
           </div>
           <div>
-            <div style="font-weight: 700; color: #166534; margin-bottom: 0.35rem;">
+            <div style="font-weight: 700; color: #15803D; margin-bottom: 0.35rem;">
               RAJUK Imarat Bidhimala 2008/2025 &bull; DAP 2016-2035 &bull; Pourashabha 1996 &bull; CDA &bull; KDA
             </div>
             <p style="font-size: 0.92rem; color: #334155; line-height: 1.6; margin: 0;">
@@ -237,12 +245,12 @@
             </p>
           </div>
           <div style="text-align: right;">
-            <div style="font-size: 0.82rem; font-weight: 800; color: #000000; text-transform: uppercase; margin-bottom: 0.35rem;">Output Result</div>
+            <div style="font-size: 0.82rem; font-weight: 800; color: #052E16; text-transform: uppercase; margin-bottom: 0.35rem;">Output Result</div>
             <span style="background: #f1f5f9; border: 1px solid #cbd5e1; padding: 0.4rem 0.75rem; font-size: 0.88rem; font-weight: 700; display: inline-block;">
               Max Gross Built-Up Sft
             </span>
             <div style="margin-top: 0.65rem;">
-              <a href="#planning" class="top-link" onclick="window.location.hash='planning';" style="font-size: 0.82rem; font-weight: 700; color: #166534;">Explore 11 Bylaws &rarr;</a>
+              <a href="#planning" class="top-link" onclick="window.location.hash='planning';" style="font-size: 0.82rem; font-weight: 700; color: #15803D;">Explore 11 Bylaws &rarr;</a>
             </div>
           </div>
         </div>
@@ -251,11 +259,11 @@
         <div class="phase-step-card">
           <div>
             <span class="phase-badge">Phase 02</span>
-            <h3 style="font-size: 1.25rem; font-weight: 800; color: #000000; margin-bottom: 0.25rem;">Structural Analysis &amp; Design</h3>
+            <h3 style="font-size: 1.25rem; font-weight: 800; color: #052E16; margin-bottom: 0.25rem;">Structural Analysis &amp; Design</h3>
             <span style="font-size: 0.85rem; color: #64748b;">Codes &amp; Specifications</span>
           </div>
           <div>
-            <div style="font-weight: 700; color: #166534; margin-bottom: 0.35rem;">
+            <div style="font-weight: 700; color: #15803D; margin-bottom: 0.35rem;">
               BNBC 2020 (Parts 6 &amp; 8) &bull; ACI 318-19 &bull; PWD Standard Specifications
             </div>
             <p style="font-size: 0.92rem; color: #334155; line-height: 1.6; margin: 0;">
@@ -263,12 +271,12 @@
             </p>
           </div>
           <div style="text-align: right;">
-            <div style="font-size: 0.82rem; font-weight: 800; color: #000000; text-transform: uppercase; margin-bottom: 0.35rem;">Output Result</div>
+            <div style="font-size: 0.82rem; font-weight: 800; color: #052E16; text-transform: uppercase; margin-bottom: 0.35rem;">Output Result</div>
             <span style="background: #f1f5f9; border: 1px solid #cbd5e1; padding: 0.4rem 0.75rem; font-size: 0.88rem; font-weight: 700; display: inline-block;">
               Concrete Cft &amp; Rebar Tons
             </span>
             <div style="margin-top: 0.65rem;">
-              <a href="#codes" class="top-link" onclick="window.location.hash='codes';" style="font-size: 0.82rem; font-weight: 700; color: #166534;">View 6 Standards &rarr;</a>
+              <a href="#codes" class="top-link" onclick="window.location.hash='codes';" style="font-size: 0.82rem; font-weight: 700; color: #15803D;">View 6 Standards &rarr;</a>
             </div>
           </div>
         </div>
@@ -277,11 +285,11 @@
         <div class="phase-step-card">
           <div>
             <span class="phase-badge">Phase 03</span>
-            <h3 style="font-size: 1.25rem; font-weight: 800; color: #000000; margin-bottom: 0.25rem;">Rate Analysis &amp; BOQ</h3>
+            <h3 style="font-size: 1.25rem; font-weight: 800; color: #052E16; margin-bottom: 0.25rem;">Rate Analysis &amp; BOQ</h3>
             <span style="font-size: 0.85rem; color: #64748b;">Government Price Schedules</span>
           </div>
           <div>
-            <div style="font-weight: 700; color: #166534; margin-bottom: 0.35rem;">
+            <div style="font-weight: 700; color: #15803D; margin-bottom: 0.35rem;">
               PWD Civil SoR 2022 (Ch 01-33) &bull; PWD E/M (Subhead 01-21) &bull; LGED &bull; RHD
             </div>
             <p style="font-size: 0.92rem; color: #334155; line-height: 1.6; margin: 0;">
@@ -289,12 +297,12 @@
             </p>
           </div>
           <div style="text-align: right;">
-            <div style="font-size: 0.82rem; font-weight: 800; color: #000000; text-transform: uppercase; margin-bottom: 0.35rem;">Output Result</div>
+            <div style="font-size: 0.82rem; font-weight: 800; color: #052E16; text-transform: uppercase; margin-bottom: 0.35rem;">Output Result</div>
             <span style="background: #f1f5f9; border: 1px solid #cbd5e1; padding: 0.4rem 0.75rem; font-size: 0.88rem; font-weight: 700; display: inline-block;">
               Itemized BOQ &amp; Cost
             </span>
             <div style="margin-top: 0.65rem;">
-              <a href="#rates" class="top-link" onclick="window.location.hash='rates';" style="font-size: 0.82rem; font-weight: 700; color: #166534;">Browse 72 Schedules &rarr;</a>
+              <a href="#rates" class="top-link" onclick="window.location.hash='rates';" style="font-size: 0.82rem; font-weight: 700; color: #15803D;">Browse 72 Schedules &rarr;</a>
             </div>
           </div>
         </div>
@@ -303,11 +311,11 @@
         <div class="phase-step-card">
           <div>
             <span class="phase-badge">Phase 04</span>
-            <h3 style="font-size: 1.25rem; font-weight: 800; color: #000000; margin-bottom: 0.25rem;">Statutory Clearances</h3>
+            <h3 style="font-size: 1.25rem; font-weight: 800; color: #052E16; margin-bottom: 0.25rem;">Statutory Clearances</h3>
             <span style="font-size: 0.85rem; color: #64748b;">Life Safety &amp; Environment</span>
           </div>
           <div>
-            <div style="font-weight: 700; color: #166534; margin-bottom: 0.35rem;">
+            <div style="font-weight: 700; color: #15803D; margin-bottom: 0.35rem;">
               Fire Prevention Act 2003 / Rules 2014 &bull; DoE ECR 2023 &bull; Air Pollution Rules 2022
             </div>
             <p style="font-size: 0.92rem; color: #334155; line-height: 1.6; margin: 0;">
@@ -315,12 +323,12 @@
             </p>
           </div>
           <div style="text-align: right;">
-            <div style="font-size: 0.82rem; font-weight: 800; color: #000000; text-transform: uppercase; margin-bottom: 0.35rem;">Output Result</div>
+            <div style="font-size: 0.82rem; font-weight: 800; color: #052E16; text-transform: uppercase; margin-bottom: 0.35rem;">Output Result</div>
             <span style="background: #f1f5f9; border: 1px solid #cbd5e1; padding: 0.4rem 0.75rem; font-size: 0.88rem; font-weight: 700; display: inline-block;">
               NOC &amp; Safety Additions
             </span>
             <div style="margin-top: 0.65rem;">
-              <a href="#clearances" class="top-link" onclick="window.location.hash='clearances';" style="font-size: 0.82rem; font-weight: 700; color: #166534;">Review 6 Clearances &rarr;</a>
+              <a href="#clearances" class="top-link" onclick="window.location.hash='clearances';" style="font-size: 0.82rem; font-weight: 700; color: #15803D;">Review 6 Clearances &rarr;</a>
             </div>
           </div>
         </div>
@@ -329,11 +337,11 @@
         <div class="phase-step-card">
           <div>
             <span class="phase-badge">Phase 05</span>
-            <h3 style="font-size: 1.25rem; font-weight: 800; color: #000000; margin-bottom: 0.25rem;">Procurement &amp; Tendering</h3>
+            <h3 style="font-size: 1.25rem; font-weight: 800; color: #052E16; margin-bottom: 0.25rem;">Procurement &amp; Tendering</h3>
             <span style="font-size: 0.85rem; color: #64748b;">Contracts &amp; Legal Framework</span>
           </div>
           <div>
-            <div style="font-weight: 700; color: #166534; margin-bottom: 0.35rem;">
+            <div style="font-weight: 700; color: #15803D; margin-bottom: 0.35rem;">
               Public Procurement Act 2006 (PPA) &bull; Public Procurement Rules 2008 (PPR)
             </div>
             <p style="font-size: 0.92rem; color: #334155; line-height: 1.6; margin: 0;">
@@ -341,7 +349,7 @@
             </p>
           </div>
           <div style="text-align: right;">
-            <div style="font-size: 0.82rem; font-weight: 800; color: #000000; text-transform: uppercase; margin-bottom: 0.35rem;">Output Result</div>
+            <div style="font-size: 0.82rem; font-weight: 800; color: #052E16; text-transform: uppercase; margin-bottom: 0.35rem;">Output Result</div>
             <span style="background: #f1f5f9; border: 1px solid #cbd5e1; padding: 0.4rem 0.75rem; font-size: 0.88rem; font-weight: 700; display: inline-block;">
               Enforceable Contract
             </span>
@@ -349,11 +357,11 @@
         </div>
 
         <!-- Phase 6 -->
-        <div class="phase-step-card" style="border-color: #166534; background: #f0fdf4;">
+        <div class="phase-step-card" style="border-color: #15803D; background: #f0fdf4;">
           <div>
             <span class="phase-badge" style="background: #15803d;">Phase 06</span>
-            <h3 style="font-size: 1.25rem; font-weight: 800; color: #000000; margin-bottom: 0.25rem;">Practical Real Benchmark</h3>
-            <span style="font-size: 0.85rem; color: #166534; font-weight: 700;">KUET Civil Engineering Model</span>
+            <h3 style="font-size: 1.25rem; font-weight: 800; color: #052E16; margin-bottom: 0.25rem;">Practical Real Benchmark</h3>
+            <span style="font-size: 0.85rem; color: #15803D; font-weight: 700;">KUET Civil Engineering Model</span>
           </div>
           <div>
             <div style="font-weight: 700; color: #15803d; margin-bottom: 0.35rem;">
@@ -364,7 +372,7 @@
             </p>
           </div>
           <div style="text-align: right;">
-            <div style="font-size: 0.82rem; font-weight: 800; color: #000000; text-transform: uppercase; margin-bottom: 0.35rem;">Live Calculator</div>
+            <div style="font-size: 0.82rem; font-weight: 800; color: #052E16; text-transform: uppercase; margin-bottom: 0.35rem;">Live Calculator</div>
             <a href="#estimator" class="btn-doc-download" onclick="window.location.hash='estimator';" style="padding: 0.5rem 1rem; font-size: 0.88rem; display: inline-block;">
               Open BOQ Engine &rarr;
             </a>
@@ -376,35 +384,35 @@
       <!-- Quick Registry Shortcuts Grid -->
       <div style="margin-top: 4.5rem;">
         <span class="section-tag">CATALOG BROWSING</span>
-        <h2 style="font-family: 'Merriweather', serif; font-size: 2rem; font-weight: 900; color: #000000; margin-bottom: 1.5rem;">
+        <h2 style="font-family: 'Merriweather', serif; font-size: 2rem; font-weight: 900; color: #052E16; margin-bottom: 1.5rem;">
           Direct Access to Government Documents by Category
         </h2>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
           
           <div class="human-card" onclick="window.location.hash='codes';" style="cursor: pointer;">
-            <div style="font-size: 1.75rem; color: #166534; margin-bottom: 0.5rem;"><i class="fa-solid fa-landmark"></i></div>
+            <div style="font-size: 1.75rem; color: #15803D; margin-bottom: 0.5rem;"><i class="fa-solid fa-landmark"></i></div>
             <h3 style="font-size: 1.25rem;">Codes &amp; Standards (6)</h3>
             <p>BNBC 2020 Gazette, HBRI Part 1, BNBC 1993 Vol 1 &amp; 2, PWD Civil Specifications (83 MB), and PWD Code of Practice.</p>
             <span class="event-box-action">Open Codes Catalog &rarr;</span>
           </div>
 
           <div class="human-card" onclick="window.location.hash='rates';" style="cursor: pointer;">
-            <div style="font-size: 1.75rem; color: #166534; margin-bottom: 0.5rem;"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+            <div style="font-size: 1.75rem; color: #15803D; margin-bottom: 0.5rem;"><i class="fa-solid fa-file-invoice-dollar"></i></div>
             <h3 style="font-size: 1.25rem;">Schedule of Rates (72)</h3>
             <p>PWD Civil SoR 2022 (Ch 01 to 33, Annexure A &amp; B), PWD E/M SoR 2022 (Subheads 01-21), 2026 Lift Rates, LGED &amp; RHD.</p>
             <span class="event-box-action">Open Rate Schedules &rarr;</span>
           </div>
 
           <div class="human-card" onclick="window.location.hash='planning';" style="cursor: pointer;">
-            <div style="font-size: 1.75rem; color: #166534; margin-bottom: 0.5rem;"><i class="fa-solid fa-map-location-dot"></i></div>
+            <div style="font-size: 1.75rem; color: #15803D; margin-bottom: 0.5rem;"><i class="fa-solid fa-map-location-dot"></i></div>
             <h3 style="font-size: 1.25rem;">Planning &amp; Bylaws (11)</h3>
             <p>RAJUK Imarat 2008 &amp; 2025, DAP 2016-2035 Report, Maps &amp; Grids, Building Construction Act 1952, Pourashabha, CDA, KDA.</p>
             <span class="event-box-action">Open Planning Rules &rarr;</span>
           </div>
 
           <div class="human-card" onclick="window.location.hash='clearances';" style="cursor: pointer;">
-            <div style="font-size: 1.75rem; color: #166534; margin-bottom: 0.5rem;"><i class="fa-solid fa-fire-extinguisher"></i></div>
+            <div style="font-size: 1.75rem; color: #15803D; margin-bottom: 0.5rem;"><i class="fa-solid fa-fire-extinguisher"></i></div>
             <h3 style="font-size: 1.25rem;">Fire &amp; Environment (6)</h3>
             <p>Fire Safety Act 2003 &amp; Rules 2014, DoE Environmental Rules (ECR 2023), Air Pollution 2022, and Solid Waste 2021.</p>
             <span class="event-box-action">Open Clearance Guidelines &rarr;</span>
@@ -425,10 +433,10 @@
       <!-- Catalog Dynamic Header -->
       <div style="margin-bottom: 2.5rem;">
         <span class="section-tag">OFFICIAL REGISTRY REPOSITORY</span>
-        <h2 id="catalog-title" style="font-family: 'Merriweather', serif; font-size: 2.2rem; font-weight: 900; color: #000000; margin-bottom: 0.35rem;">
+        <h2 id="catalog-title" style="font-family: 'Merriweather', serif; font-size: 2.2rem; font-weight: 900; color: #052E16; margin-bottom: 0.35rem;">
           Government Document Catalog
         </h2>
-        <div id="catalog-bn-title" style="font-size: 1.15rem; font-weight: 700; color: #166534; margin-bottom: 0.75rem;">
+        <div id="catalog-bn-title" style="font-size: 1.15rem; font-weight: 700; color: #15803D; margin-bottom: 0.75rem;">
           সরকারি গেজেট ও টেকনিক্যাল স্পেসিফিকেশন রেজিস্ট্রি
         </div>
         <p id="catalog-desc" style="font-size: 1.02rem; color: #475569; max-width: 860px; line-height: 1.7;">
@@ -438,19 +446,19 @@
 
       <!-- Rates Specific Sub-Filter Tabs (Shown when activeRoute == 'rates') -->
       <div id="rates-sub-filters" style="display: none; gap: 0.65rem; margin-bottom: 1.75rem; flex-wrap: wrap;">
-        <button type="button" class="rate-sub-pill active" data-rate-sub="ALL" style="background: #166534; color: #ffffff; border: 2px solid #000000; padding: 0.45rem 1rem; font-weight: 800; cursor: pointer;">
+        <button type="button" class="rate-sub-pill active" data-rate-sub="ALL" style="background: #15803D; color: #ffffff; border: 2px solid #000000; padding: 0.45rem 1rem; font-weight: 800; cursor: pointer;">
           All Schedules (72)
         </button>
-        <button type="button" class="rate-sub-pill" data-rate-sub="PWD-CIVIL" style="background: #ffffff; color: #000000; border: 2px solid #000000; padding: 0.45rem 1rem; font-weight: 800; cursor: pointer;">
+        <button type="button" class="rate-sub-pill" data-rate-sub="PWD-CIVIL" style="background: #ffffff; color: #052E16; border: 2px solid #000000; padding: 0.45rem 1rem; font-weight: 800; cursor: pointer;">
           PWD Civil (37 Ch.)
         </button>
-        <button type="button" class="rate-sub-pill" data-rate-sub="PWD-EM" style="background: #ffffff; color: #000000; border: 2px solid #000000; padding: 0.45rem 1rem; font-weight: 800; cursor: pointer;">
+        <button type="button" class="rate-sub-pill" data-rate-sub="PWD-EM" style="background: #ffffff; color: #052E16; border: 2px solid #000000; padding: 0.45rem 1rem; font-weight: 800; cursor: pointer;">
           PWD E/M (25 Sub.)
         </button>
-        <button type="button" class="rate-sub-pill" data-rate-sub="LGED" style="background: #ffffff; color: #000000; border: 2px solid #000000; padding: 0.45rem 1rem; font-weight: 800; cursor: pointer;">
+        <button type="button" class="rate-sub-pill" data-rate-sub="LGED" style="background: #ffffff; color: #052E16; border: 2px solid #000000; padding: 0.45rem 1rem; font-weight: 800; cursor: pointer;">
           LGED Rates (2)
         </button>
-        <button type="button" class="rate-sub-pill" data-rate-sub="RHD" style="background: #ffffff; color: #000000; border: 2px solid #000000; padding: 0.45rem 1rem; font-weight: 800; cursor: pointer;">
+        <button type="button" class="rate-sub-pill" data-rate-sub="RHD" style="background: #ffffff; color: #052E16; border: 2px solid #000000; padding: 0.45rem 1rem; font-weight: 800; cursor: pointer;">
           RHD Roads &amp; Bridges (2)
         </button>
       </div>
@@ -469,7 +477,7 @@
 
         <!-- Authority Filter Pills -->
         <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;">
-          <span style="font-size: 0.85rem; font-weight: 800; color: #000000; text-transform: uppercase; margin-right: 0.35rem;">Authority:</span>
+          <span style="font-size: 0.85rem; font-weight: 800; color: #052E16; text-transform: uppercase; margin-right: 0.35rem;">Authority:</span>
           <button type="button" class="auth-pill active" data-auth="ALL">All Authorities</button>
           <button type="button" class="auth-pill" data-auth="PWD">PWD (68)</button>
           <button type="button" class="auth-pill" data-auth="RAJUK">RAJUK (6)</button>
@@ -486,7 +494,7 @@
 
       <!-- Results Count -->
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
-        <span id="results-counter" style="font-family: 'Space Mono', monospace; font-size: 0.92rem; font-weight: 700; color: #166534;">
+        <span id="results-counter" style="font-family: 'Space Mono', monospace; font-size: 0.92rem; font-weight: 700; color: #15803D;">
           Showing 95 of 95 Official Government Documents
         </span>
       </div>
@@ -508,10 +516,10 @@
       <!-- Section Header -->
       <div style="margin-bottom: 2.5rem;">
         <span class="section-tag">PRACTICAL PROJECT BENCHMARK</span>
-        <h2 style="font-family: 'Merriweather', serif; font-size: 2.2rem; font-weight: 900; color: #000000; margin-bottom: 0.35rem;">
+        <h2 style="font-family: 'Merriweather', serif; font-size: 2.2rem; font-weight: 900; color: #052E16; margin-bottom: 0.35rem;">
           ACI-KUET Standard G+3 Residential Building BOQ Engine
         </h2>
-        <div style="font-size: 1.15rem; font-weight: 700; color: #166534; margin-bottom: 0.75rem;">
+        <div style="font-size: 1.15rem; font-weight: 700; color: #15803D; margin-bottom: 0.75rem;">
           ৪-তলা আবাসিক ভবনের পূর্ণাঙ্গ প্রাক্কলন ও ম্যাটেরিয়াল কনসাম্পশন মডেল (৮,৪০৬ বর্গফুট)
         </div>
         <p style="font-size: 1.02rem; color: #475569; max-width: 900px; line-height: 1.7;">
@@ -578,7 +586,7 @@
       <!-- Export Action Bar -->
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
         <div>
-          <h3 style="font-size: 1.4rem; font-weight: 800; color: #000000; margin: 0;">Grand Abstract of Cost (PWD Reference)</h3>
+          <h3 style="font-size: 1.4rem; font-weight: 800; color: #052E16; margin: 0;">Grand Abstract of Cost (PWD Reference)</h3>
           <span style="font-size: 0.88rem; color: #64748b;">Detailed cost distribution across civil &amp; MEP categories</span>
         </div>
         <button type="button" class="btn-primary" onclick="window.printEstimationBOQ()" style="padding: 0.75rem 1.75rem; font-size: 1rem;">
@@ -661,7 +669,7 @@
             </tr>
             <tr style="background: #f8fafc; font-weight: 800; border-top: 2px solid #000000;">
               <td colspan="3"><strong>NET DIRECT CIVIL &amp; MEP ESTIMATE</strong></td>
-              <td id="direct-total-cost" style="text-align: right; font-family: 'Space Mono', monospace; font-size: 1.1rem; color: #000000;">BDT 24,095,654</td>
+              <td id="direct-total-cost" style="text-align: right; font-family: 'Space Mono', monospace; font-size: 1.1rem; color: #052E16;">BDT 24,095,654</td>
               <td style="text-align: right;">100.0%</td>
             </tr>
             <tr>
@@ -685,7 +693,7 @@
               <td id="contingency-cost" style="text-align: right; font-family: 'Space Mono', monospace;">BDT 722,870</td>
               <td style="text-align: right;">3.0%</td>
             </tr>
-            <tr style="background: #166534; color: #ffffff; font-weight: 900; font-size: 1.15rem;">
+            <tr style="background: #15803D; color: #ffffff; font-weight: 900; font-size: 1.15rem;">
               <td colspan="3" style="color: #ffffff;">🏆 GRAND TOTAL ESTIMATED PROJECT BUDGET</td>
               <td id="final-grand-total" style="text-align: right; font-family: 'Space Mono', monospace; color: #ffffff;">BDT 26,050,436</td>
               <td style="text-align: right; color: #ffffff;">Turnkey</td>
@@ -696,7 +704,7 @@
 
       <!-- Bulk Material Consumption Table -->
       <div style="margin-bottom: 2rem;">
-        <h3 style="font-size: 1.4rem; font-weight: 800; color: #000000; margin-bottom: 0.35rem;">Key Bulk Material Consumption Index</h3>
+        <h3 style="font-size: 1.4rem; font-weight: 800; color: #052E16; margin-bottom: 0.35rem;">Key Bulk Material Consumption Index</h3>
         <p style="font-size: 0.95rem; color: #64748b; margin-bottom: 1.5rem;">Material quantities automatically derived for the building footprint and structural specifications</p>
       </div>
 
@@ -761,7 +769,7 @@
     <div style="background: #ffffff; width: 100%; max-width: 780px; max-height: 90vh; overflow-y: auto; border: 2px solid #000000; box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4); border-radius: 0; padding: 2.5rem; position: relative;">
       
       <!-- Close icon button -->
-      <button type="button" onclick="window.closeDocModal()" style="position: absolute; right: 1.5rem; top: 1.5rem; background: none; border: none; font-size: 1.5rem; color: #000000; cursor: pointer;">
+      <button type="button" onclick="window.closeDocModal()" style="position: absolute; right: 1.5rem; top: 1.5rem; background: none; border: none; font-size: 1.5rem; color: #052E16; cursor: pointer;">
         <i class="fa-solid fa-xmark"></i>
       </button>
 
@@ -771,94 +779,87 @@
     </div>
   </div>
 
-  <!-- Unified Site Footer -->
-  <footer class="site-footer">
-    <div class="container footer-container">
-      <div class="footer-split-layout">
-        
-        <!-- Left Column: Chapter Mission -->
-        <div class="footer-brand-column">
-          <div class="footer-brand-header">
-            <img src="images/aci-kuet-official-logo.webp" alt="ACI KUET Logo" class="footer-brand-logo" style="height: 52px; width: auto; object-fit: contain;">
-            <div class="footer-brand-title">
-              <h3>AMERICAN CONCRETE INSTITUTE</h3>
-              <p>STUDENT CHAPTER &bull; KUET</p>
-            </div>
+  <!-- Comprehensive Split Footer (Institutional Light Green Theme) -->
+  <footer class="split-footer">
+    <div class="container">
+      <div class="split-footer-top">
+        <div class="footer-left-club-intro">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.15rem;">
+            <img src="images/aci-kuet-official-logo.webp" alt="ACI KUET Logo" style="height: 52px; width: auto; object-fit: contain;">
+            <h3 style="margin: 0; font-size: 1.4rem; font-weight: 900; color: #052E16;">ACI KUET Student Chapter</h3>
           </div>
-          <p class="footer-mission-text">
-            Advancing concrete technology, architectural engineering, and structural excellence at Khulna University of Engineering &amp; Technology through rigorous research, professional workshops, and national innovation symposiums.
+          <p style="color: #052E16; font-weight: 500; font-size: 0.95rem; line-height: 1.75;">
+            Rooted in the Department of Civil Engineering at KUET and chartered by the American Concrete Institute (ACI), the ACI KUET Student Chapter is a dynamic platform for aspiring civil and materials engineers. We strive to cultivate hands-on innovation, sustainable construction practices, and leadership, connecting KUET students with nationwide industry networks and global engineering forums.
           </p>
-          <div class="footer-social-strip">
-            <a href="https://www.facebook.com/acikuet" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="https://www.linkedin.com/company/aci-kuet-student-chapter/" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="https://www.instagram.com/acikuet" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="mailto:aci.kuet.student.chapter@gmail.com" class="footer-social-icon" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <div class="footer-social-row">
+            <a href="https://www.facebook.com/profile.php?id=61596231034458" target="_blank" class="footer-social-link" title="Official Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/in/aci-kuet-student-chapter-426b2644a/" target="_blank" class="footer-social-link" title="Official LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/aci.kuet/" target="_blank" class="footer-social-link" title="Official Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@ACIKUETStudentChapter" target="_blank" class="footer-social-link" title="Official YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="mailto:aci.kuetsc@gmail.com" class="footer-social-link" title="Official Gmail"><i class="fa-solid fa-envelope"></i></a>
           </div>
         </div>
 
-        <!-- Right 4-Column Directory Grid -->
-        <div class="footer-directory-grid">
-          
-          <!-- Column 1: Core Navigation -->
-          <div class="footer-nav-col">
-            <h4>EXPLORE</h4>
-            <ul>
+        <div class="footer-right-columns">
+          <!-- Col 1: Navigation -->
+          <div>
+            <h4 class="footer-col-title">Navigation</h4>
+            <ul class="footer-links-list">
               <li><a href="index.html">Home</a></li>
-              <li><a href="about-us.html">About Chapter</a></li>
-              <li><a href="about-membership.html">Join Membership</a></li>
+              <li><a href="events-major.html">Events &amp; Competitions</a></li>
               <li><a href="panel-officers.html">Executive Panel</a></li>
-              <li><a href="panel-webteam.html">Webpage Team</a></li>
-              <li><a href="achievements.html">Achievements</a></li>
+              <li><a href="resources.html">Resources</a></li>
+              <li><a href="verify-certificate.html">Verify Certificate</a></li>
+              <li><a href="about-membership.html">Join Membership</a></li>
             </ul>
           </div>
 
-          <!-- Column 2: Signature Events -->
-          <div class="footer-nav-col">
-            <h4>SIGNATURE EVENTS</h4>
-            <ul>
+          <!-- Col 2: About & Lab -->
+          <div>
+            <h4 class="footer-col-title">About Chapter</h4>
+            <ul class="footer-links-list">
+              <li><a href="about-us.html">Overview &amp; Mission</a></li>
+              <li><a href="about-lab.html">Inside KUET Concrete Lab</a></li>
+              <li><a href="about-alumni.html">Alumni Spotlight</a></li>
+              <li><a href="achievements.html">Honors &amp; Awards</a></li>
+              <li><a href="sponsors.html">Corporate Sponsors</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Competitions & Media -->
+          <div>
+            <h4 class="footer-col-title">Competitions &amp; Media</h4>
+            <ul class="footer-links-list">
               <li><a href="events-national.html">ReinforCE 1.0 &amp; 2.0</a></li>
-              <li><a href="events-major.html">ACI Annual Convention</a></li>
-              <li><a href="events-technical.html">Concrete Mix Design</a></li>
-              <li><a href="events-inhouse.html">In-House Competitions</a></li>
-              <li><a href="events-tours.html">Industrial Tours</a></li>
-              <li><a href="events-seminars.html">Academic Seminars</a></li>
+              <li><a href="events-technical.html">Materials &amp; Mechanics</a></li>
+              <li><a href="events-tours.html">Industrial Site Tours</a></li>
+              <li><a href="news.html">News &amp; Bulletins</a></li>
+              <li><a href="panel-webteam.html">Web Development Team</a></li>
             </ul>
           </div>
 
-          <!-- Column 3: Resources & Tools -->
-          <div class="footer-nav-col">
-            <h4>ENGINEERING TOOLS</h4>
-            <ul>
-              <li><a href="estimation.html">Civil Estimation Hub</a></li>
-              <li><a href="resources.html">Mix Design Calculator</a></li>
-              <li><a href="resources.html#sec-civil-standards">BNBC &amp; ACI Manuals</a></li>
-              <li><a href="about-lab.html">Concrete Testing Hall</a></li>
-              <li><a href="verify-certificate.html">Certificate Verification</a></li>
-              <li><a href="sponsors.html">Corporate Partners</a></li>
-            </ul>
-          </div>
-
-          <!-- Column 4: Contact & Secretariat -->
-          <div class="footer-nav-col">
-            <h4>SECRETARIAT</h4>
-            <div class="footer-contact-snippet">
-              <p><strong>Department of Civil Engineering</strong></p>
-              <p>Khulna University of Engineering &amp; Technology (KUET)</p>
-              <p>Khulna-9203, Bangladesh</p>
-              <p style="margin-top: 0.5rem;"><i class="fa-solid fa-envelope"></i> aci.kuet.student.chapter@gmail.com</p>
+          <!-- Col 4: Department Coordinates -->
+          <div>
+            <h4 class="footer-col-title">Department Coordinates</h4>
+            <div class="footer-location-block">
+              <i class="fa-solid fa-location-dot" style="color: #15803D; font-size: 1.15rem; margin-top: 3px;"></i>
+              <p style="color: #052E16; font-size: 0.92rem; line-height: 1.6; font-weight: 500;">
+                Department of Civil Engineering<br>
+                Khulna University of Engineering &amp; Technology (KUET)<br>
+                Teligati, Khulna-9203, Bangladesh.
+              </p>
+            </div>
+            <div style="margin-top: 1rem; font-size: 0.88rem; color: #052E16; font-weight: 600; line-height: 1.6;">
+              <strong>Convener:</strong> Shakil Ilhan (2301044)<br>
+              <strong>Email:</strong> aci.kuetsc@gmail.com
             </div>
           </div>
-
         </div>
-
       </div>
 
-      <!-- Bottom Copyright Strip -->
-      <div class="footer-bottom-bar">
-        <p>&copy; 2026 American Concrete Institute (ACI) Student Chapter, KUET. All Rights Reserved.</p>
-        <p>Architected by the ACI KUET Web Team &bull; Department of Civil Engineering</p>
+      <div class="footer-bottom-legal" style="text-align: center; border-top: 1px solid var(--border-light); padding-top: 2rem; color: #052E16; font-size: 0.88rem; font-weight: 500;">
+        <p>&copy; 2026 ACI Student Chapter, KUET. All rights reserved. Department of Civil Engineering, Khulna University of Engineering &amp; Technology.</p>
       </div>
-
     </div>
   </footer>
 

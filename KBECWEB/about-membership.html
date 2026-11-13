@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#166534">
+  <meta name="theme-color" content="#15803D">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <title>Join ACI KUET | Student Membership Privileges & Registration</title>
+  <title>ACI KUET Student Chapter | Join Membership</title>
   <meta name="description" content="Access global ACI resources, free webinars, American Concrete Institute member discounts, and research forums at KUET.">
   <link rel="canonical" href="https://acikuet.org/about-membership.html">
   
@@ -23,29 +23,44 @@
   <meta name="twitter:title" content="Join ACI KUET | Student Membership Privileges & Registration">
   <meta name="twitter:description" content="Access global ACI resources, free webinars, American Concrete Institute member discounts, and research forums at KUET.">
   <meta name="twitter:image" content="https://acikuet.org/images/hero-group-photo.webp">
-  <link rel="icon" href="images/aci-kuet-official-logo.webp" type="image/webp">
+    <!-- Favicon with Solid White Circular Backing (Dark Mode Proof for Browser Tabs) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="shortcut icon" href="images/favicon.ico">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="css/styles.css?v=6.1">
+  <link rel="stylesheet" href="css/styles.css?v=8.6">
 </head>
 <body>
 
-  <!-- Main Slim White Navbar -->
-    <!-- Main Slim White Navbar -->
+    <!-- Persistent Sticky Top Ribbon (Stays pinned at top as page scrolls) -->
+  <div class="persistent-top-ribbon">
+    <div class="top-ribbon-inner">
+      <span>ACI KUET Student Chapter</span>
+    </div>
+  </div>
+
+  <!-- Main Slim White Navbar (0.8x Compact, Logo shifted to far left, 3-step stacked brand) -->
   <header class="main-header">
     <div class="navbar-container">
       <nav class="navbar">
-        <!-- Far Left: Official Logo + Text -->
+        <!-- Far Left: Official Logo with Solid White Backing + 3-Step Stacked Text -->
         <a href="index.html" class="nav-brand">
-          <img src="images/aci-kuet-official-logo.webp" alt="ACI KUET Official Logo" class="nav-brand-logo">
-          <span class="nav-brand-text">
-            <span class="brand-aci">ACI</span> <span class="brand-kuet">KUET</span> <span class="brand-sub">Student Chapter</span>
+          <div class="nav-brand-logo-box">
+            <img src="images/aci-kuet-official-logo.webp" alt="ACI KUET Official Logo" class="nav-brand-logo">
+          </div>
+          <span class="nav-brand-stacked">
+            <span class="brand-step-1">ACI KUET</span>
+            <span class="brand-step-2">STUDENT</span>
+            <span class="brand-step-3">CHAPTER</span>
           </span>
         </a>
 
-        <!-- Right Side: Navigation Menu -->
+        <!-- Right Side: Navigation Menu (0.8x compact, bold on click/active) -->
         <ul class="nav-menu">
           <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
           
@@ -73,9 +88,8 @@
 
           <li class="nav-item"><a href="achievements.html" class="nav-link">Achievements</a></li>
           <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>
-          <li class="nav-item"><a href="estimation.html" class="nav-link">Civil Estimation</a></li>
           <li class="nav-item"><a href="resources.html" class="nav-link">Resources</a></li>
-          <li class="nav-item"><a href="verify-certificate.html" class="nav-link"><i class="fa-solid fa-certificate"></i> Verify Certificate</a></li>
+          <li class="nav-item"><a href="verify-certificate.html" class="nav-link">Verify Certificate</a></li>
           <li class="nav-item"><a href="sponsors.html" class="nav-link">Sponsors</a></li>
           <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
 
@@ -116,12 +130,12 @@
   <!-- Intro Highlights Section -->
   <section style="background: var(--bg-cream); padding: 4.5rem 0 3.5rem;">
     <div class="container">
-      <div style="text-align: center; max-width: 860px; margin: 0 auto 3.5rem;">
-        <span style="display: inline-block; background: transparent; color: #166534; font-size: 0.82rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.75rem;">Global Student Membership Advantage</span>
-        <h2 style="font-size: 2.3rem; font-weight: 900; color: #000000; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 1.25rem;">
+      <div data-animate="pop-inside" style="text-align: center; max-width: 860px; margin: 0 auto 3.5rem;">
+        <span style="display: inline-block; background: transparent; color: #15803D; font-size: 0.82rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.75rem;">Global Student Membership Advantage</span>
+        <h2 style="font-size: 2.3rem; font-weight: 900; color: #052E16; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 1.25rem;">
           Bridging Classroom Mechanics with World-Class Engineering Practice
         </h2>
-        <p style="font-size: 1.05rem; line-height: 1.75; color: #000000; font-weight: 500;">
+        <p style="font-size: 1.05rem; line-height: 1.75; color: #052E16; font-weight: 500;">
           As an undergraduate in the Department of Civil Engineering at KUET, joining the American Concrete Institute (ACI) Student Chapter transforms theoretical knowledge into competitive engineering mastery. From international travel grants to structural software mastery, explore how chapter membership elevates your career trajectory.
         </p>
       </div>
@@ -129,7 +143,7 @@
       <!-- 6 Core Membership Perks Grid -->
       <div class="perks-grid">
         <!-- Perk 1 -->
-        <div class="perk-card">
+        <div class="perk-card" data-animate="slide-bottom" style="transition-delay: 0.1s;">
           <div class="perk-icon-wrap">
             <i class="fa-solid fa-earth-americas"></i>
           </div>
@@ -140,7 +154,7 @@
         </div>
 
         <!-- Perk 2 -->
-        <div class="perk-card">
+        <div class="perk-card" data-animate="slide-bottom" style="transition-delay: 0.2s;">
           <div class="perk-icon-wrap">
             <i class="fa-solid fa-trophy"></i>
           </div>
@@ -151,7 +165,7 @@
         </div>
 
         <!-- Perk 3 -->
-        <div class="perk-card">
+        <div class="perk-card" data-animate="slide-bottom" style="transition-delay: 0.3s;">
           <div class="perk-icon-wrap">
             <i class="fa-solid fa-flask-vial"></i>
           </div>
@@ -162,7 +176,7 @@
         </div>
 
         <!-- Perk 4 -->
-        <div class="perk-card">
+        <div class="perk-card" data-animate="slide-bottom" style="transition-delay: 0.1s;">
           <div class="perk-icon-wrap">
             <i class="fa-solid fa-laptop-code"></i>
           </div>
@@ -173,7 +187,7 @@
         </div>
 
         <!-- Perk 5 -->
-        <div class="perk-card">
+        <div class="perk-card" data-animate="slide-bottom" style="transition-delay: 0.2s;">
           <div class="perk-icon-wrap">
             <i class="fa-solid fa-network-wired"></i>
           </div>
@@ -184,7 +198,7 @@
         </div>
 
         <!-- Perk 6 -->
-        <div class="perk-card">
+        <div class="perk-card" data-animate="slide-bottom" style="transition-delay: 0.3s;">
           <div class="perk-icon-wrap">
             <i class="fa-solid fa-certificate"></i>
           </div>
@@ -200,44 +214,44 @@
   <!-- Step-by-Step Induction Roadmap -->
   <section style="background: var(--bg-subtle); padding: 4.5rem 0; border-top: 1.5px solid var(--border-light); border-bottom: 1.5px solid var(--border-light);">
     <div class="container">
-      <div style="text-align: center; max-width: 760px; margin: 0 auto 3.5rem;">
-        <h2 style="font-size: 2.1rem; font-weight: 900; color: #000000; letter-spacing: -0.4px;">
+      <div data-animate="pop-inside" style="text-align: center; max-width: 760px; margin: 0 auto 3.5rem;">
+        <h2 style="font-size: 2.1rem; font-weight: 900; color: #052E16; letter-spacing: -0.4px;">
           How Chapter Induction Works
         </h2>
-        <p style="font-size: 1.02rem; color: #000000; margin-top: 0.5rem; font-weight: 500;">
+        <p style="font-size: 1.02rem; color: #052E16; margin-top: 0.5rem; font-weight: 500;">
           Simple 4-stage onboarding pathway for undergraduate students of Civil Engineering, KUET
         </p>
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;">
-        <div style="background: #ffffff; padding: 2rem; border-radius: var(--radius-lg); border: 1.5px solid var(--border-light); text-align: center;">
-          <div style="width: 48px; height: 48px; border-radius: 0; background: #166534; color: #ffffff; font-weight: 900; font-size: 1.3rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem;">1</div>
-          <h4 style="font-size: 1.2rem; font-weight: 800; color: #000000; margin-bottom: 0.5rem;">Online Application</h4>
-          <p style="font-size: 0.92rem; color: #000000; line-height: 1.6;">
+        <div data-animate="slide-bottom" style="background: #ffffff; padding: 2rem; border-radius: var(--radius-lg); border: 1.5px solid var(--border-light); text-align: center; transition-delay: 0.1s;">
+          <div style="width: 48px; height: 48px; border-radius: 0; background: #15803D; color: #ffffff; font-weight: 900; font-size: 1.3rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem;">1</div>
+          <h4 style="font-size: 1.2rem; font-weight: 800; color: #052E16; margin-bottom: 0.5rem;">Online Application</h4>
+          <p style="font-size: 0.92rem; color: #052E16; line-height: 1.6;">
             Fill out the official chapter registration form below with your KUET student roll and academic email.
           </p>
         </div>
 
-        <div style="background: #ffffff; padding: 2rem; border-radius: var(--radius-lg); border: 1.5px solid var(--border-light); text-align: center;">
-          <div style="width: 48px; height: 48px; border-radius: 0; background: #166534; color: #ffffff; font-weight: 900; font-size: 1.3rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem;">2</div>
-          <h4 style="font-size: 1.2rem; font-weight: 800; color: #000000; margin-bottom: 0.5rem;">Department Verification</h4>
-          <p style="font-size: 0.92rem; color: #000000; line-height: 1.6;">
+        <div data-animate="slide-bottom" style="background: #ffffff; padding: 2rem; border-radius: var(--radius-lg); border: 1.5px solid var(--border-light); text-align: center; transition-delay: 0.2s;">
+          <div style="width: 48px; height: 48px; border-radius: 0; background: #15803D; color: #ffffff; font-weight: 900; font-size: 1.3rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem;">2</div>
+          <h4 style="font-size: 1.2rem; font-weight: 800; color: #052E16; margin-bottom: 0.5rem;">Department Verification</h4>
+          <p style="font-size: 0.92rem; color: #052E16; line-height: 1.6;">
             Academic cohort credentials verified by the ACI KUET Secretariat under the Department of Civil Engineering.
           </p>
         </div>
 
-        <div style="background: #ffffff; padding: 2rem; border-radius: var(--radius-lg); border: 1.5px solid var(--border-light); text-align: center;">
-          <div style="width: 48px; height: 48px; border-radius: 0; background: #166534; color: #ffffff; font-weight: 900; font-size: 1.3rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem;">3</div>
-          <h4 style="font-size: 1.2rem; font-weight: 800; color: #000000; margin-bottom: 0.5rem;">ACI USA Portal Access</h4>
-          <p style="font-size: 0.92rem; color: #000000; line-height: 1.6;">
+        <div data-animate="slide-bottom" style="background: #ffffff; padding: 2rem; border-radius: var(--radius-lg); border: 1.5px solid var(--border-light); text-align: center; transition-delay: 0.3s;">
+          <div style="width: 48px; height: 48px; border-radius: 0; background: #15803D; color: #ffffff; font-weight: 900; font-size: 1.3rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem;">3</div>
+          <h4 style="font-size: 1.2rem; font-weight: 800; color: #052E16; margin-bottom: 0.5rem;">ACI USA Portal Access</h4>
+          <p style="font-size: 0.92rem; color: #052E16; line-height: 1.6;">
             Receive your unique international ACI Member ID giving immediate free access to concrete.org technical libraries.
           </p>
         </div>
 
-        <div style="background: #ffffff; padding: 2rem; border-radius: var(--radius-lg); border: 1.5px solid var(--border-light); text-align: center;">
-          <div style="width: 48px; height: 48px; border-radius: 0; background: #166534; color: #ffffff; font-weight: 900; font-size: 1.3rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem;">4</div>
-          <h4 style="font-size: 1.2rem; font-weight: 800; color: #000000; margin-bottom: 0.5rem;">Team Induction</h4>
-          <p style="font-size: 0.92rem; color: #000000; line-height: 1.6;">
+        <div data-animate="slide-bottom" style="background: #ffffff; padding: 2rem; border-radius: var(--radius-lg); border: 1.5px solid var(--border-light); text-align: center; transition-delay: 0.4s;">
+          <div style="width: 48px; height: 48px; border-radius: 0; background: #15803D; color: #ffffff; font-weight: 900; font-size: 1.3rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem;">4</div>
+          <h4 style="font-size: 1.2rem; font-weight: 800; color: #052E16; margin-bottom: 0.5rem;">Team Induction</h4>
+          <p style="font-size: 0.92rem; color: #052E16; line-height: 1.6;">
             Assigned to technical sub-committees (Lab Casting, Competition Teams, Media/Design, or Logistics &amp; Events).
           </p>
         </div>
@@ -248,33 +262,34 @@
   <!-- Interactive Membership Application Form Section -->
   <section style="background: var(--bg-cream); padding: 4.5rem 0 5.5rem;">
     <div class="container">
-      <div style="max-width: 800px; margin: 0 auto; background: #ffffff; padding: 3.5rem; border-radius: var(--radius-lg); border: 1.5px solid var(--border-light); box-shadow: var(--shadow-sm);">
+      <div class="form-box-card" data-animate="pop-inside">
         <div style="text-align: center; margin-bottom: 2.5rem;">
-          <span style="color: #166534; font-weight: 800; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px;">Student Chapter Portal</span>
-          <h3 style="font-size: 1.95rem; font-weight: 900; color: #000000; margin-top: 0.35rem; letter-spacing: -0.4px;">
+          <span style="color: #15803D; font-weight: 800; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px;">Student Chapter Portal</span>
+          <h3 style="font-size: 1.95rem; font-weight: 900; color: #052E16; margin-top: 0.35rem; letter-spacing: -0.4px;">
             Apply for ACI Student Chapter Membership
           </h3>
-          <p style="font-size: 0.98rem; color: #000000; margin-top: 0.5rem; font-weight: 500;">
+          <p style="font-size: 0.98rem; color: #052E16; margin-top: 0.5rem; font-weight: 500;">
             Open to all undergraduate students of the Department of Civil Engineering, KUET.
           </p>
         </div>
 
         <form id="membership-application-form" name="membership-application" method="POST" data-netlify="true" action="/about-membership.html?success=true">
           <input type="hidden" name="form-name" value="membership-application">
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+          
+          <div class="form-responsive-grid">
             <div>
-              <label style="display: block; font-weight: 800; font-size: 0.92rem; color: #000000; margin-bottom: 0.5rem;">Full Name *</label>
+              <label style="display: block; font-weight: 700; font-size: 0.88rem; color: #052E16; margin-bottom: 0.45rem;">Full Name *</label>
               <input type="text" name="name" class="contact-input-lg" placeholder="e.g. Shakil Ilhan" required>
             </div>
             <div>
-              <label style="display: block; font-weight: 800; font-size: 0.92rem; color: #000000; margin-bottom: 0.5rem;">Student Roll (KUET) *</label>
+              <label style="display: block; font-weight: 700; font-size: 0.88rem; color: #052E16; margin-bottom: 0.45rem;">Student Roll (KUET) *</label>
               <input type="text" name="roll" class="contact-input-lg" placeholder="e.g. 2301044" required>
             </div>
           </div>
 
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+          <div class="form-responsive-grid">
             <div>
-              <label style="display: block; font-weight: 800; font-size: 0.92rem; color: #000000; margin-bottom: 0.5rem;">Academic Year / Cohort *</label>
+              <label style="display: block; font-weight: 700; font-size: 0.88rem; color: #052E16; margin-bottom: 0.45rem;">Academic Year / Cohort *</label>
               <select name="academic_year" class="contact-input-lg" required>
                 <option value="">Select your academic year</option>
                 <option value="1st Year">1st Year (Freshman)</option>
@@ -284,18 +299,18 @@
               </select>
             </div>
             <div>
-              <label style="display: block; font-weight: 800; font-size: 0.92rem; color: #000000; margin-bottom: 0.5rem;">Contact Mobile *</label>
+              <label style="display: block; font-weight: 700; font-size: 0.88rem; color: #052E16; margin-bottom: 0.45rem;">Contact Mobile *</label>
               <input type="tel" name="phone" class="contact-input-lg" placeholder="e.g. 01973592343" required>
             </div>
           </div>
 
-          <div style="margin-bottom: 1.5rem;">
-            <label style="display: block; font-weight: 800; font-size: 0.92rem; color: #000000; margin-bottom: 0.5rem;">Email Address *</label>
+          <div style="margin-bottom: 1.35rem;">
+            <label style="display: block; font-weight: 700; font-size: 0.88rem; color: #052E16; margin-bottom: 0.45rem;">Email Address *</label>
             <input type="email" name="email" class="contact-input-lg" placeholder="e.g. yourname@gmail.com or student@kuet.ac.bd" required>
           </div>
 
           <div style="margin-bottom: 1.85rem;">
-            <label style="display: block; font-weight: 800; font-size: 0.92rem; color: #000000; margin-bottom: 0.5rem;">Primary Technical Interest *</label>
+            <label style="display: block; font-weight: 700; font-size: 0.88rem; color: #052E16; margin-bottom: 0.45rem;">Primary Technical Interest *</label>
             <select name="interest" class="contact-input-lg" required>
               <option value="">Select Area of Interest</option>
               <option value="mix-design">Concrete Mix Design &amp; Materials Testing</option>
@@ -306,7 +321,7 @@
             </select>
           </div>
 
-          <button type="submit" class="btn-reinforce" style="width: 100%; justify-content: center; padding: 1.15rem; font-size: 1.1rem; border-radius: 0;">
+          <button type="submit" class="btn-reinforce" style="width: 100%; justify-content: center; padding: 1.15rem; font-size: 1.05rem; border-radius: 0;">
             <i class="fa-solid fa-paper-plane"></i> Submit Chapter Membership Application
           </button>
         </form>
@@ -321,9 +336,9 @@
         <div class="footer-left-club-intro">
           <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.15rem;">
             <img src="images/aci-kuet-official-logo.webp" alt="ACI KUET Logo" style="height: 52px; width: auto; object-fit: contain;">
-            <h3 style="margin: 0; font-size: 1.4rem; font-weight: 900; color: #000000;">ACI KUET Student Chapter</h3>
+            <h3 style="margin: 0; font-size: 1.4rem; font-weight: 900; color: #052E16;">ACI KUET Student Chapter</h3>
           </div>
-          <p style="color: #000000; font-weight: 500; font-size: 0.95rem; line-height: 1.75;">
+          <p style="color: #052E16; font-weight: 500; font-size: 0.95rem; line-height: 1.75;">
             Rooted in the Department of Civil Engineering at KUET and chartered by the American Concrete Institute (ACI), the ACI KUET Student Chapter is a dynamic platform for aspiring civil and materials engineers. We strive to cultivate hands-on innovation, sustainable construction practices, and leadership, connecting KUET students with nationwide industry networks and global engineering forums.
           </p>
           <div class="footer-social-row">
@@ -379,14 +394,14 @@
           <div>
             <h4 class="footer-col-title">Department Coordinates</h4>
             <div class="footer-location-block">
-              <i class="fa-solid fa-location-dot" style="color: #166534; font-size: 1.15rem; margin-top: 3px;"></i>
-              <p style="color: #000000; font-size: 0.92rem; line-height: 1.6; font-weight: 500;">
+              <i class="fa-solid fa-location-dot" style="color: #15803D; font-size: 1.15rem; margin-top: 3px;"></i>
+              <p style="color: #052E16; font-size: 0.92rem; line-height: 1.6; font-weight: 500;">
                 Department of Civil Engineering<br>
                 Khulna University of Engineering &amp; Technology (KUET)<br>
                 Teligati, Khulna-9203, Bangladesh.
               </p>
             </div>
-            <div style="margin-top: 1rem; font-size: 0.88rem; color: #000000; font-weight: 600; line-height: 1.6;">
+            <div style="margin-top: 1rem; font-size: 0.88rem; color: #052E16; font-weight: 600; line-height: 1.6;">
               <strong>Convener:</strong> Shakil Ilhan (2301044)<br>
               <strong>Email:</strong> aci.kuetsc@gmail.com
             </div>
@@ -394,7 +409,7 @@
         </div>
       </div>
 
-      <div class="footer-bottom-legal" style="text-align: center; border-top: 1px solid var(--border-light); padding-top: 2rem; color: #000000; font-size: 0.88rem; font-weight: 500;">
+      <div class="footer-bottom-legal" style="text-align: center; border-top: 1px solid var(--border-light); padding-top: 2rem; color: #052E16; font-size: 0.88rem; font-weight: 500;">
         <p>&copy; 2026 ACI Student Chapter, KUET. All rights reserved. Department of Civil Engineering, Khulna University of Engineering &amp; Technology.</p>
       </div>
     </div>
